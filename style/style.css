@@ -56,7 +56,7 @@ nav button:hover {
 
 section {
     padding: 80px;
-    background-color: gainsboro;
+    background-color: #f9fafb;
     display: flex;
     gap: 20px;
 }
