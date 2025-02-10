@@ -3,9 +3,12 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    background-color: #0D2A3A;
+}
+
 nav {
     height: 48px;
-    background-color: #0D2A3A;
     padding: 18px;
     display: flex;
     justify-content: end;
@@ -118,7 +121,6 @@ section {
 }
 
 footer {
-    background-color: #333;
     color: white;
     text-align: center;
     padding: 15px;
@@ -128,9 +130,17 @@ footer {
 
 /* Liens dans le footer */
 footer a {
-    color: #f1c40f;
+    color: #FFFFFF;
     text-decoration: none;
-    margin: 0 10px;
+}
+
+footer ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style:none;
+    padding: 0px;
+    margin: 30px 0px;
 }
 
 footer a:hover {
