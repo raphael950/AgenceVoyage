@@ -10,7 +10,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-
 }
 
 #main-card {
@@ -30,11 +29,11 @@ fieldset {
 
 legend {
     font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
-
 input {
-    border-style:solid;
+    border-style: solid;
     width: 100%;
     font-size: 1em;
     padding: 10px 0px;
@@ -46,16 +45,37 @@ input {
 input:last-of-type {
     background-color: #045F94;
     border-style: none;
-    color:white;
+    color: white;
     margin-top: 30px;
     padding: 20px;
     cursor: pointer;
 }
 
-input:last-child:hover {
+input:last-of-type:hover {
     background-color: #015585;
 }
 
 label {
     margin-top: 20px;
+}
+
+.info {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 10px;
+}
+
+.back-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.back-link a {
+    color: #045F94;
+    text-decoration: none;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
 }
