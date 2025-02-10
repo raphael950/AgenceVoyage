@@ -34,8 +34,12 @@ nav button:hover {
     background-color: #015585;
 }
 
-h1{
-    text-align: center;
+body {
+    background-color: #f9fafb;
+}
+
+legend {
+    font-size: 1.5em;
 }
 
 form{
@@ -47,9 +51,7 @@ form{
 
 fieldset{
     background-color: white;
-    border:2px solid darkblue;
-    border-radius: 15px;
-
+    border: none;
 }
 
 table{
@@ -62,12 +64,34 @@ table{
 
 th, td {
     border: 1px solid #ddd;
-    padding: 40px;
+    padding: 30px;
     text-align: left;
 }
 
+/*
 input{
     border-radius: 8px;
     width: 100%;
 
+}
+*/
+
+input {
+    border-style:solid;
+    width: 100%;
+    font-size: 1em;
+    padding: 10px 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+input[type="submit"]{
+    background-color: #045F94;
+    color:white;
+}
+
+input[type="submit"]:hover{
+    background-color: #015585;
+    cursor: pointer;
 }
