@@ -9,18 +9,21 @@ nav {
     padding: 18px;
     display: flex;
     justify-content: end;
+    align-items: center;
 }
 
-nav button {
+#login-button {
     background-color: #045F94;
     border-style: none;
     border-radius: 10px;
-    padding: 0px 40px;
+    padding: 15px 40px;
 
     color: white;
     font-weight: bold;
     font-size: medium;
+    text-decoration: none;
 }
+
 
 nav button:hover {
     background-color: #015585;
@@ -41,11 +44,44 @@ nav button:hover {
     justify-content: center;
     font-size: 1.75em;
 }
+/*
 #header input {
     border-radius: 10px;
     border-style: none;
     padding: 10px;
 }
+*/
+
+.search-container {
+    position: relative; /* place la loupe dans la barre */
+    display: flex;
+    align-items: center;
+    background: #f0f0f0;
+    border-radius: 25px;
+    padding: 5px;
+    width: 500px;
+    border: 1px solid #ccc;
+}
+
+input[name="search"] {
+    width: 100%;
+    padding: 10px;
+    padding-right: 40px;
+    font-size: 16px;
+    border: none;
+    background: white;
+    border-radius: 25px;
+}
+
+input[name="gosearch"] {
+    position: absolute;
+    right: 10px; /* decale la loupe de 10 a partir de la droite */
+    width: 20px;
+    height: 20px;
+    cursor: pointer; /* curseur cliquer */
+}
+
+/* */
 
 #header #side {
     display: flex;
