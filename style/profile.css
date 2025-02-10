@@ -39,20 +39,35 @@ h1{
 }
 
 form{
-    width:20%;
+    width:30%;
     text-align: center;
     margin:auto;
     padding-top: 50px;
 }
 
+fieldset{
+    background-color: white;
+    border:2px solid darkblue;
+    border-radius: 15px;
+
+}
 
 table{
     margin-left: 25px;
+    border-radius: 15px;
     border-style: solid;
+    margin: auto;
+    width: 100%;
 }
 
 th, td {
     border: 1px solid #ddd;
-    padding: 30px;
+    padding: 40px;
     text-align: left;
+}
+
+input{
+    border-radius: 8px;
+    width: 100%;
+
 }

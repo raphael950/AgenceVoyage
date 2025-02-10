@@ -10,8 +10,10 @@
 </head>
 <body>
     <nav>
-        <img src="logo2.png" class="logo" alt="logo">
-        <button>Se connecter</button>
+        <a href="index.html">
+            <img src="logo2.png" class="logo" alt="logo">
+        </a>
+        <button>Mon profil</button>
     </nav>
 
     <br><br>
@@ -19,29 +21,41 @@
 
     <form>
         <fieldset>
-            <legend>Détail du profil</legend>
+            <legend>Détails du profil</legend>
             <table>
                 <tr>
                     <th>Nom</td>
-                    <td>jsp</td>
+                    <td><input type="text" id="nom" name="nom"/></td>
                 </tr>
                 <tr>
                     <th>Prénom</td>
-                    <td>jsp</td>
+                    <td><input type="text" id="prenom" name="prenom"/></td>
+                </tr>
+                <tr>
+                    <th>E-mail</td>
+                    <td><input type="email" id="email" name="email"/></td>
                 </tr>
                 <tr>
                     <th>Sexe</td>
-                    <td>jsp</td>
+                    <td>
+                        <select name="country">
+                            <option value="homme">Homme</option>
+                            <option value="femme">Femme</option>
+                            <option value="NA">brigitte/nicolass</option>
+                            </select>
+                    </td>
                 </tr>
                 <tr>
                     <th>Date de naissance</td>
-                    <td>jsp</td>
+                    <td><input type="date" name="date" value="2021-11-08"></td>
                 </tr>
                 <tr>
                     <th>Adresse</td>
-                    <td>jsp</td>
+                    <td><input type="text" id="adresse" name="adresse"/></td>
                 </tr>
             </table>
+            <br><br>
+            <input type="submit" value="Modifier">
         </fieldset>
     </form>
     
