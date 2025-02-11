@@ -110,3 +110,28 @@ input[type="submit"]:hover {
 label {
     margin-top: 20px;
 }
+
+
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 15px;
+    bottom: 0;
+    background-color: #0D2A3A;
+    width: 100%;
+    position: fixed;
+}
+
+footer ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style:none;
+    padding: 0px;
+    margin: 30px 0px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
