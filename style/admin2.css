@@ -6,11 +6,6 @@
 
 body {
     background-color: #f9fafb;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-
 }
 
 nav {
@@ -122,7 +117,6 @@ footer {
     bottom: 0;
     background-color: #0D2A3A;
     width: 100%;
-    position: fixed;
 }
 
 footer ul {
