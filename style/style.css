@@ -15,7 +15,7 @@ nav {
     align-items: center;
 }
 
-#login-button {
+#login-button, #button-avancee {
     background-color: #045F94;
     border-style: none;
     border-radius: 10px;
@@ -27,9 +27,18 @@ nav {
     text-decoration: none;
 }
 
+#button-avancee {
+    color: #045F94;
+    background-color: white;
+}
+
 
 #login-button:hover {
     background-color: #015585;
+}
+
+#header p {
+    color: #0D2A3A;
 }
 
 #header {
@@ -47,13 +56,6 @@ nav {
     justify-content: center;
     font-size: 1.75em;
 }
-/*
-#header input {
-    border-radius: 10px;
-    border-style: none;
-    padding: 10px;
-}
-*/
 
 .search-container {
     position: relative; /* place la loupe dans la barre */
