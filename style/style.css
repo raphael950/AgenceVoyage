@@ -95,12 +95,14 @@ input[name="gosearch"] {
     gap: 15px;
 }
 
-section {
+section#exemples {
     padding: 80px;
     background-color: #f9fafb;
     display: flex;
     gap: 20px;
 }
+
+
 
 .card {
     background-color: white;
@@ -121,6 +123,35 @@ section {
 .card h3:last-of-type {
     padding-top: 20px;
 }
+
+section#points-forts {
+    color: #0D2A3A;
+    background-color: white;
+    text-align: center;
+    padding: 80px;
+}
+
+section#points-forts h1 {
+    margin-bottom: 20px;
+}
+
+section i {
+    margin-bottom: 20px;
+}
+
+section#points-forts > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.point {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 footer {
     color: white;
