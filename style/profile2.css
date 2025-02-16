@@ -78,7 +78,7 @@ input {
     border-style:solid;
     width: 100%;
     font-size: 1em;
-    padding: 10px 10px;
+    padding: 10px 0px 10px 1px;
     border-width: 1px;
     border-style: solid;
     border-radius: 10px;
@@ -86,7 +86,7 @@ input {
 
 select{
     border-style:solid;
-    width: 109%;
+    width: 100%;
     font-size: 1em;
     padding: 10px 10px;
     border-width: 1px;
