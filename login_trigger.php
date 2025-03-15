@@ -28,7 +28,7 @@
                 break;
             }
 
-            $_SESSION["username"] = $user["username"];
+            // TODO: Authentification
             header("Location: index.html");
             exit();
         }

@@ -1,0 +1,9 @@
+[
+    {
+        "id": 1,
+        "username": "jean@gmail.com",
+        "email": "jean@gmail.com",
+        "password": "$2y$12$f\/5kV7HU8N7keVpCbsaSNu5MVlUZKkN2XIYZbCqwJsgZMnuIptEjC",
+        "role": "default"
+    }
+]
