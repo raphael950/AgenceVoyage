@@ -1,19 +1,34 @@
-<?php
-    session_start();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Se connecter</title>
+    <link rel="stylesheet" href="style/login.css">
+</head>
+<body>
+    <div class="bg-image"></div>
+    <div id="main-card">
+        <form action="login_trigger.php" method="post">
+            <fieldset>
+                <?php
+                    session_start();
+                    if (isset($_SESSION["error"])) {
+                        echo "<p style='color: red':>".$_SESSION["error"]."</p>";
+                        unset($_SESSION["error"]);
+                    }
 
-    $email = $_POST["mail"];
-    $email = isset($email) ? trim($email) : '';
+                ?>
+                <legend>Connexion</legend>
+                <label for="email">Adresse email</label>
+                <input type="email" name="mail" id="email" placeholder="Email" required>
 
-    $pass = $_POST["pass"];
-    $pass = isset($pass) ? trim($pass) : '';
-
-    if (empty($email) || empty($pass)) {
-        header("Location: login.html");
-        exit();
-    }
-
-    // Check si l'utilisateur existe
-    // le connecter
-
-    
-?>
+                <label for="pass">Mot de passe</label>
+                <input type="password" name="pass" id="pass" placeholder="Mot de passe" required>
+                <a href="oublie.html">Mot de passe oublié</a>
+                <input type="submit" value="Se connecter">
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
