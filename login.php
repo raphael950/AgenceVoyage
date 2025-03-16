@@ -13,6 +13,13 @@
             <fieldset>
                 <?php
                     session_start();
+                    /*
+                    user déja connecté mais se rend sur la page quand meme via URL
+                    if(session_status=="PHP_SESSION_ACTIVE" || isset($_SESSION["user"])){
+                        header("Location: profile2.html");
+                        exit();
+                    }
+                    */
                     if (isset($_SESSION["error"])) {
                         echo "<p style='color: red':>".$_SESSION["error"]."</p>";
                         unset($_SESSION["error"]);

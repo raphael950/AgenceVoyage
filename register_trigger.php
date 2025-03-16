@@ -32,6 +32,7 @@
 
     $users[] = $new_user;
     file_put_contents("data/users.json", json_encode($users, JSON_PRETTY_PRINT));
+    $_SESSION["user"]=$user;
     header("Location: index.html")
     
 ?>

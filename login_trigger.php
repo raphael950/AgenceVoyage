@@ -29,6 +29,7 @@
             }
 
             // TODO: Authentification
+            $_SESSION["user"] = $user;
             header("Location: index.html");
             exit();
         }
