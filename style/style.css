@@ -16,7 +16,12 @@ nav {
     gap: 10px;
 }
 
-#login-button, #button-avancee, #register-button {
+.welcome {
+    color: white;
+}
+
+
+.button {
     background-color: #045F94;
     border-style: none;
     border-radius: 10px;
