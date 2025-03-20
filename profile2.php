@@ -1,5 +1,15 @@
+<?php
+    session_start();
+
+    // user non connecté mais se rend sur la page quand meme via URL
+    if (!isset($_SESSION["user"])) {
+        header("Location: login.php");
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,13 +24,22 @@
         <button>Mon profil</button>
     </nav>
     <div id="main-card">
-        <form action="" method="post">
+        <form action="edit_trigger.php" method="post">
             <fieldset>
+
+                <?php
+                    if (isset($_SESSION["error"])) {
+                        echo "<p style='color: red':>".$_SESSION["error"]."</p>";
+                        unset($_SESSION["error"]);
+                    }
+                    //echo $_SESSION[ "user"]["email"];
+                ?>
+
                 <legend>Modifier mon profil</legend>
                 <table>
                     <tr>
                         <th><label for="nom">Nom</label></td>
-                        <td><input type="text" id="nom" name="nom"/></td>
+                        <td><input type="text" id="nom" name="nom" value="<?php echo $_SESSION["user"]["username"];?>"/></td>
                     </tr>
                     <tr>
                         <th><label for="prenom">Prénom</label></td>
@@ -28,12 +47,12 @@
                     </tr>
                     <tr>
                         <th><label for="email">E-mail</label></td>
-                        <td><input type="email" id="email" name="email"/></td>
+                        <td><input type="email" id="email" name="email" value="<?php echo $_SESSION["user"]["email"];?>"/></td>
                     </tr>
                     <tr>
                         <th><label for="sexe">Sexe</label></td>
                         <td>
-                            <select name="country">
+                            <select name="sexe">
                                 <option value="homme">Homme</option>
                                 <option value="femme">Femme</option>
                                 </select>
@@ -41,11 +60,11 @@
                     </tr>
                     <tr>
                         <th><label for="date">Date de naissance</label></td>
-                        <td><input type="date" name="date" value="2021-11-08"></td>
+                        <td><input type="date" name="date" value="<?php if(isset($_SESSION["user"]["birth"])){echo $_SESSION["user"]["birth"];}?>"></td>
                     </tr>
                     <tr>
                         <th><label for="adresse">Adresse</label></td>
-                        <td><input type="text" id="adresse" name="adresse"/></td>
+                        <td><input type="text" id="adresse" name="adresse" value="<?php if(isset($_SESSION["user"]["birth"])){echo $_SESSION["user"]["birth"];}?>"/></td>
                     </tr>
                 </table>
                 <input type="submit" value="Modifier">
