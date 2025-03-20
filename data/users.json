@@ -1,9 +1,9 @@
 [
     {
         "id": 1,
-        "username": "jean@gmail.com",
-        "email": "jean@gmail.com",
-        "password": "$2y$12$f\/5kV7HU8N7keVpCbsaSNu5MVlUZKkN2XIYZbCqwJsgZMnuIptEjC",
-        "role": "default"
+        "username": "Admin",
+        "email": "admin@admin.com",
+        "password": "$2y$12$KmH0vxhivi.U4sSISKGbc.PbYtK6ftY0oFLOeIzLXw\/ysSPE.D8Ny",
+        "role": "admin"
     }
 ]
