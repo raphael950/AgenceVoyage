@@ -19,7 +19,7 @@
 <body>
     <nav>
         <a href="index.html">
-            <img src="logo2.png" class="logo" alt="logo">
+            <img src="assets/logo2.png" class="logo" alt="logo">
         </a>
         <button>Mon profil</button>
     </nav>
