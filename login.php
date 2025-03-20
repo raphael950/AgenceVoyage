@@ -3,7 +3,7 @@
 
     // user déja connecté mais se rend sur la page quand meme via URL
     if (isset($_SESSION["user"])) {
-        header("Location: profile2.html");
+        header("Location: profile2.php");
         exit();
     }
 ?>

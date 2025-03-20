@@ -30,7 +30,7 @@
 
             // TODO: Authentification
             $_SESSION["user"] = $user;
-            header("Location: profile2.html");
+            header("Location: profile2.php");
             exit();
         }
         $_SESSION["error"] = "Mot de passe incorrect";

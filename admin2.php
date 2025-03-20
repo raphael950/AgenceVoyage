@@ -23,7 +23,7 @@
 </head>
 <body>
     <nav>
-        <a href="index.html">
+        <a href="index.php">
             <img src="assets/logo2.png" class="logo" alt="logo">
         </a>
         <button>Mon profil</button>
@@ -47,7 +47,7 @@
                         <td><?= htmlspecialchars($user['username']) ?></td>
                         <td><?= htmlspecialchars($user['username']) ?></td>
                         <td><?= htmlspecialchars($user['email']) ?></td>
-                        <td><?= isset($user["genre"]) ? htmlspecialchars($user["genre"]) : "N/A"; ?></td>
+                        <td><?= isset($user["gender"]) ? htmlspecialchars($user["gender"]) : "N/A"; ?></td>
                         <td><?= isset($user["birth"]) ? htmlspecialchars($user["birth"]) : "N/A"; ?></td>
                         <td><?= isset($user["adresse"]) ? htmlspecialchars($user["adresse"]) : "N/A"; ?></td>
                         <td>
