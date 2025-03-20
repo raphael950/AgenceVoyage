@@ -18,7 +18,7 @@
 </head>
 <body>
     <nav>
-        <a href="index.html">
+        <a href="index.php">
             <img src="assets/logo2.png" class="logo" alt="logo">
         </a>
         <button>Mon profil</button>
@@ -53,9 +53,9 @@
                         <th><label for="sexe">Sexe</label></td>
                         <td>
                             <select name="sexe">
-                                <option value="homme">Homme</option>
-                                <option value="femme">Femme</option>
-                                </select>
+                                <option value="homme" <?= (($_SESSION["user"]["gender"] ?? '') == "homme") ? 'selected' : '' ?>>Homme</option>
+                                <option value="femme" <?= (($_SESSION["user"]["gender"] ?? '') == "femme") ? 'selected' : '' ?>>Femme</option>
+                            </select>
                         </td>
                     </tr>
                     <tr>
