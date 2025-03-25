@@ -59,6 +59,32 @@
         </div>
     </section>
     <section id="exemples">
+        <?php
+            #recup voyages
+            #pour chaque voyage afficher une carte avec titre, image, etc
+            $contenu = file_get_contents("data/voyages.json");
+            $voyages = json_decode($contenu, true);
+
+            foreach($voyages as $voyage) {
+                $titre = $voyage["titre"];
+                $imageUrl = "assets/voyages/". $voyage["id"] . ".jpg";
+                $prix = $voyage["prix"];
+                echo <<<HTML
+                    <div class="card">
+                        <a href="?.html">
+                        <img src="$imageUrl" alt="$titre">
+                        <div class="text">
+                            <h3>$titre</h3>
+                            <p>1h 50, sans escale</p>
+                            <p>lun. 3/3 > lun. 10/3</p>
+                            <h3>à partir de {$prix}€</h3>
+                        </div>
+                        </a>
+                
+                    </div>
+                HTML;
+            }
+        ?>
         <!-- Costa rica -->
         <div class="card">
             <a href="voyage1.html">

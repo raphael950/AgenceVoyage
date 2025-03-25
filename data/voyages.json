@@ -1,0 +1,19 @@
+[
+    {
+        "id": 1,
+        "titre": "Voyage special carnassier",
+        "texte": "texte",
+        "prix": 1000,
+        "duree": "7 jours",
+        "pays": "France",
+        "etapes": [
+            {
+                "secteur": "Vexin",
+                "poisson": "Carnassier",
+                "options": [
+                    "Bateau premium", "Guide"
+                ]
+            }
+        ]
+    }
+]
