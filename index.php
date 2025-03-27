@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,11 +17,11 @@
 <body>
     <nav>
     <?php
-        session_start();
         if (isset($_SESSION["user"])) {
             $username = htmlspecialchars($_SESSION["user"]["username"]);
             echo '<span class="welcome">Bienvenue, ' . $username . '</span>';
-            echo '<a href="logout.php" class="button"><i class="fa-solid fa-right-from-bracket"></i></a>';
+            echo '<a href="profile2.php" class="button">Mon profil</a>';
+            echo '<a href="logout.php" class="button">Se déconnecter <i class="fa-solid fa-right-from-bracket"></i></a>';
         } else {
             echo '<a href="register.php" class="button" id="register-button">S\'inscrire</a>';
             echo '<a href="login.php" class="button">Se connecter</a>';
