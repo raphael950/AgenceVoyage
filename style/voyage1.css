@@ -134,3 +134,92 @@ footer ul {
 footer a:hover {
     text-decoration: underline;
 }
+
+
+.etapes {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 30px auto;
+    max-width: 1200px; /* Limite la largeur de l'ensemble des étapes */
+    padding: 0 20px;
+}
+
+.etape {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 900px; /* Limite la largeur de chaque carte */
+}
+
+.etape:hover {
+    transform: scale(1.02);
+}
+
+.etape-info {
+    flex: 1;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.etape h4 {
+    margin: 0;
+    font-size: 22px;
+    color: #333;
+    font-weight: 600;
+}
+
+.etape p {
+    margin: 10px 0;
+    color: #555;
+    font-size: 16px;
+}
+
+.etape-image {
+    flex-shrink: 0;
+    width: 200px; /* Réduit la largeur de l'image */
+}
+
+.etape-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    object-fit: cover; /* Assure que l'image couvre son conteneur sans déformer */
+}
+
+.reservation {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.reservation button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+}
+
+.reservation button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.reservation button:active {
+    background-color: #00408a;
+    transform: scale(0.95);
+}

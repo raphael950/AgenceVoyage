@@ -71,7 +71,7 @@
                 $prix = $voyage["prix"];
                 echo <<<HTML
                     <div class="card">
-                        <a href="?.html">
+                        <a href="voyage.php?id={$voyage['id']}">
                         <img src="$imageUrl" alt="$titre">
                         <div class="text">
                             <h3>$titre</h3>

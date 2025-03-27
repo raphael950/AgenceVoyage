@@ -2,14 +2,26 @@
     {
         "id": 1,
         "titre": "Voyage special carnassier",
-        "texte": "texte",
+        "texte": "Partez pour une aventure de pêche unique en France...",
         "prix": 1000,
         "duree": "7 jours",
         "pays": "France",
+        "images": [
+            "https://www.tourismesuede.fr/wp-content/uploads/2018/10/suede-abisko-Trollsjon.jpg",
+            "https://s3-eu-north-1.amazonaws.com/py3.visitsweden.com/original_images/f1190198-Katja_Kristoferson-Folio-IBSweb.jpg",
+            "https://flyfishingpyrenees.fr/wp-content/uploads/2022/08/Sejour-de-peche-FLY-FISHING-Pyrenees.jpg"
+        ],
         "etapes": [
             {
                 "secteur": "Vexin",
                 "poisson": "Carnassier",
+                "options": [
+                    "Bateau premium", "Guide"
+                ]
+            },
+            {
+                "secteur": "Chez Tim",
+                "poisson": "Vache",
                 "options": [
                     "Bateau premium", "Guide"
                 ]
