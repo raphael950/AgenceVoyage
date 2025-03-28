@@ -15,29 +15,40 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /*position: fixed;
+    top: 0;*/
+    width: 100%;
 }
 
 nav img{
-    height:80px;
+    height: 80px;
     width: 80px;
 }
 
-nav button {
+#nav-button {
     background-color: #045F94;
     border-style: none;
     border-radius: 10px;
     padding: 15px 40px;
+    margin-right: 15px;
     color: white;
     font-weight: bold;
     font-size: medium;
-    text-align: left;
-    
+    text-align: left; 
 }
 
 nav button:hover {
     background-color: #015585;
 }
 
+.nav-buttons {
+    padding-right: 20px;
+}
+
+.welcome {
+    color: white;
+    margin-right: 20px;
+}
 
 
 .photos {
