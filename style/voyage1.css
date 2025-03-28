@@ -11,7 +11,7 @@ body {
 nav {
     height: 48px;
     background-color: #0D2A3A;
-    padding: 18px;
+    padding: 18px 0px 18px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,7 +42,7 @@ nav button:hover {
 }
 
 .nav-buttons {
-    padding-right: 20px;
+    padding-right: 0px;
 }
 
 .welcome {
