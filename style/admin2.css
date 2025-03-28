@@ -8,6 +8,12 @@ body {
     background-color: #f9fafb;
 }
 
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 nav {
     height: 48px;
     background-color: #0D2A3A;
@@ -111,6 +117,7 @@ footer {
     bottom: 0;
     background-color: #0D2A3A;
     width: 100%;
+    margin-top: auto;
 }
 
 footer ul {
