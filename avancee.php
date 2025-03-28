@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <title>Fishing Travel - Recherche Avancée</title>
     <link rel="stylesheet" href="style/recherche.css">
+    <script src="https://kit.fontawesome.com/1633e685ed.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav>

@@ -29,6 +29,7 @@ if ($voyage):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($voyage['titre']); ?></title>
     <link rel="stylesheet" href="style/voyage1.css">
+    <script src="https://kit.fontawesome.com/1633e685ed.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav>

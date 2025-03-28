@@ -20,6 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page administrateur</title>
     <link rel="stylesheet" href="style/admin2.css">
+    <script src="https://kit.fontawesome.com/1633e685ed.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav>
