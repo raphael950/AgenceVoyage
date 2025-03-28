@@ -26,10 +26,15 @@ nav {
     font-size: medium;
     text-decoration: none;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 #login-button:hover, .gosearch:hover {
     background-color: #015585;
+}
+
+.welcome {
+    color: white;
 }
 
 #header {

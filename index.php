@@ -39,7 +39,7 @@
                 <input class="gosearch" type="image" name="gosearch" id="gosearch" src="https://png.pngtree.com/png-vector/20221023/ourmid/pngtree-magnifying-glass-or-loupe-in-flat-style-png-image_6383627.png">
             </form>
             <p>ou</p>
-            <a href="avancee.html" class="button" id="button-avancee">Recherche avancée</a>
+            <a href="avancee.php" class="button" id="button-avancee">Recherche avancée</a>
         </div>
     </div>
     <section id="points-forts">
