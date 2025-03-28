@@ -22,7 +22,7 @@ nav img{
     width: 80px;
 }
 
-nav button {
+#nav-button {
     background-color: #045F94;
     border-style: none;
     border-radius: 10px;
@@ -31,13 +31,16 @@ nav button {
     font-weight: bold;
     font-size: medium;
     text-align: left;
-    
+    margin-left: 10px;
 }
 
 nav button:hover {
     background-color: #015585;
 }
 
+.welcome {
+    color: white;
+}
 
 
 #main-card {
