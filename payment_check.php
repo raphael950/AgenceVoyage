@@ -1,0 +1,48 @@
+<?php
+
+    session_start();
+
+    // retour de l'API
+    $transaction = $_GET['transaction'] ?? '';
+    $montant = $_GET['montant'] ?? '';
+    $vendeur = $_GET['vendeur'] ?? '';
+    $statut = $_GET['status'] ?? '';
+    $control_recu = $_GET['control'] ?? '';
+
+    // reverif du control
+    require('getapikey.php');
+    $api_key = "zzzz";
+    $vendeur = 'MI-5_D' ;
+    $api_key = getAPIKey($vendeur);
+    $control = md5($api_key. "#" . $transaction. "#" . $montant. "#" . $vendeur. "#" . $statut . "#");
+    if($control != $control_recu){
+        $_SESSION["error"] = "wrong";
+        header("Location: payement.php");
+    }
+
+    // verif du status et redirection
+    if ($statut === "accepted"){
+        // enregistrement de la transaction
+        $content = file_get_contents("data/transactions.json");
+        $transactions = json_decode($content, true);
+        $new_transaction = array(
+            "transaction" => $transaction,
+            "date" => date("Y-m-d H:i:s"), // "2025-03-29 12:30:45"
+            "email" => $_SESSION["user"]["email"],
+            "voyage" => $_SESSION["voyage"]["id"],
+            "montant" => $montant
+        );
+    
+        $transactions[] = $new_transaction;
+        file_put_contents("data/transactions.json", json_encode($transactions, JSON_PRETTY_PRINT));
+
+        $_SESSION["payement"] = "accepted";
+        header("Location: payement.php"); // TODO : pages des voyages réservés
+    }
+    else{
+        $_SESSION["payement"] = "declined";
+        header("Location: payement.php");
+    }
+    
+
+?>
