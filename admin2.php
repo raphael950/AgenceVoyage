@@ -79,7 +79,7 @@
                             </form>    
                             <form action="admin_trigger.php" method="post">
                                 <input type="hidden" name="client_id" value="<?= htmlspecialchars($user['id']) ?>">
-                                <button type="submit" name="action" value="vip">Donner VIP</button>
+                                <button type="submit" name="action" value="vip"><?= ($user['role'] == "vip") ? "Enlever VIP" : "Donner VIP"; ?></button>
                             </form>
                             <form action="admin_trigger.php" method="post">
                                 <input type="hidden" name="client_id" value="<?= htmlspecialchars($user['id']) ?>">
