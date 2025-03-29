@@ -27,7 +27,7 @@
 
     // parcours du fichier transactions pour donner l'id de transaction
     $json_transactions = file_get_contents("data/transactions.json");
-    $transactions = json_decode($json, true);
+    $transactions = json_decode($json_transactions, true);
 
     require('getapikey.php');
     $api_key = "zzzz";

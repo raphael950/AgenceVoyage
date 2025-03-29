@@ -2,8 +2,9 @@
     {
         "transaction": "0000000001",
         "date": "2025-03-29 16:04:30",
-        "email": "mich@michou.fr",
+        "email": "admin@admin.com",
         "voyage": 1,
-        "montant": "1000.00"
+        "montant": "1000.00",
+        "_comment": "ne pas supprimer cette entrée, necessaire pour le count des transactions"
     }
 ]
