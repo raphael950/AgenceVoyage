@@ -1,5 +1,4 @@
 <?php
-    session_start();
 
     $nom = trim($_POST["nom"] ?? '');
     $email = trim($_POST["email"] ?? '');
@@ -11,7 +10,7 @@
     $users = json_decode($content, true);
 
     foreach ($users as &$user) {
-        if (!isset($user["email"]) || $user["email"] != $_SESSION[ "user"]["email"]) continue;
+        if (!isset($user["email"])) continue;
 
         // User is found in the json
 
@@ -25,7 +24,6 @@
     }
 
     file_put_contents("data/users.json", json_encode($users, JSON_PRETTY_PRINT));
-    $_SESSION["user"]=$user;
-    header("Location: profile2.php");
+    header("Location: admin2.php");
     
 ?>

@@ -24,7 +24,7 @@
 </head>
 <body>
     <nav>
-    <a href="index.php">
+        <a href="index.php">
             <img src="assets/logo2.png" class="logo" alt="logo">
         </a>
         <div class="nav-buttons">
@@ -64,21 +64,21 @@
                         <td><?= htmlspecialchars($user['username']) ?></td>
                         <td><?= htmlspecialchars($user['username']) ?></td>
                         <td><?= htmlspecialchars($user['email']) ?></td>
-                        <td><?= isset($user["gender"]) ? htmlspecialchars($user["gender"]) : "N/A"; ?></td>
-                        <td><?= isset($user["birth"]) ? htmlspecialchars($user["birth"]) : "N/A"; ?></td>
-                        <td><?= isset($user["adresse"]) ? htmlspecialchars($user["adresse"]) : "N/A"; ?></td>
+                        <td><?= isset($user["gender"]) && !empty($user["gender"]) ? htmlspecialchars($user["gender"]) : "N/A"; ?></td>
+                        <td><?= isset($user["birth"]) && !empty($user["birth"]) ? htmlspecialchars($user["birth"]) : "N/A"; ?></td>
+                        <td><?= isset($user["adresse"]) && !empty($user["adresse"]) ? htmlspecialchars($user["adresse"]) : "N/A"; ?></td>
                         <td>
-                            <form action="edit.php" method="post">
+                            <form action="admin_edit.php" method="post">
                                 <input type="hidden" name="client_id" value="<?= htmlspecialchars($user['id']) ?>">
-                                <button type="submit" class="edit">Modifier</button>
+                                <button type="submit" name="action" value="edit">Modifier</button>
                             </form>    
-                            <form action="vip.php" method="post">
+                            <form action="admin_trigger.php" method="post">
                                 <input type="hidden" name="client_id" value="<?= htmlspecialchars($user['id']) ?>">
-                                <button type="submit" class="vip">Donner VIP</button>
+                                <button type="submit" name="action" value="vip">Donner VIP</button>
                             </form>
-                            <form action="ban.php" method="post">
+                            <form action="admin_trigger.php" method="post">
                                 <input type="hidden" name="client_id" value="<?= htmlspecialchars($user['id']) ?>">
-                                <button type="submit" class="ban">Bannir</button>
+                                <button type="submit" name="action" value="ban">Bannir</button>
                             </form>
                         </td>
                     </tr>
