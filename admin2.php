@@ -11,6 +11,15 @@
     
     $content = file_get_contents("data/users.json");
     $users = json_decode($content, true);
+
+    
+    $usersPerPage = 5;
+    $totalUsers = count($users);
+    $totalPages = ceil($totalUsers / $usersPerPage); // ceil = arrondir float
+    $currentPage = isset($_GET['page']) ? max(1, min($totalPages, intval($_GET['page']))) : 1;
+
+    $startIndex = ($currentPage - 1) * $usersPerPage;
+    $usersToDisplay = array_slice($users, $startIndex, $usersPerPage);
 ?>
 
 <!DOCTYPE html>
@@ -28,10 +37,6 @@
             <img src="assets/logo2.png" class="logo" alt="logo">
         </a>
         <div class="nav-buttons">
-            <!-- 
-            <a href="profile2.php" id="profile-button">Mon profil</a>
-            <a href="logout.php" id="logout-button">Se déconnecter</a>
-            -->
             <?php
                 if (isset($_SESSION["user"])) {
                     $username = htmlspecialchars($_SESSION["user"]["username"]);
@@ -59,7 +64,7 @@
                     <th>Adresse client</th>
                     <th>Actions sur client</th>
                 </tr>
-                <?php foreach ($users as $user): ?>
+                <?php foreach ($usersToDisplay as $user): ?>
                     <tr>
                         <td><?= htmlspecialchars($user['username']) ?></td>
                         <td><?= htmlspecialchars($user['username']) ?></td>
@@ -84,6 +89,21 @@
                     </tr>
                 <?php endforeach; ?>
             </table>
+        </div>
+
+        
+        <div class="pagination">
+            <?php if ($currentPage > 1): ?>
+                <a href="?page=<?= $currentPage - 1 ?>">Précédent</a>
+            <?php endif; ?>
+
+            <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                <a href="?page=<?= $i ?>" <?= $i === $currentPage ? 'style="font-weight: bold;"' : '' ?>><?= $i ?></a>
+            <?php endfor; ?>
+
+            <?php if ($currentPage < $totalPages): ?>
+                <a href="?page=<?= $currentPage + 1 ?>">Suivant</a>
+            <?php endif; ?>
         </div>
     </div>
     <footer>
