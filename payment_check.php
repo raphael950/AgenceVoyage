@@ -17,7 +17,7 @@
     $control = md5($api_key. "#" . $transaction. "#" . $montant. "#" . $vendeur. "#" . $statut . "#");
     if($control != $control_recu){
         $_SESSION["error"] = "wrong";
-        header("Location: payement.php");
+        header("Location: payment.php");
     }
 
     // verif du status et redirection
@@ -36,12 +36,12 @@
         $transactions[] = $new_transaction;
         file_put_contents("data/transactions.json", json_encode($transactions, JSON_PRETTY_PRINT));
 
-        $_SESSION["payement"] = "accepted";
-        header("Location: payement.php"); // TODO : pages des voyages réservés
+        $_SESSION["payment"] = "accepted";
+        header("Location: payment.php"); // TODO : pages des voyages réservés
     }
     else{
-        $_SESSION["payement"] = "declined";
-        header("Location: payement.php");
+        $_SESSION["payment"] = "declined";
+        header("Location: payment.php");
     }
     
 

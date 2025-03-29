@@ -38,40 +38,18 @@ form {
     gap: 15px;
 }
 
-label {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-input, button {
+input {
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 10px;
     font-size: 1em;
     width: 100%;
     box-sizing: border-box;
+    margin-top: 10px;
 }
 
 input:focus {
     outline: none;
     border-color: #045F94;
     box-shadow: 0 0 5px rgba(4, 95, 148, 0.5);
-}
-
-button {
-    background-color: #045F94;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button:hover {
-    background-color: #015585;
-    transform: scale(1.05);
-}
-
-button:active {
-    background-color: #00476b;
-    transform: scale(0.95);
 }
