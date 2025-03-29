@@ -10,7 +10,7 @@
     $users = json_decode($content, true);
 
     foreach ($users as &$user) {
-        if (!isset($user["email"])) continue;
+        if (!isset($user["email"]) || $email != $user["email"]) continue;
 
         // User is found in the json
 
