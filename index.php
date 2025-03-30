@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include "include/voyage_utils.php";
 ?>
 
 <!DOCTYPE html>
@@ -71,60 +72,31 @@
 
             foreach($voyages as $voyage) {
                 $titre = $voyage["titre"];
-                $imageUrl = "assets/voyages/". $voyage["id"] . ".jpg";
+                $imageUrl = "assets/voyages/". $voyage["id"] . "/miniature.jpg";
+                if (!file_exists($imageUrl)) $imageUrl = "assets/no_photo.jpg";
                 $prix = $voyage["prix"];
+                $duree = duree($voyage);
+                $etapes = count($voyage["etapes"]);
+
                 echo <<<HTML
                     <div class="card">
                         <a href="voyage.php?id={$voyage['id']}">
-                        <img src="$imageUrl" alt="$titre">
-                        <div class="text">
-                            <h3>$titre</h3>
-                            <p>1h 50, sans escale</p>
-                            <p>lun. 3/3 > lun. 10/3</p>
-                            <h3>à partir de {$prix}€</h3>
-                        </div>
+                            <img src="$imageUrl" alt="$titre">
+                            <div class="text">
+                                <div>
+                                    <h3>$titre</h3>
+                                    <p>$duree jours, $etapes étapes</p>
+                                </div>
+                                <h3 class="bottom">à partir de {$prix}€/pers</h3>
+                            </div>
                         </a>
                 
                     </div>
                 HTML;
             }
         ?>
-        <!-- Costa rica -->
-        <div class="card">
-            <a href="voyage1.html">
-                <img src="https://s3-eu-north-1.amazonaws.com/py3.visitsweden.com/original_images/f1190198-Katja_Kristoferson-Folio-IBSweb.jpg" alt="costa">
-                <div class="text">
-                    <h3>Laponie (Suède)</h3>
-                    <p>1h 50, sans escale</p>
-                    <p>lun. 3/3 > lun. 10/3</p>
-                    <h3>à partir de 1000e</h3>
-                </div>
-            </a>
-            
-        </div>
-        <div class="card">
-            <a href="voyage2.html">
-                <img src="https://tanzaniaspecialist.fr/wp-content/uploads/sites/8/2023/07/Pemba-Island-Tanzania-10.jpg" alt="costa">
-                <div class="text">
-                    <h3>Ile de Pemba (Tanzanie)</h3>
-                    <p>1h 50, sans escale</p>
-                    <p>lun. 3/3 > lun. 10/3</p>
-                    <h3>à partir de 0e</h3>
-                </div>
-            </a>
-        </div>
-        <div class="card">
-            <a href="voyage3.html">
-                <img src="https://voyagesautenteo.com/wp-content/uploads/2022/10/phuket.jpg" alt="costa">
-                <div class="text">
-                    <h3>Phuket (Thailande)</h3>
-                    <p>1h 50, sans escale</p>
-                    <p>lun. 3/3 > lun. 10/3</p>
-                    <h3>à partir de 31e</h3>
-                </div></a>
-            
-        </div>
         
+          
     </section>
     
     <footer>

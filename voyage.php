@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+include "include/voyage_utils.php";
 
 // Récupération de l'ID depuis l'URL
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
@@ -61,11 +62,11 @@ if ($voyage):
             <h1><?php echo htmlspecialchars($voyage['titre']); ?></h1>
         </div>
         <div class="photos">
-            <img src="<?php echo isset($voyage['images'][0]) ? htmlspecialchars($voyage['images'][0]) : ''; ?>" alt="Image du voyage">
+            <img src="<?php echo isset($voyage['images'][0]) ? htmlspecialchars($voyage['images'][0]) : "assets/no_photo.jpg"; ?>" alt="Image du voyage">
         </div>
         <div class="texte">
             <p><?php echo htmlspecialchars($voyage['texte']); ?></p>
-            <p><strong>Durée:</strong> <?php echo htmlspecialchars($voyage['duree']); ?></p>
+            <p><strong>Durée:</strong> <?php echo duree($voyage); ?></p>
             <p><strong>Prix:</strong> <?php echo htmlspecialchars($voyage['prix']); ?> €</p>
             <p><strong>Pays:</strong> <?php echo htmlspecialchars($voyage['pays']); ?></p>
         </div>
@@ -76,10 +77,9 @@ if ($voyage):
                     <div class="etape-info">
                         <h4>Secteur: <?php echo htmlspecialchars($etape['secteur']); ?></h4>
                         <p><strong>Poisson ciblé:</strong> <?php echo htmlspecialchars($etape['poisson']); ?></p>
-                        <p><strong>Options:</strong> <?php echo implode(', ', array_map('htmlspecialchars', $etape['options'])); ?></p>
                     </div>
                     <div class="etape-image">
-                        <img src="<?php echo htmlspecialchars($voyage['images'][$index + 1] ?? $voyage['images'][0]); ?>" alt="Image de l'étape">
+                        <img src="<?php echo htmlspecialchars($voyage['images'][$index + 1] ?? "assets/no_photo.jpg"); ?>" alt="Image de l'étape">
                     </div>
                 </div>
             <?php endforeach; ?>

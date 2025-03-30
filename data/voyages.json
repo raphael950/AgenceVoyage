@@ -1,29 +1,193 @@
 [
     {
         "id": 1,
-        "titre": "Voyage special carnassier",
-        "texte": "Partez pour une aventure de pêche unique en France...",
-        "prix": 1000,
-        "duree": "7 jours",
-        "pays": "France",
-        "images": [
-            "https://www.tourismesuede.fr/wp-content/uploads/2018/10/suede-abisko-Trollsjon.jpg",
-            "https://s3-eu-north-1.amazonaws.com/py3.visitsweden.com/original_images/f1190198-Katja_Kristoferson-Folio-IBSweb.jpg",
-            "https://flyfishingpyrenees.fr/wp-content/uploads/2022/08/Sejour-de-peche-FLY-FISHING-Pyrenees.jpg"
-        ],
+        "titre": "Voyage de Pêche au Brochet en Laponie",
+        "texte": "Partez pour une aventure de pêche inoubliable en Laponie, à la découverte des brochets géants dans des décors sauvages et préservés.",
+        "prix": 2500,
+        "duree": "10 jours",
+        "pays": "Suède, Finlande",
         "etapes": [
             {
-                "secteur": "Vexin",
-                "poisson": "Carnassier",
+                "secteur": "Rivière Torne",
+                "poisson": "Brochet, Perche, Truite",
+                "hebergement": {
+                    "nom": "Arctic River Lodge",
+                    "adresse": "Särkimukka 27, 980 63 Kangos, Suède"
+                },
+                "nb_jours": 2,
                 "options": [
-                    "Bateau premium", "Guide"
+                    {
+                        "nom": "Location de float tube",
+                        "type": "individuel",
+                        "prix": 40,
+                        "description": "Float tube avec palmes inclus pour pêcher en toute liberté."
+                    },
+                    {
+                        "nom": "Guide privé dédié",
+                        "type": "groupe",
+                        "prix": 250,
+                        "description": "Un guide expérimenté pour maximiser vos chances de capture. Jusqu’à 3 personnes."
+                    },
+                    {
+                        "nom": "Nuit en cabane avec sauna privé",
+                        "type": "individuel",
+                        "prix": 100,
+                        "description": "Cabane traditionnelle en bois avec sauna privatif, pour une immersion totale."
+                    }
                 ]
             },
             {
-                "secteur": "Chez Tim",
-                "poisson": "Vache",
+                "secteur": "Lac Inari",
+                "poisson": "Brochet, Perche, Saumon",
+                "hebergement": {
+                    "nom": "Wilderness Hotel Inari",
+                    "adresse": "Inarintie 2, 99870 Inari, Finlande"
+                },
+                "nb_jours": 2,
                 "options": [
-                    "Bateau premium", "Guide"
+                    {
+                        "nom": "Pêche de nuit sous les aurores boréales",
+                        "type": "groupe",
+                        "prix": 120,
+                        "description": "Expérience unique de pêche sous un ciel illuminé par les aurores boréales. Jusqu’à 4 personnes."
+                    },
+                    {
+                        "nom": "Hébergement en chalet luxe avec sauna et jacuzzi",
+                        "type": "individuel",
+                        "prix": 250,
+                        "description": "Chalet de luxe équipé pour un confort absolu après une journée de pêche."
+                    },
+                    {
+                        "nom": "Location bateau premium",
+                        "type": "groupe",
+                        "prix": 80,
+                        "description": "Bateau équipé d’un sondeur et moteur électrique pour une exploration optimale du lac. Jusqu’à 3 personnes."
+                    }
+                ]
+            },
+            {
+                "secteur": "Rovaniemi",
+                "poisson": "Brochet, Perche, Ombre Arctique",
+                "hebergement": {
+                    "nom": "Arctic TreeHouse Hotel",
+                    "adresse": "Tarvantie 3, 96930 Rovaniemi, Finlande"
+                },
+                "nb_jours": 2,
+                "options": [
+                    {
+                        "nom": "Expédition de pêche sur glace en traîneau à chiens",
+                        "type": "groupe",
+                        "prix": 180,
+                        "description": "Rejoignez un lac isolé en traîneau pour une expérience de pêche sur glace hors du commun. Jusqu’à 5 personnes."
+                    },
+                    {
+                        "nom": "Nuit en igloo de verre avec vue sur les aurores",
+                        "type": "individuel",
+                        "prix": 300,
+                        "description": "Passez une nuit magique dans un igloo de verre sous les aurores boréales."
+                    },
+                    {
+                        "nom": "Excursion en motoneige vers des spots secrets",
+                        "type": "groupe",
+                        "prix": 150,
+                        "description": "Accédez aux meilleurs spots de pêche en motoneige avec un guide. Jusqu’à 6 personnes."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "titre": "Voyage de Pêche au Lac de Serre-Ponçon",
+        "texte": "Venez découvrir l'un des plus beaux lacs de France pour une aventure de pêche exceptionnelle au cœur des Alpes.",
+        "prix": 1800,
+        "pays": "France",
+        "etapes": [
+            {
+                "secteur": "Baie Saint-Michel",
+                "poisson": "Brochet, Perche, Truite Fario",
+                "nb_jours": 2,
+                "hebergement": {
+                    "nom": "Les Flots Bleus",
+                    "adresse": "Baie Saint-Michel, 05230 Chorges, France"
+                },
+                "options": [
+                    {
+                        "nom": "Location de bateau de pêche",
+                        "type": "groupe",
+                        "prix": 100,
+                        "description": "Bateau équipé avec moteur électrique et sondeur. Jusqu’à 4 personnes."
+                    },
+                    {
+                        "nom": "Guide de pêche privé",
+                        "type": "groupe",
+                        "prix": 250,
+                        "description": "Accompagnement par un expert local pour optimiser vos chances de capture. Jusqu’à 3 personnes."
+                    },
+                    {
+                        "nom": "Hébergement en chalet avec vue sur le lac",
+                        "type": "individuel",
+                        "prix": 120,
+                        "description": "Chalet tout confort avec vue panoramique sur le lac."
+                    }
+                ]
+            },
+            {
+                "secteur": "Savines-le-Lac",
+                "poisson": "Brochet, Sandre, Carpe",
+                "nb_jours": 3,
+                "hebergement": {
+                    "nom": "Hôtel Les Chaumettes",
+                    "adresse": "Rue de la Combette, 05160 Savines-le-Lac, France"
+                },
+                "options": [
+                    {
+                        "nom": "Session de pêche en float tube",
+                        "type": "individuel",
+                        "prix": 50,
+                        "description": "Location de float tube et palmes pour une approche discrète des poissons."
+                    },
+                    {
+                        "nom": "Sortie en bateau avec un guide",
+                        "type": "groupe",
+                        "prix": 180,
+                        "description": "Sortie sur le lac avec un guide expert et matériel fourni. Jusqu’à 3 personnes."
+                    },
+                    {
+                        "nom": "Dîner gastronomique local",
+                        "type": "individuel",
+                        "prix": 60,
+                        "description": "Repas du terroir avec produits locaux dans un restaurant réputé."
+                    }
+                ]
+            },
+            {
+                "secteur": "Embrun",
+                "poisson": "Ombre Commun, Truite Arc-en-Ciel, Brochet",
+                "nb_jours": 2,
+                "hebergement": {
+                    "nom": "Camping Les Airelles",
+                    "adresse": "Route de Caléyère, 05200 Embrun, France"
+                },
+                "options": [
+                    {
+                        "nom": "Excursion en kayak de pêche",
+                        "type": "individuel",
+                        "prix": 70,
+                        "description": "Kayak stable équipé pour la pêche, idéal pour explorer les criques isolées."
+                    },
+                    {
+                        "nom": "Pêche nocturne guidée",
+                        "type": "groupe",
+                        "prix": 150,
+                        "description": "Session de pêche nocturne pour capturer les plus beaux spécimens. Jusqu’à 4 personnes."
+                    },
+                    {
+                        "nom": "Randonnée au belvédère du lac",
+                        "type": "groupe",
+                        "prix": 40,
+                        "description": "Marche guidée offrant une vue imprenable sur le lac et les montagnes. Jusqu’à 8 personnes."
+                    }
                 ]
             }
         ]
