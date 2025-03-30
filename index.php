@@ -72,7 +72,7 @@
 
             foreach($voyages as $voyage) {
                 $titre = $voyage["titre"];
-                $imageUrl = "assets/voyages/". $voyage["id"] . "/miniature.jpg";
+                $imageUrl = "assets/voyages/". $voyage["id"] . "/miniature.png";
                 if (!file_exists($imageUrl)) $imageUrl = "assets/no_photo.jpg";
                 $prix = $voyage["prix"];
                 $duree = duree($voyage);

@@ -62,7 +62,7 @@ if ($voyage):
             <h1><?php echo htmlspecialchars($voyage['titre']); ?></h1>
         </div>
         <div class="photos">
-            <img src="<?php echo isset($voyage['images'][0]) ? htmlspecialchars($voyage['images'][0]) : "assets/no_photo.jpg"; ?>" alt="Image du voyage">
+            <img src="<?php echo file_exists("assets/voyages/". $voyage["id"] . "/miniature.png") ? "assets/voyages/". $voyage["id"] . "/miniature.png" : "assets/no_photo.jpg"; ?>" alt="Image du voyage">
         </div>
         <div class="texte">
             <p><?php echo htmlspecialchars($voyage['texte']); ?></p>
