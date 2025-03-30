@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f9fafb;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    height: 48px;
+    background-color: #0D2A3A;
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img{
+    height:80px;
+    width: 80px;
+}
+
+#nav-button {
+    background-color: #045F94;
+    border-style: none;
+    border-radius: 10px;
+    padding: 15px 40px;
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    text-align: left;
+    margin-left: 10px;
+}
+
+nav button:hover {
+    background-color: #015585;
+}
+
+.welcome {
+    color: white;
+}
+
+
+#main-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: fit-content;
+    /*margin: 66px auto;*/
+    margin: auto;
+}
+
+h1{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.inside-container {
+    border-radius: 15px;
+    overflow: hidden;
+    /*border: 2px solid lightgrey;*/
+    display: inline-block;
+}
+
+input[type="submit"] {
+    background-color: #045F94;
+    border-style: none;
+    border-radius: 12px;
+    color:white;
+    margin-top: 2px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+form{
+    text-align: center;
+}
+
+
+footer {
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    bottom: 0;
+    background-color: #0D2A3A;
+    width: 100%;
+    margin-top: auto;
+}
+
+footer ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style:none;
+    padding: 0px;
+    margin: 30px 0px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
