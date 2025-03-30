@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "user_id": 1,
+        "voyage_id": 1,
+        "date_depart": "2005-01-29",
+        "nombre_personne": 3,
+        "options_souscrites": {
+            "Location de float tube": 1,
+            "Guide priv\u00e9 d\u00e9di\u00e9": 0
+        }
+    }
+]
