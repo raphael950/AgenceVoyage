@@ -4,6 +4,15 @@
     // Récupération de l'ID du voyage depuis l'URL
     // $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
+    // Recup l'ID de la resa depuis la session
+    $idReservation = intval($SESSION["resaID"]);
+    // recup de la reservation
+    $reservations = json_decode(file_get_contents('data/reservations.json'), true);
+
+    // recup des precedents paiements lies a la reservation
+
+    // TODO: Recup les precedents paiements liés puis trouver ce qu'il reste à payer
+
     // Chargement des données des voyages
     $json = file_get_contents("data/voyages.json");
     $voyages = json_decode($json, true);
@@ -38,7 +47,7 @@
         echo "API Key valide";
     }*/
     $transaction = str_pad(count($transactions), 10, "0", STR_PAD_LEFT); // jsp pk mais l'API ne prends pas en charge les int ni les str !=10 
-    $montant = "1000.00"; // hardcodé
+    $montant = "1000.00"; // RECUP MONTANT RESTANT
     $retour = "http://localhost:8080/payment_check.php";
     $control = md5($api_key. "#" . $transaction. "#" . $montant. "#" . $vendeur. "#" . $retour . "#");
 ?>

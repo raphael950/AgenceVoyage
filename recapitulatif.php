@@ -34,10 +34,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     // Charger les réservations existantes
     $reservations = json_decode(file_get_contents('data/reservations.json'), true);
+
+    $resa_id = count($reservations) + 1;
     
     // Ajouter la nouvelle réservation
     $reservations[] = [
-        'id' => count($reservations) + 1,
+        'id' => $resa_id,
         'user_id' => $_SESSION["user"]["id"],
         'voyage_id' => $voyage_id,
         'date_depart' => $date_depart,
@@ -47,6 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     // Sauvegarder les réservations mises à jour
     file_put_contents('data/reservations.json', json_encode($reservations, JSON_PRETTY_PRINT));
+
+    $_SESSION["resaID"] = $resa_id;
     
     // Redirection vers la page de paiement
     header('Location: paiement.php');
