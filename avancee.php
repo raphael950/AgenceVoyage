@@ -28,7 +28,7 @@
         <img src="assets/logo2.png" alt="logo">
         <div id="side">
             <h1>Trouvez votre spot de pêche idéal</h1>
-            <form class="search-container" action="search_results.html" method="get">
+            <form class="search-container" action="search_results.php" method="get">
                 <input class="search" type="text" name="search" placeholder="Rechercher (optionnel)">
                 <select name="country" class="search">
                     <option value="">Sélectionner un pays</option>
