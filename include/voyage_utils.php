@@ -12,12 +12,12 @@
         $voyages = json_decode(file_get_contents('data/voyages.json'), true);
         $voy;
         foreach ($voyages as $v) {
-            if ($v[id] == $id) {
+            if ($v["id"] == $id) {
                 $voy = $v;
                 break;
             }
         }
-        return voy;
+        return $voy;
     }
 
     function prixTotal($reserv) {
@@ -30,6 +30,7 @@
             foreach ($etape['options'] as $option) {
                 // Vérifier si l'option a été sélectionnée
                 if (in_array($option["nom"], array_keys($options_select))) {
+                    $quantite_option = $options_select[$option['nom']];
                     $prix_options += $option["prix"] * $quantite_option;
                 }
             }
