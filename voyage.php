@@ -66,7 +66,7 @@ if ($voyage):
         </div>
         <div class="texte">
             <p><?php echo htmlspecialchars($voyage['texte']); ?></p>
-            <p><strong>Durée:</strong> <?php echo duree($voyage); ?></p>
+            <p><strong>Durée:</strong> <?php echo duree($voyage); ?> jours</p>
             <p><strong>Prix:</strong> <?php echo htmlspecialchars($voyage['prix']); ?> €</p>
             <p><strong>Pays:</strong> <?php echo htmlspecialchars($voyage['pays']); ?></p>
         </div>
