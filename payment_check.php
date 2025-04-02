@@ -15,13 +15,13 @@
     $vendeur = 'MI-5_D' ;
     $api_key = getAPIKey($vendeur);
     $control = md5($api_key. "#" . $transaction. "#" . $montant. "#" . $vendeur. "#" . $statut . "#");
-    if($control != $control_recu){
+    if ($control != $control_recu) {
         $_SESSION["error"] = "wrong";
         header("Location: payment.php");
     }
 
     // verif du status et redirection
-    if ($statut === "accepted"){
+    if ($statut === "accepted") {
         // enregistrement de la transaction
         $content = file_get_contents("data/transactions.json");
         $transactions = json_decode($content, true);
@@ -38,8 +38,7 @@
 
         $_SESSION["payment"] = "accepted";
         header("Location: payment.php"); // TODO : pages des voyages réservés
-    }
-    else{
+    } else {
         $_SESSION["payment"] = "declined";
         header("Location: payment.php");
     }
