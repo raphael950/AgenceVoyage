@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION["resaID"] = $resa_id;
     
     // Redirection vers la page de paiement
-    header('Location: paiement.php');
+    header('Location: payment.php');
     exit;
 }
 ?>
@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <select name="voyage_id" id="voyage" required>
                 <?php foreach ($voyages as $voyage) : ?>
                     <option value="<?= $voyage['id'] ?>" <?= (isset($_GET["id"]) && $voyage['id'] == $_GET["id"]) ? 'selected' : '' ?>>
-                        <?= htmlspecialchars($voyage['titre']) ?> - <?= $voyage['prix'] ?>€
+                        <?= htmlspecialchars($voyage['titre']) ?> - <?= $voyage['prix'] ?>€ par pers.
                     </option>
                 <?php endforeach; ?>
             </select>
