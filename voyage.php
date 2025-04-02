@@ -85,7 +85,7 @@ if ($voyage):
             <?php endforeach; ?>
         </div>
         <div class="reservation">
-            <button onclick="window.location.href='reservation.php?id=<?php echo $voyage['id']; ?>'">Réserver</button>
+            <button onclick="window.location.href='recapitulatif.php?id=<?php echo $voyage['id']; ?>'">Réserver</button>
         </div>
     </main>
 
