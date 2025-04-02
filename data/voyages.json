@@ -191,5 +191,991 @@
                 ]
             }
         ]
+    },
+    {
+        "id": 3,
+        "titre": "Voyage de Pêche à l'île de Pemba",
+        "texte": "Partez à l'aventure pour une expérience de pêche unique sur l'île de Pemba, dans des eaux cristallines où vous pourrez traquer les poissons tropicaux tels que le marlin, le thon et le barracuda.",
+        "prix": 3000,
+        "pays": "Tanzanie",
+        "etapes": [
+            {
+                "secteur": "Zone de pêche de Misali",
+                "poisson": "Marlin, Thon, Barracuda",
+                "nb_jours": 4,
+                "hebergement": {
+                    "nom": "Misali Island Resort",
+                    "adresse": "Misali Island, Pemba, Tanzanie"
+                },
+                "options": [
+                    {
+                        "nom": "Excursion en bateau de pêche haute mer",
+                        "type": "groupe",
+                        "prix": 300,
+                        "description": "Excursion en bateau pour pêcher dans les eaux profondes autour de Misali Island. Jusqu'à 4 personnes."
+                    },
+                    {
+                        "nom": "Snorkeling avec guide",
+                        "type": "individuel",
+                        "prix": 50,
+                        "description": "Explorez les récifs coralliens avec un guide local pour découvrir la faune sous-marine exceptionnelle."
+                    },
+                    {
+                        "nom": "Séance de pêche en palmes et tuba",
+                        "type": "individuel",
+                        "prix": 40,
+                        "description": "Initiation à la pêche en apnée dans les eaux peu profondes autour de l'île."
+                    }
+                ]
+            },
+            {
+                "secteur": "Kipungani Beach",
+                "poisson": "Barracuda, Napoléon, Poisson-perroquet",
+                "nb_jours": 3,
+                "hebergement": {
+                    "nom": "Kipungani Explorer Lodge",
+                    "adresse": "Kipungani Beach, Pemba, Tanzanie"
+                },
+                "options": [
+                    {
+                        "nom": "Sortie de pêche à la mouche",
+                        "type": "groupe",
+                        "prix": 250,
+                        "description": "Sortie guidée pour la pêche à la mouche dans les lagunes autour de l'île. Jusqu'à 3 personnes."
+                    },
+                    {
+                        "nom": "Séance de pêche en kayak",
+                        "type": "individuel",
+                        "prix": 60,
+                        "description": "Pêchez en kayak dans les eaux tranquilles tout en admirant les paysages magnifiques de l'île."
+                    },
+                    {
+                        "nom": "Dîner au bord de l'eau avec fruits de mer frais",
+                        "type": "individuel",
+                        "prix": 100,
+                        "description": "Dégustez un dîner romantique au bord de l'eau avec des fruits de mer fraîchement pêchés."
+                    }
+                ]
+            },
+            {
+                "secteur": "Pemba Channel",
+                "poisson": "Thon, Marlin, Doré",
+                "nb_jours": 3,
+                "hebergement": {
+                    "nom": "Pemba Channel Lodge",
+                    "adresse": "Pemba Channel, Pemba, Tanzanie"
+                },
+                "options": [
+                    {
+                        "nom": "Excursion en bateau de pêche au marlin",
+                        "type": "groupe",
+                        "prix": 350,
+                        "description": "Excursion dédiée à la pêche au marlin dans le canal de Pemba. Jusqu'à 4 personnes."
+                    },
+                    {
+                        "nom": "Pêche sur le rivage avec guide",
+                        "type": "individuel",
+                        "prix": 75,
+                        "description": "Pêche à la ligne depuis la plage, guidée par un expert local."
+                    },
+                    {
+                        "nom": "Massage après pêche",
+                        "type": "individuel",
+                        "prix": 80,
+                        "description": "Détente après une journée de pêche avec un massage local revigorant."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "titre": "Voyage de Pêche en Thaïlande",
+        "texte": "Venez découvrir les eaux cristallines de la Thaïlande et sa faune aquatique incroyable. Pêchez dans des rivières et des lacs offrant une grande variété de poissons tropicaux tels que le poisson-chat géant, le tilapia et la carpe.",
+        "prix": 2800,
+        "pays": "Thaïlande",
+        "etapes": [
+            {
+                "secteur": "Rivière Kwai",
+                "poisson": "Poisson-chat géant, Tilapia, Carpe",
+                "nb_jours": 4,
+                "hebergement": {
+                    "nom": "River Kwai Jungle Rafts",
+                    "adresse": "209 Moo 4, Kanchanaburi, Thaïlande"
+                },
+                "options": [
+                    {
+                        "nom": "Excursion en bateau de pêche",
+                        "type": "groupe",
+                        "prix": 250,
+                        "description": "Excursion en bateau dans la rivière Kwai pour attraper des poissons géants. Jusqu'à 4 personnes."
+                    },
+                    {
+                        "nom": "Pêche à la mouche",
+                        "type": "individuel",
+                        "prix": 100,
+                        "description": "Initiation à la pêche à la mouche dans les eaux claires de la rivière Kwai."
+                    },
+                    {
+                        "nom": "Séance de relaxation traditionnelle thaïlandaise",
+                        "type": "individuel",
+                        "prix": 50,
+                        "description": "Profitez d'un massage traditionnel thaïlandais après une journée de pêche."
+                    }
+                ]
+            },
+            {
+                "secteur": "Lac Songkhla",
+                "poisson": "Tilapia, Perche, Poisson-chat",
+                "nb_jours": 3,
+                "hebergement": {
+                    "nom": "Koh Yo Resort",
+                    "adresse": "Pattani Rd, Songkhla, Thaïlande"
+                },
+                "options": [
+                    {
+                        "nom": "Excursion en kayak de pêche",
+                        "type": "individuel",
+                        "prix": 70,
+                        "description": "Profitez de la tranquillité du lac en pêchant en kayak à travers les mangroves."
+                    },
+                    {
+                        "nom": "Pêche de nuit",
+                        "type": "groupe",
+                        "prix": 120,
+                        "description": "Expérience de pêche de nuit sous un ciel étoilé dans les eaux paisibles du lac."
+                    },
+                    {
+                        "nom": "Dîner gastronomique de fruits de mer",
+                        "type": "individuel",
+                        "prix": 80,
+                        "description": "Dégustez un dîner gastronomique de fruits de mer fraîchement pêchés sur la terrasse du resort."
+                    }
+                ]
+            },
+            {
+                "secteur": "Phuket",
+                "poisson": "Thon, Marlin, Barracuda",
+                "nb_jours": 3,
+                "hebergement": {
+                    "nom": "The Racha Resort",
+                    "adresse": "71/23-24 Moo 5, Rawai, Phuket, Thaïlande"
+                },
+                "options": [
+                    {
+                        "nom": "Sortie en mer pour le marlin",
+                        "type": "groupe",
+                        "prix": 350,
+                        "description": "Participez à une sortie en mer pour pêcher le marlin et d'autres gros poissons tropicaux."
+                    },
+                    {
+                        "nom": "Pêche en haute mer",
+                        "type": "groupe",
+                        "prix": 300,
+                        "description": "Excursion en bateau pour pêcher en haute mer. Jusqu'à 5 personnes."
+                    },
+                    {
+                        "nom": "Spa après pêche",
+                        "type": "individuel",
+                        "prix": 120,
+                        "description": "Détente et récupération avec un soin spa relaxant après une journée de pêche."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "titre": "Voyage de Pêche au Lac Titicaca",
+        "texte": "Explorez les eaux profondes du légendaire lac Titicaca, un lieu mystique partagé entre le Pérou et la Bolivie. Profitez de l'opportunité unique de pêcher des poissons comme le truite géante et la carpe dans un cadre naturel époustouflant.",
+        "prix": 3200,
+        "pays": "Bolivie, Pérou",
+        "etapes": [
+            {
+                "secteur": "Copacabana (Bolivie)",
+                "poisson": "Truite géante, Carpe, Poisson-chat",
+                "nb_jours": 4,
+                "hebergement": {
+                    "nom": "Hotel La Cupula",
+                    "adresse": "Calle 6 de Octubre, Copacabana, La Paz, Bolivie"
+                },
+                "options": [
+                    {
+                        "nom": "Excursion en bateau sur le lac Titicaca",
+                        "type": "groupe",
+                        "prix": 250,
+                        "description": "Excursion guidée en bateau pour pêcher au lac Titicaca, tout en explorant les îles flottantes et les paysages magnifiques. Jusqu'à 4 personnes."
+                    },
+                    {
+                        "nom": "Séance de pêche à la ligne",
+                        "type": "individuel",
+                        "prix": 90,
+                        "description": "Une session de pêche à la ligne pour attraper la fameuse truite géante du lac Titicaca."
+                    },
+                    {
+                        "nom": "Visite des îles de l'archipel",
+                        "type": "groupe",
+                        "prix": 100,
+                        "description": "Visite guidée des îles de l'archipel, notamment l'île du Soleil, avec un guide local. Jusqu'à 6 personnes."
+                    }
+                ]
+            },
+            {
+                "secteur": "Puno (Pérou)",
+                "poisson": "Truite, Perche, Poisson-chat",
+                "nb_jours": 3,
+                "hebergement": {
+                    "nom": "Casa Andina Premium Puno",
+                    "adresse": "Jr. Cajamarca 517, Puno, Pérou"
+                },
+                "options": [
+                    {
+                        "nom": "Pêche en bateau traditionnel",
+                        "type": "groupe",
+                        "prix": 220,
+                        "description": "Pêche en bateau traditionnel péruvien, avec guide local pour découvrir les meilleurs spots autour de Puno. Jusqu'à 5 personnes."
+                    },
+                    {
+                        "nom": "Pêche à la truite géante",
+                        "type": "individuel",
+                        "prix": 110,
+                        "description": "Session de pêche à la truite géante du lac Titicaca, avec un guide expérimenté."
+                    },
+                    {
+                        "nom": "Excursion sur l'île Uros",
+                        "type": "groupe",
+                        "prix": 90,
+                        "description": "Excursion culturelle sur les îles Uros, où vivent des communautés flottantes. Jusqu'à 6 personnes."
+                    }
+                ]
+            },
+            {
+                "secteur": "Isla del Sol (Bolivie)",
+                "poisson": "Truite, Perche, Carpe",
+                "nb_jours": 3,
+                "hebergement": {
+                    "nom": "Ecolodge La Estancia",
+                    "adresse": "Isla del Sol, Copacabana, La Paz, Bolivie"
+                },
+                "options": [
+                    {
+                        "nom": "Pêche en haute altitude",
+                        "type": "groupe",
+                        "prix": 200,
+                        "description": "Pêche dans les eaux profondes de l'Isla del Sol, située à haute altitude. Jusqu'à 4 personnes."
+                    },
+                    {
+                        "nom": "Randonnée et pêche",
+                        "type": "individuel",
+                        "prix": 130,
+                        "description": "Randonnée guidée autour de l'île, suivie d'une session de pêche dans les eaux cristallines du lac."
+                    },
+                    {
+                        "nom": "Nuit sous les étoiles",
+                        "type": "individuel",
+                        "prix": 150,
+                        "description": "Nuit inoubliable sous les étoiles à l'ecolodge avec vue imprenable sur le lac Titicaca."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "titre": "Voyage de Pêche à Madagascar",
+        "texte": "Partez à la découverte des eaux cristallines de Madagascar, un paradis pour les pêcheurs. Explorez des lagons et rivières regorgeant de poissons exotiques, tels que le bar de mer, le tilapia et le poisson-perroquet, tout en découvrant les paysages spectaculaires de l'île.",
+        "prix": 3500,
+        "pays": "Madagascar",
+        "etapes": [
+            {
+                "secteur": "Nosy Be",
+                "poisson": "Bar de mer, Poisson-perroquet, Thon",
+                "nb_jours": 4,
+                "hebergement": {
+                    "nom": "Nosy Be Hotel & Spa",
+                    "adresse": "Befotaka Bay, Nosy Be, Madagascar"
+                },
+                "options": [
+                    {
+                        "nom": "Excursion en bateau de pêche au gros",
+                        "type": "groupe",
+                        "prix": 300,
+                        "description": "Pêche au gros dans les eaux profondes de Nosy Be pour attraper des thons, barracudas et autres gros poissons marins. Jusqu'à 4 personnes."
+                    },
+                    {
+                        "nom": "Pêche à la ligne en bord de mer",
+                        "type": "individuel",
+                        "prix": 90,
+                        "description": "Session de pêche à la ligne depuis la plage pour attraper du bar de mer et du poisson-perroquet."
+                    },
+                    {
+                        "nom": "Plongée sous-marine après pêche",
+                        "type": "individuel",
+                        "prix": 150,
+                        "description": "Plongée sous-marine pour explorer les récifs coralliens de Nosy Be après une journée de pêche."
+                    }
+                ]
+            },
+            {
+                "secteur": "Andasibe",
+                "poisson": "Tilapia, Poisson-chat, Perche",
+                "nb_jours": 3,
+                "hebergement": {
+                    "nom": "Vakona Forest Lodge",
+                    "adresse": "Andasibe, Madagascar"
+                },
+                "options": [
+                    {
+                        "nom": "Pêche en rivière",
+                        "type": "groupe",
+                        "prix": 120,
+                        "description": "Excursion de pêche en rivière à la recherche de tilapias et poissons-chats. Jusqu'à 5 personnes."
+                    },
+                    {
+                        "nom": "Visite de la réserve d'Andasibe",
+                        "type": "groupe",
+                        "prix": 80,
+                        "description": "Randonnée guidée dans la réserve d'Andasibe pour observer la faune locale, y compris les célèbres lémuriens."
+                    },
+                    {
+                        "nom": "Nuit en bungalow avec vue sur la forêt",
+                        "type": "individuel",
+                        "prix": 100,
+                        "description": "Séjour dans un bungalow traditionnel avec vue imprenable sur la forêt tropicale."
+                    }
+                ]
+            },
+            {
+                "secteur": "Mahajanga",
+                "poisson": "Carangue, Barracuda, Poisson-lune",
+                "nb_jours": 3,
+                "hebergement": {
+                    "nom": "Le Radama Hotel",
+                    "adresse": "Mahajanga, Madagascar"
+                },
+                "options": [
+                    {
+                        "nom": "Pêche à la traîne",
+                        "type": "groupe",
+                        "prix": 250,
+                        "description": "Excursion de pêche à la traîne pour attraper des carangues et barracudas. Jusqu'à 4 personnes."
+                    },
+                    {
+                        "nom": "Pêche nocturne",
+                        "type": "groupe",
+                        "prix": 180,
+                        "description": "Session de pêche nocturne pour attraper des poissons-lunes et autres espèces nocturnes. Jusqu'à 5 personnes."
+                    },
+                    {
+                        "nom": "Dîner de fruits de mer frais",
+                        "type": "individuel",
+                        "prix": 75,
+                        "description": "Dégustation de fruits de mer fraîchement pêchés lors d'un dîner avec vue sur la mer."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "titre": "Voyage de Pêche au Requin Marteau en Floride",
+        "texte": "Partez à la recherche du redoutable requin marteau dans les eaux cristallines de la Floride. Explorez les célèbres eaux de l'Atlantique et du Golfe du Mexique, où ces prédateurs marins règnent. Ce voyage combine pêche sportive et paysages époustouflants.",
+        "prix": 4000,
+        "pays": "États-Unis (Floride)",
+        "etapes": [
+            {
+                "secteur": "Miami",
+                "poisson": "Requin marteau, Requin tigre, Requin-mako",
+                "nb_jours": 4,
+                "hebergement": {
+                    "nom": "The Ritz-Carlton Key Biscayne",
+                    "adresse": "455 Grand Bay Dr, Key Biscayne, FL 33149, États-Unis"
+                },
+                "options": [
+                    {
+                        "nom": "Excursion de pêche au requin marteau",
+                        "type": "groupe",
+                        "prix": 350,
+                        "description": "Excursion guidée pour traquer les requins marteaux dans les eaux profondes au large de Miami. Jusqu'à 4 personnes."
+                    },
+                    {
+                        "nom": "Session de pêche en haute mer",
+                        "type": "individuel",
+                        "prix": 200,
+                        "description": "Pêche individuelle au large de Miami pour attraper des requins marteaux et autres espèces marines."
+                    },
+                    {
+                        "nom": "Cours de pêche au requin",
+                        "type": "groupe",
+                        "prix": 150,
+                        "description": "Cours sur les techniques spécifiques de pêche au requin marteau avec un guide expérimenté. Jusqu'à 5 personnes."
+                    }
+                ]
+            },
+            {
+                "secteur": "Key West",
+                "poisson": "Requin marteau, Requin citron, Requin blanc",
+                "nb_jours": 3,
+                "hebergement": {
+                    "nom": "Ocean Key Resort & Spa",
+                    "adresse": "0 Duval St, Key West, FL 33040, États-Unis"
+                },
+                "options": [
+                    {
+                        "nom": "Pêche au requin marteau en haute mer",
+                        "type": "groupe",
+                        "prix": 380,
+                        "description": "Excursion en bateau pour cibler les requins marteaux dans les eaux profondes de Key West. Jusqu'à 4 personnes."
+                    },
+                    {
+                        "nom": "Expédition de pêche nocturne",
+                        "type": "groupe",
+                        "prix": 250,
+                        "description": "Session de pêche nocturne pour attraper des requins et autres prédateurs marins. Jusqu'à 6 personnes."
+                    },
+                    {
+                        "nom": "Nuit dans un hôtel de luxe avec vue sur la mer",
+                        "type": "individuel",
+                        "prix": 220,
+                        "description": "Séjour dans un hôtel de luxe en bord de mer à Key West, parfait pour se détendre après une journée de pêche."
+                    }
+                ]
+            },
+            {
+                "secteur": "Tampa Bay",
+                "poisson": "Requin marteau, Requin-nourrice, Requin-tigre",
+                "nb_jours": 3,
+                "hebergement": {
+                    "nom": "The Godfrey Hotel & Cabanas Tampa",
+                    "adresse": "7700 W Courtney Campbell Causeway, Tampa, FL 33607, États-Unis"
+                },
+                "options": [
+                    {
+                        "nom": "Pêche au requin marteau et autres requins",
+                        "type": "groupe",
+                        "prix": 300,
+                        "description": "Excursion en bateau pour la pêche au requin marteau et autres espèces dans les eaux peu profondes de Tampa Bay. Jusqu'à 5 personnes."
+                    },
+                    {
+                        "nom": "Formation à la pêche au requin",
+                        "type": "individuel",
+                        "prix": 180,
+                        "description": "Session de formation individuelle pour apprendre les meilleures techniques de pêche au requin marteau."
+                    },
+                    {
+                        "nom": "Observation des dauphins et pêche",
+                        "type": "groupe",
+                        "prix": 200,
+                        "description": "Excursion combinée d'observation des dauphins et de pêche, idéale pour les amoureux de la nature. Jusqu'à 6 personnes."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "titre": "Voyage de Pêche au Lac Baïkal",
+        "texte": "Le lac Baïkal, joyau de la Sibérie, est l'un des endroits les plus spectaculaires pour la pêche. Venez découvrir ses eaux cristallines, son écosystème unique et la pêche à des poissons endémiques tels que l'omoul et le lavaret, tout en explorant des paysages sauvages et préservés.",
+        "prix": 5000,
+        "pays": "Russie",
+        "etapes": [
+            {
+                "secteur": "Olkhon Island",
+                "poisson": "Omoul, Lavaret",
+                "nb_jours": 4,
+                "hebergement": {
+                    "nom": "Baikal View Hotel",
+                    "adresse": "Olkhonskiy District, Irkutsk Oblast, Russie"
+                },
+                "options": [
+                    {
+                        "nom": "Pêche sur glace au Baïkal",
+                        "type": "groupe",
+                        "prix": 250,
+                        "description": "Expérience de pêche sur glace sur le lac Baïkal, avec un guide pour maximiser vos prises. Jusqu'à 4 personnes."
+                    },
+                    {
+                        "nom": "Excursion en motoneige",
+                        "type": "groupe",
+                        "prix": 150,
+                        "description": "Excursion en motoneige pour explorer les côtes du lac Baïkal et pêcher dans des endroits inaccessibles. Jusqu'à 5 personnes."
+                    },
+                    {
+                        "nom": "Séjour dans un chalet traditionnel",
+                        "type": "individuel",
+                        "prix": 180,
+                        "description": "Séjour dans un chalet traditionnel avec vue imprenable sur le lac Baïkal. Idéal pour un séjour reposant après une journée de pêche."
+                    }
+                ]
+            },
+            {
+                "secteur": "Irkoutsk",
+                "poisson": "Omoul, Truite lacustre, Perche",
+                "nb_jours": 3,
+                "hebergement": {
+                    "nom": "Irkutsk Hotel",
+                    "adresse": "1, Karl Marx St., Irkutsk, Russie"
+                },
+                "options": [
+                    {
+                        "nom": "Pêche en bateau sur le lac Baïkal",
+                        "type": "groupe",
+                        "prix": 200,
+                        "description": "Excursion en bateau sur le lac Baïkal pour une pêche à l'omoul et à la truite lacustre. Jusqu'à 4 personnes."
+                    },
+                    {
+                        "nom": "Pêche au coucher du soleil",
+                        "type": "groupe",
+                        "prix": 220,
+                        "description": "Session de pêche en soirée pour capturer des poissons sous les couleurs spectaculaires du coucher du soleil. Jusqu'à 3 personnes."
+                    },
+                    {
+                        "nom": "Nuit dans une yourte traditionnelle",
+                        "type": "individuel",
+                        "prix": 150,
+                        "description": "Séjour dans une yourte traditionnelle mongole au bord du lac Baïkal, offrant une immersion unique dans la culture locale."
+                    }
+                ]
+            },
+            {
+                "secteur": "Listvyanka",
+                "poisson": "Omoul, Perche, Brochet",
+                "nb_jours": 3,
+                "hebergement": {
+                    "nom": "Baikal Hotel",
+                    "adresse": "Listvyanka, Irkutsk Oblast, Russie"
+                },
+                "options": [
+                    {
+                        "nom": "Pêche à la traîne en bateau",
+                        "type": "groupe",
+                        "prix": 280,
+                        "description": "Pêche à la traîne en bateau sur le lac Baïkal pour attraper des omouls et des brochets. Jusqu'à 4 personnes."
+                    },
+                    {
+                        "nom": "Randonnée guidée et pêche",
+                        "type": "groupe",
+                        "prix": 250,
+                        "description": "Excursion guidée combinant randonnée et pêche dans des spots reculés autour de Listvyanka. Jusqu'à 5 personnes."
+                    },
+                    {
+                        "nom": "Hébergement dans un lodge en bord de lac",
+                        "type": "individuel",
+                        "prix": 220,
+                        "description": "Séjour dans un lodge confortable avec vue sur le lac Baïkal, idéal pour un séjour relaxant après une journée de pêche."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "titre": "Voyage de Pêche en Nouvelle-Zélande",
+        "texte": "Explorez les lacs cristallins et les rivières sauvages de la Nouvelle-Zélande pour pêcher des truites et des saumons dans des paysages à couper le souffle.",
+        "prix": 6000,
+        "pays": "Nouvelle-Zélande",
+        "etapes": [
+            {
+                "secteur": "Lake Taupo",
+                "poisson": "Truite, Saumon",
+                "nb_jours": 4,
+                "hebergement": {
+                    "nom": "Huka Lodge",
+                    "adresse": "Huka Falls Rd, Taupo 3382, Nouvelle-Zélande"
+                },
+                "options": [
+                    {
+                        "nom": "Pêche à la mouche",
+                        "type": "groupe",
+                        "prix": 350,
+                        "description": "Excursion de pêche à la mouche dans le lac Taupo avec un guide expert. Jusqu'à 3 personnes."
+                    },
+                    {
+                        "nom": "Séjour de luxe avec vue sur le lac",
+                        "type": "individuel",
+                        "prix": 450,
+                        "description": "Séjour dans une villa de luxe avec vue panoramique sur le lac Taupo."
+                    }
+                ]
+            },
+            {
+                "secteur": "Rotorua",
+                "poisson": "Truite arc-en-ciel, Saumon",
+                "nb_jours": 3,
+                "hebergement": {
+                    "nom": "Rotorua Lakefront Lodge",
+                    "adresse": "1120 Fenton Street, Rotorua 3010, Nouvelle-Zélande"
+                },
+                "options": [
+                    {
+                        "nom": "Excursion de pêche en bateau",
+                        "type": "groupe",
+                        "prix": 300,
+                        "description": "Excursion guidée de pêche en bateau sur les lacs volcaniques de Rotorua. Jusqu'à 4 personnes."
+                    },
+                    {
+                        "nom": "Nuit dans une chambre spa avec vue sur le lac",
+                        "type": "individuel",
+                        "prix": 250,
+                        "description": "Séjour avec baignoire spa et vue imprenable sur les lacs volcaniques."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "titre": "Voyage de Pêche en Islande",
+        "texte": "Partez à la découverte de l'Islande, où l'Atlantique Nord vous attend pour des sessions de pêche au saumon et à la truite dans des rivières sauvages et des lacs volcaniques.",
+        "prix": 5500,
+        "pays": "Islande",
+        "etapes": [
+            {
+                "secteur": "Rivière Laxa",
+                "poisson": "Saumon, Truite",
+                "nb_jours": 4,
+                "hebergement": {
+                    "nom": "Hotel Laxá",
+                    "adresse": "Lake Myvatn, 660 Myvatn, Islande"
+                },
+                "options": [
+                    {
+                        "nom": "Pêche au saumon dans la rivière Laxa",
+                        "type": "groupe",
+                        "prix": 400,
+                        "description": "Session de pêche au saumon dans les eaux cristallines de la rivière Laxa. Jusqu'à 3 personnes."
+                    },
+                    {
+                        "nom": "Séjour en cabane avec vue sur le lac Myvatn",
+                        "type": "individuel",
+                        "prix": 350,
+                        "description": "Séjour dans une cabane traditionnelle avec vue sur le lac Myvatn, après une journée de pêche."
+                    }
+                ]
+            },
+            {
+                "secteur": "Lac Thingvallavatn",
+                "poisson": "Truite, Saumon",
+                "nb_jours": 3,
+                "hebergement": {
+                    "nom": "Thingvellir Hotel",
+                    "adresse": "Thingvellir, 801 Selfoss, Islande"
+                },
+                "options": [
+                    {
+                        "nom": "Pêche en lac avec guide",
+                        "type": "groupe",
+                        "prix": 350,
+                        "description": "Pêche en lac avec guide sur le lac Thingvallavatn, pour capturer des truites et des saumons."
+                    },
+                    {
+                        "nom": "Hébergement en maison d'hôtes",
+                        "type": "individuel",
+                        "prix": 250,
+                        "description": "Séjour dans une maison d'hôtes traditionnelle islandaise avec petit-déjeuner inclus."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "titre": "Voyage de Pêche en Alaska",
+        "texte": "Venez découvrir l'Alaska et ses rivières sauvages, où vous pourrez pêcher le saumon, le truite et l'omble. Un voyage au cœur de la nature avec des paysages spectaculaires.",
+        "prix": 7000,
+        "pays": "États-Unis (Alaska)",
+        "etapes": [
+            {
+                "secteur": "Kenai River",
+                "poisson": "Saumon, Truite arc-en-ciel",
+                "nb_jours": 4,
+                "hebergement": {
+                    "nom": "Kenai River Lodge",
+                    "adresse": "Kenai River, Soldotna, AK 99669, États-Unis"
+                },
+                "options": [
+                    {
+                        "nom": "Pêche au saumon sur la Kenai",
+                        "type": "groupe",
+                        "prix": 500,
+                        "description": "Excursion de pêche en bateau sur la Kenai River pour attraper des saumons. Jusqu'à 4 personnes."
+                    },
+                    {
+                        "nom": "Séjour dans une cabane au bord du fleuve",
+                        "type": "individuel",
+                        "prix": 400,
+                        "description": "Séjour dans une cabane tout confort avec vue sur la rivière Kenai."
+                    }
+                ]
+            },
+            {
+                "secteur": "Bristol Bay",
+                "poisson": "Saumon, Omble chevalier",
+                "nb_jours": 3,
+                "hebergement": {
+                    "nom": "Bristol Bay Lodge",
+                    "adresse": "Bristol Bay, AK, États-Unis"
+                },
+                "options": [
+                    {
+                        "nom": "Pêche sur les lacs de Bristol Bay",
+                        "type": "groupe",
+                        "prix": 600,
+                        "description": "Excursion guidée sur les lacs de Bristol Bay pour pêcher l'omble et le saumon."
+                    },
+                    {
+                        "nom": "Nuit dans un lodge au bord du lac",
+                        "type": "individuel",
+                        "prix": 500,
+                        "description": "Séjour dans un lodge de luxe avec vue sur les lacs de Bristol Bay."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "titre": "Voyage de Pêche au Costa Rica",
+        "texte": "Le Costa Rica vous offre des opportunités incroyables pour pêcher le marlin, le thon et d'autres poissons tropicaux dans des eaux chaudes et claires.",
+        "prix": 5500,
+        "pays": "Costa Rica",
+        "etapes": [
+            {
+                "secteur": "Gulf of Papagayo",
+                "poisson": "Marlin, Thon",
+                "nb_jours": 4,
+                "hebergement": {
+                    "nom": "Papagayo Resort",
+                    "adresse": "Gulf of Papagayo, Guanacaste, Costa Rica"
+                },
+                "options": [
+                    {
+                        "nom": "Pêche en haute mer",
+                        "type": "groupe",
+                        "prix": 500,
+                        "description": "Excursion de pêche en haute mer pour attraper du marlin et du thon. Jusqu'à 4 personnes."
+                    },
+                    {
+                        "nom": "Séjour dans un hôtel de luxe",
+                        "type": "individuel",
+                        "prix": 450,
+                        "description": "Séjour dans un hôtel de luxe avec vue sur la mer et services premium."
+                    }
+                ]
+            },
+            {
+                "secteur": "Quepos",
+                "poisson": "Marlin, Poisson-lune",
+                "nb_jours": 3,
+                "hebergement": {
+                    "nom": "Los Suenos Resort",
+                    "adresse": "Quepos, Puntarenas, Costa Rica"
+                },
+                "options": [
+                    {
+                        "nom": "Pêche au marlin",
+                        "type": "groupe",
+                        "prix": 550,
+                        "description": "Session de pêche au marlin dans les eaux chaudes de Quepos."
+                    },
+                    {
+                        "nom": "Hébergement au bord de l'océan",
+                        "type": "individuel",
+                        "prix": 500,
+                        "description": "Séjour dans une villa avec vue sur l'océan Pacifique."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "titre": "Voyage de Pêche en Argentine",
+        "texte": "Explorez les rivières et lacs argentins, parfaits pour la pêche à la mouche et pour attraper des poissons comme la truite arc-en-ciel et le doré.",
+        "prix": 6500,
+        "pays": "Argentine",
+        "etapes": [
+            {
+                "secteur": "Patagonie",
+                "poisson": "Truite arc-en-ciel, Doré",
+                "nb_jours": 5,
+                "hebergement": {
+                    "nom": "Estancia El Chaltén",
+                    "adresse": "Ruta 23, El Chaltén, Santa Cruz, Argentine"
+                },
+                "options": [
+                    {
+                        "nom": "Pêche à la mouche en Patagonie",
+                        "type": "groupe",
+                        "prix": 400,
+                        "description": "Pêche à la mouche dans les rivières de la Patagonie pour attraper des truites et des dorés."
+                    },
+                    {
+                        "nom": "Séjour dans une estancia traditionnelle",
+                        "type": "individuel",
+                        "prix": 450,
+                        "description": "Séjour dans une estancia de style argentin en pleine nature."
+                    }
+                ]
+            },
+            {
+                "secteur": "Lac de Nahuel Huapi",
+                "poisson": "Truite, Saumon",
+                "nb_jours": 4,
+                "hebergement": {
+                    "nom": "Nahuel Huapi Lodge",
+                    "adresse": "San Carlos de Bariloche, Argentine"
+                },
+                "options": [
+                    {
+                        "nom": "Pêche au saumon dans le lac",
+                        "type": "groupe",
+                        "prix": 450,
+                        "description": "Pêche au saumon dans le lac de Nahuel Huapi avec guide local."
+                    },
+                    {
+                        "nom": "Nuit dans un lodge au bord du lac",
+                        "type": "individuel",
+                        "prix": 400,
+                        "description": "Séjour dans un lodge confortable avec vue imprenable sur le lac."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "titre": "Voyage de Pêche en Écosse",
+        "texte": "L'Écosse est un lieu mythique pour la pêche au saumon dans ses rivières sauvages et ses lacs calmes.",
+        "prix": 7800,
+        "pays": "Écosse",
+        "etapes": [
+            {
+                "secteur": "Rivière Spey",
+                "poisson": "Saumon écossais",
+                "nb_jours": 5,
+                "hebergement": {
+                    "nom": "Speyside Lodge",
+                    "adresse": "Ballindalloch, Moray, Écosse"
+                },
+                "options": [
+                    {
+                        "nom": "Pêche au saumon avec guide privé",
+                        "type": "individuel",
+                        "prix": 600,
+                        "description": "Pêche au saumon dans la mythique rivière Spey, avec un guide privé expérimenté."
+                    },
+                    {
+                        "nom": "Séjour à Speyside Lodge",
+                        "type": "individuel",
+                        "prix": 800,
+                        "description": "Séjour dans un lodge confortable au cœur de la vallée de Spey, idéal pour les pêcheurs."
+                    },
+                    {
+                        "nom": "Pêche à la mouche traditionnelle écossaise",
+                        "type": "groupe",
+                        "prix": 500,
+                        "description": "Apprenez la pêche à la mouche traditionnelle écossaise dans la rivière Spey."
+                    }
+                ]
+            },
+            {
+                "secteur": "Lac Loch Awe",
+                "poisson": "Truite brune, Saumon",
+                "nb_jours": 4,
+                "hebergement": {
+                    "nom": "Loch Awe Cottage",
+                    "adresse": "Loch Awe, Argyll, Écosse"
+                },
+                "options": [
+                    {
+                        "nom": "Pêche à la truite sur le lac",
+                        "type": "groupe",
+                        "prix": 450,
+                        "description": "Pêche à la truite brune dans les eaux cristallines du Loch Awe."
+                    },
+                    {
+                        "nom": "Pêche au saumon au lever du soleil",
+                        "type": "individuel",
+                        "prix": 500,
+                        "description": "Pêche au saumon au lever du soleil, à la recherche des saumons remontant le Loch Awe."
+                    },
+                    {
+                        "nom": "Séjour dans une maison de campagne au bord du lac",
+                        "type": "individuel",
+                        "prix": 550,
+                        "description": "Séjour dans une maison de campagne traditionnelle avec vue sur le Loch Awe."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "titre": "Voyage de Pêche en Afrique du Sud",
+        "texte": "L'Afrique du Sud offre des opportunités uniques pour la pêche en mer, y compris la capture du poisson-papillon et du barracuda.",
+        "prix": 11500,
+        "pays": "Afrique du Sud",
+        "etapes": [
+            {
+                "secteur": "Côte sauvage",
+                "poisson": "Poisson-papillon, Barracuda, Thon",
+                "nb_jours": 6,
+                "hebergement": {
+                    "nom": "Wild Coast Lodge",
+                    "adresse": "Côte sauvage, Afrique du Sud"
+                },
+                "options": [
+                    {
+                        "nom": "Pêche en haute mer pour le poisson-papillon",
+                        "type": "groupe",
+                        "prix": 750,
+                        "description": "Pêche en mer pour attraper le magnifique poisson-papillon au large des côtes de la Côte sauvage."
+                    },
+                    {
+                        "nom": "Excursion de pêche au thon dans l'océan Atlantique",
+                        "type": "individuel",
+                        "prix": 900,
+                        "description": "Participez à une excursion de pêche en haute mer pour capturer le thon dans les eaux froides de l'Atlantique."
+                    },
+                    {
+                        "nom": "Séjour dans un lodge de luxe sur la côte",
+                        "type": "individuel",
+                        "prix": 1200,
+                        "description": "Séjour de luxe avec accès exclusif aux meilleures zones de pêche et services haut de gamme."
+                    }
+                ]
+            },
+            {
+                "secteur": "Cap de Bonne-Espérance",
+                "poisson": "Requin blanc, Doré",
+                "nb_jours": 5,
+                "hebergement": {
+                    "nom": "Cape Point Lodge",
+                    "adresse": "Cap de Bonne-Espérance, Afrique du Sud"
+                },
+                "options": [
+                    {
+                        "nom": "Pêche au requin blanc",
+                        "type": "groupe",
+                        "prix": 850,
+                        "description": "Pêche au requin blanc dans les eaux profondes autour du Cap de Bonne-Espérance."
+                    },
+                    {
+                        "nom": "Pêche au doré au large des côtes",
+                        "type": "individuel",
+                        "prix": 700,
+                        "description": "Pêche au doré dans les eaux chaudes au large des côtes du Cap."
+                    },
+                    {
+                        "nom": "Séjour dans un lodge exclusif avec vue sur l'océan",
+                        "type": "individuel",
+                        "prix": 1500,
+                        "description": "Séjour dans un lodge exclusif avec vue spectaculaire sur l'océan et accès direct à la pêche."
+                    }
+                ]
+            }
+        ]
     }
+    
 ]
