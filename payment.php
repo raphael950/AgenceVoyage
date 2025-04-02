@@ -55,7 +55,7 @@
         echo "API Key valide";
     }*/
     $transaction = str_pad(count($transactions), 10, "0", STR_PAD_LEFT); // jsp pk mais l'API ne prends pas en charge les int ni les str !=10 
-    $montant = "1000.00"; // RECUP MONTANT RESTANT
+    $montant = $montantRestant;
     $retour = "http://localhost:8080/payment_check.php";
     $control = md5($api_key. "#" . $transaction. "#" . $montant. "#" . $vendeur. "#" . $retour . "#");
 ?>
