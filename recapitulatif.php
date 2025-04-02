@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         // Calcul du prix pour les options de type 'individuel'
                         if ($option['type'] == 'individuel') {
                             $quantite_option = $_POST['options'][$option['nom']];
+                            if ((int) $quantite_option == 0) continue;
                             $options_souscrites[$option['nom']] = (int) $quantite_option;
                         } else {
                             // Calcul du prix pour les options de type 'groupe'
@@ -73,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="voyage">Choisissez un voyage :</label>
             <select name="voyage_id" id="voyage" required>
                 <?php foreach ($voyages as $voyage) : ?>
-                    <option value="<?= $voyage['id'] ?>">
+                    <option value="<?= $voyage['id'] ?>" <?= (isset($_GET["id"]) && $voyage['id'] == $_GET["id"]) ? 'selected' : '' ?>>
                         <?= htmlspecialchars($voyage['titre']) ?> - <?= $voyage['prix'] ?>€
                     </option>
                 <?php endforeach; ?>
@@ -103,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <?php endforeach; ?>
                 <?php endforeach; ?>
             </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
 
 
             <h3 id="prix_total">Prix total : 0€</h3>
