@@ -1,30 +1,38 @@
 <?php
     session_start();
+    include "include/voyage_utils.php";
 
     // Récupération de l'ID du voyage depuis l'URL
     // $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
     // Recup l'ID de la resa depuis la session
-    $idReservation = intval($SESSION["resaID"]);
+    $idReservation = intval($_SESSION["resaID"]);
     // recup de la reservation
     $reservations = json_decode(file_get_contents('data/reservations.json'), true);
-
-    // recup des precedents paiements lies a la reservation
-
-    // TODO: Recup les precedents paiements liés puis trouver ce qu'il reste à payer
-
-    // Chargement des données des voyages
-    $json = file_get_contents("data/voyages.json");
-    $voyages = json_decode($json, true);
-
-    // Recherche du voyage correspondant à l'ID
-    $voyage = null;
-    foreach ($voyages as $v) {
-        if ($v['id'] === 1) { // 1 c'est hardcodé en attendant les autres voyages
-            $voyage = $v;
+    $reservation;
+    foreach ($reservations as $reserv) {
+        if ($reserv["id"] == $idReservation) {
+            $reservation = $reserv;
             break;
         }
     }
+
+    // recup des precedentes transactions lies a la reservation
+    $transactions = json_decode(file_get_contents('data/transactions.json'), true);
+    $dejaPaye=[];
+    $somme=0.0;
+    foreach ($transactions as $transac) {
+        if ($transac["reservation_id"] == $reservation["id"]) {
+            $dejaPaye[] = $transac;
+            $somme += floatval($transac["montant"]);
+        }
+    }
+    $prixTotalReserv = prixTotal($reservation);
+    $montantRestant = $prixTotalReserv - $somme;
+
+    // Recherche du voyage correspondant à l'ID
+    $voyage = voyageFromId($reservation["voyage_id"]);
+
     /* Si le voyage n'est pas trouvé, rediriger vers la page d'accueil
     if(!$voyage) {
         header("Location: index.php");
@@ -64,9 +72,11 @@
     <div id="main-card">
         <h1>Paiement</h1>
         <h2>Récapitulatif du voyage</h2>
-        <p><strong>Titre :</strong> <?= htmlspecialchars($voyage['titre']); ?></p>
-        <p><strong>Dates :</strong> <?= htmlspecialchars($voyage['duree']); ?></p>
-        <p><strong>Prix :</strong> <?= htmlspecialchars($voyage['prix']); ?> €</p>
+        <p><?= htmlspecialchars($voyage['titre']); ?></p>
+        <p><strong>Durée du voyage :</strong> <?= htmlspecialchars(duree($voyage)); ?> jours</p>
+        <p><strong>Date de départ :</strong> <?= htmlspecialchars($reservation["date_depart"]); ?></p>
+        <p><strong>Vous avez déjà payé :</strong> <?= htmlspecialchars($somme); ?> €</p>
+        <p><strong>Il vous reste à payer :</strong> <?= htmlspecialchars($montantRestant); ?> €</p>
 
         <?php
             if(isset($_SESSION["payment"]) && $_SESSION["payment"] == "declined"){
