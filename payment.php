@@ -22,7 +22,7 @@
     $dejaPaye=[];
     $somme=0.0;
     foreach ($transactions as $transac) {
-        if ($transac["reservation_id"] == $reservation["id"]) {
+        if ($transac["transaction"] == $reservation["id"]) {
             $dejaPaye[] = $transac;
             $somme += floatval($transac["montant"]);
         }
@@ -54,7 +54,7 @@
     if(preg_match("/^[0-9a-zA-Z]{15}$/", $api_key)) {
         echo "API Key valide";
     }*/
-    $transaction = str_pad(count($transactions), 10, "0", STR_PAD_LEFT); // jsp pk mais l'API ne prends pas en charge les int ni les str !=10 
+    $transaction = str_pad(count($transactions)+1, 10, "0", STR_PAD_LEFT); // jsp pk mais l'API ne prends pas en charge les int ni les str !=10 
     $montant = $montantRestant;
     $retour = "http://localhost:8080/payment_check.php";
     $control = md5($api_key. "#" . $transaction. "#" . $montant. "#" . $vendeur. "#" . $retour . "#");

@@ -27,7 +27,7 @@
         $transactions = json_decode($content, true);
         $new_transaction = array(
             "transaction" => $transaction,
-            "date" => date("Y-m-d H:i:s"), // "2025-03-29 12:30:45"
+            "date" => date("d-m-Y H:i:s"), // "14-02-2025 12:30:45"
             "email" => $_SESSION["user"]["email"],
             "voyage" => $_SESSION["voyage"]["id"],
             "montant" => $montant
