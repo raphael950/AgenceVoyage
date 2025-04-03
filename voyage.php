@@ -67,7 +67,7 @@ if ($voyage):
         <div class="texte">
             <p><?php echo htmlspecialchars($voyage['texte']); ?></p>
             <p><strong>Durée:</strong> <?php echo duree($voyage); ?> jours</p>
-            <p><strong>Prix:</strong> <?php echo htmlspecialchars($voyage['prix']); ?> €</p>
+            <p><strong>Prix:</strong> <?php echo htmlspecialchars($voyage['prix']); ?> € par personne</p>
             <p><strong>Pays:</strong> <?php echo htmlspecialchars($voyage['pays']); ?></p>
         </div>
 
@@ -75,13 +75,26 @@ if ($voyage):
             <?php foreach ($voyage['etapes'] as $index => $etape): ?>
                 <div class="etape">
                     <div class="etape-info">
-                        <h4>Secteur: <?php echo htmlspecialchars($etape['secteur']); ?></h4>
+                        <h4><?php echo htmlspecialchars($etape['secteur']); ?></h4>
                         <p><strong>Poisson ciblé:</strong> <?php echo htmlspecialchars($etape['poisson']); ?></p>
+                        <p><strong>Durée de l'étape:</strong> <?php echo htmlspecialchars($etape['nb_jours']); ?> jours</p>
+                        <?php if (!empty($etape["options"])): ?>
+                            <div class="options">
+                                <h5>Options disponibles :</h5>
+                                <ul>
+                                    <?php foreach ($etape["options"] as $option): ?>
+                                        <li><?php echo $option["nom"]; ?> <span><?php echo $option["prix"]; ?>€</span></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                        <?php endif; ?>
                     </div>
                     <div class="etape-image">
-                        <img src="<?php echo htmlspecialchars($voyage['images'][$index + 1] ?? "assets/no_photo.jpg"); ?>" alt="Image de l'étape">
+                        <img src="<?php echo htmlspecialchars(file_exists("assets/voyages/".$voyage["id"]."/".($index+1).".jpg") ? "assets/voyages/".$voyage["id"]."/".($index+1).".jpg" : "assets/no_photo.jpg"); ?>" alt="Image de l'étape">
                     </div>
+                    
                 </div>
+                
             <?php endforeach; ?>
         </div>
         <div class="reservation">

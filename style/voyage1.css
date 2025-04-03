@@ -234,3 +234,43 @@ footer a:hover {
     background-color: #00408a;
     transform: scale(0.95);
 }
+
+.options {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f8fafc; /* Couleur de fond légère */
+    border-radius: 8px;
+    border: 1px solid #d1d5db; /* Bordure discrète */
+}
+
+.options h5 {
+    margin: 5px 0;
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+}
+
+.options ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.options li {
+    font-size: 16px;
+    color: #555;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e7eb; /* Séparation entre les options */
+}
+
+.options li:last-child {
+    border-bottom: none; /* Pas de bordure en bas pour le dernier élément */
+}
+
+.options li span {
+    font-weight: bold;
+    color: #045F94; /* Bleu pour faire ressortir le prix */
+}
+
+
