@@ -29,7 +29,7 @@
             "transaction" => $transaction,
             "date" => date("d-m-Y H:i:s"), // "14-02-2025 12:30:45"
             "email" => $_SESSION["user"]["email"],
-            "voyage" => $_SESSION["voyage"]["id"],
+            "reservation_id" => $_SESSION["resaID"],
             "montant" => $montant
         );
     

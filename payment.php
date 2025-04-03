@@ -22,7 +22,7 @@
     $dejaPaye=[];
     $somme=0.0;
     foreach ($transactions as $transac) {
-        if ($transac["transaction"] == $reservation["id"]) {
+        if ($transac["reservation_id"] == $reservation["id"]) {
             $dejaPaye[] = $transac;
             $somme += floatval($transac["montant"]);
         }
@@ -41,10 +41,6 @@
 
     // mise en session de l'id du voyage pour plus tard
     $_SESSION["voyage"] = $voyage;
-
-    // parcours du fichier transactions pour donner l'id de transaction
-    $json_transactions = file_get_contents("data/transactions.json");
-    $transactions = json_decode($json_transactions, true);
 
     require('getapikey.php');
     $api_key = "zzzz";
