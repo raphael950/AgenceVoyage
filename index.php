@@ -35,7 +35,7 @@
         <img src="assets/logo2.png" alt="logo">
         <div id="side">
             <h1>Pêchez votre voyage de rêve</h1>
-            <form class="search-container" action="x" method="get" enctype="multipart/form-data">
+            <form class="search-container" action="search_results.php" method="get">
                 <input class="search" type="text" name="search" id="search" placeholder="Rechercher">
                 <input class="gosearch" type="image" name="gosearch" id="gosearch" src="https://png.pngtree.com/png-vector/20221023/ourmid/pngtree-magnifying-glass-or-loupe-in-flat-style-png-image_6383627.png">
             </form>
