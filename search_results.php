@@ -1,52 +1,52 @@
 <?php
-session_start();
+    session_start();
 
-// récupérer les paramètres de recherche
-$search = trim($_GET['search'] ?? '');
-$country = trim($_GET['country'] ?? '');
-$travelers = intval($_GET['travelers'] ?? 0);
+    // récupérer les paramètres de recherche
+    $search = trim($_GET['search'] ?? '');
+    $country = trim($_GET['country'] ?? '');
+    $travelers = intval($_GET['travelers'] ?? 0);
 
-// charger les données des voyages
-$voyages = json_decode(file_get_contents('data/voyages.json'), true);
-$results = [];
+    // charger les données des voyages
+    $voyages = json_decode(file_get_contents('data/voyages.json'), true);
+    $results = [];
 
-// parcourir les voyages pour trouver des correspondances
-foreach ($voyages as $voyage) {
-    $match = true;
+    // parcourir les voyages pour trouver des correspondances
+    foreach ($voyages as $voyage) {
+        $match = true;
 
-    // vérifier le champ "search" dans titre, texte, secteur, poissons
-    if (!empty($search)) {
-        $foundInTitle = stripos($voyage['titre'], $search) !== false;
-        $foundInText = stripos($voyage['texte'], $search) !== false;
-        $foundInCountry = stripos($voyage['pays'], $search) !== false;
+        // vérifier le champ "search" dans titre, texte, secteur, poissons
+        if (!empty($search)) {
+            $foundInTitle = stripos($voyage['titre'], $search) !== false;
+            $foundInText = stripos($voyage['texte'], $search) !== false;
+            $foundInCountry = stripos($voyage['pays'], $search) !== false;
 
-        // vérifier dans les secteurs et poissons
-        $foundInSecteur = false;
-        $foundInPoissons = false;
-        foreach ($voyage['etapes'] as $etape) {
-            if (stripos($etape['secteur'], $search) !== false) {
-                $foundInSecteur = true;
+            // vérifier dans les secteurs et poissons
+            $foundInSecteur = false;
+            $foundInPoissons = false;
+            foreach ($voyage['etapes'] as $etape) {
+                if (stripos($etape['secteur'], $search) !== false) {
+                    $foundInSecteur = true;
+                }
+                if (stripos($etape['poisson'], $search) !== false) {
+                    $foundInPoissons = true;
+                }
             }
-            if (stripos($etape['poisson'], $search) !== false) {
-                $foundInPoissons = true;
+
+            if (!$foundInTitle && !$foundInText && !$foundInCountry && !$foundInSecteur && !$foundInPoissons) {
+                $match = false;
             }
         }
 
-        if (!$foundInTitle && !$foundInText && !$foundInCountry && !$foundInSecteur && !$foundInPoissons) {
+        // vérifier le pays
+        if (!empty($country) && stripos($voyage['pays'], $country) === false) {
             $match = false;
         }
-    }
 
-    // vérifier le pays
-    if (!empty($country) && stripos($voyage['pays'], $country) === false) {
-        $match = false;
+        // ajouter le voyage aux résultats s'il correspond
+        if ($match) {
+            $results[] = $voyage;
+        }
     }
-
-    // ajouter le voyage aux résultats s'il correspond
-    if ($match) {
-        $results[] = $voyage;
-    }
-}
 ?>
 
 <!DOCTYPE html>
