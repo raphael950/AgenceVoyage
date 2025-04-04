@@ -50,12 +50,11 @@
 
     // pagination
     $travelsPerPage = 5;
-    $totalTravels = count($voyages);
+    $totalTravels = count($results);
     $totalPages = ceil($totalTravels / $travelsPerPage); // ceil = arrondir float
     $currentPage = isset($_GET['page']) ? max(1, min($totalPages, intval($_GET['page']))) : 1;
-
     $startIndex = ($currentPage - 1) * $travelsPerPage;
-    $usersToDisplay = array_slice($voyages, $startIndex, $travelsPerPage);
+    $resultsToDisplay = array_slice($results, $startIndex, $travelsPerPage);
 ?>
 
 <!DOCTYPE html>
@@ -90,16 +89,18 @@
         <h1>Résultats de la recherche</h1>
         <div class="results">
             <?php if (count($results) > 0): ?>
-                <ul>
-                    <?php foreach ($results as $result): ?>
-                        <li>
+                <?php foreach ($resultsToDisplay as $result): ?>
+                    <?php $imageUrl = "assets/voyages/". $result["id"] . "/miniature.png";?>
+                    <div class="card">
+                        <img src="<?= $imageUrl ?>" alt="Image de <?= $imageUrl ?>">
+                        <div class="card-content">
                             <h3><?= htmlspecialchars($result['titre']) ?></h3>
                             <p><?= htmlspecialchars($result['texte']) ?></p>
                             <p><strong>Pays :</strong> <?= htmlspecialchars($result['pays']) ?></p>
                             <a href="voyage.php?id=<?= $result['id'] ?>">Voir les détails</a>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             <?php else: ?>
                 <p>Aucun résultat trouvé pour votre recherche.</p>
             <?php endif; ?>
