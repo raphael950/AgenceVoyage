@@ -22,7 +22,7 @@
             $username = htmlspecialchars($_SESSION["user"]["username"]);
             echo '<span class="welcome">Bienvenue, ' . $username . '</span>';
             echo '<a href="profile2.php" class="button">Mon profil</a>';
-            echo '<a href="logout.php" class="button">Se déconnecter <i class="fa-solid fa-right-from-bracket"></i></a>';
+            echo '<a href="script/logout.php" class="button">Se déconnecter <i class="fa-solid fa-right-from-bracket"></i></a>';
         } else {
             echo '<a href="register.php" class="button" id="register-button">S\'inscrire</a>';
             echo '<a href="login.php" class="button">Se connecter</a>';

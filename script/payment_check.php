@@ -10,7 +10,7 @@
     $control_recu = $_GET['control'] ?? '';
 
     // reverif du control
-    require('getapikey.php');
+    require('include/getapikey.php');
     $api_key = "zzzz";
     $vendeur = 'MI-5_D' ;
     $api_key = getAPIKey($vendeur);

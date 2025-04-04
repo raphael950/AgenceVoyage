@@ -19,7 +19,7 @@
 <body>
     <div class="bg-image"></div>
     <div id="main-card">
-        <form action="login_trigger.php" method="post">
+        <form action="script/login_trigger.php" method="post">
             <fieldset>
                 <?php
                     if (isset($_SESSION["error"])) {

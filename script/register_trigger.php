@@ -5,7 +5,7 @@
     $pass = trim($_POST["password"] ?? '');
 
     if (empty($email) || empty($pass)) {
-        header("Location: register.html");
+        header("Location: register.php");
         exit();
     }
 
@@ -16,7 +16,7 @@
     foreach ($users as $user) {
         if (isset($user["email"]) && $user["email"] == $email) {
             $_SESSION["error"] = "Un compte utilise déjà cette adresse email.";
-            header("Location: login.html");
+            header("Location: login.php");
             exit();
         }
     }

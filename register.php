@@ -19,7 +19,7 @@
 <body>
     <div class="bg-image"></div>
     <div id="main-card">
-        <form action="register_trigger.php" method="post">
+        <form action="script/register_trigger.php" method="post">
             <fieldset>
                 <legend>Inscription</legend>
                 <?php                    

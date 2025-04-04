@@ -40,7 +40,7 @@
                     $username = htmlspecialchars($_SESSION["user"]["username"]);
                     echo '<span class="welcome">Bienvenue, ' . $username . '</span>';
                     echo '<a href="profile2.php" id="nav-button">Mon profil</a>';
-                    echo '<a href="logout.php" id="nav-button">Se déconnecter <i class="fa-solid fa-right-from-bracket"></i></a>';
+                    echo '<a href="script/logout.php" id="nav-button">Se déconnecter <i class="fa-solid fa-right-from-bracket"></i></a>';
                 } else {
                     echo '<a href="register.php" id="nav-button">S\'inscrire</a>';
                     echo '<a href="login.php" id="nav-button">Se connecter</a>';
@@ -49,7 +49,7 @@
         </div>
     </nav>
     <div id="main-card">
-        <form action="admin_edit_trigger.php" method="post">
+        <form action="script/admin_edit_trigger.php" method="post">
             <fieldset>
 
                 <?php

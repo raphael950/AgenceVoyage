@@ -42,7 +42,7 @@
     // mise en session de l'id du voyage pour plus tard
     $_SESSION["voyage"] = $voyage;
 
-    require('getapikey.php');
+    require('include/getapikey.php');
     $api_key = "zzzz";
     $vendeur = 'MI-5_D' ;
     $api_key = getAPIKey($vendeur);
@@ -52,7 +52,7 @@
     }*/
     $transaction = str_pad(count($transactions)+1, 10, "0", STR_PAD_LEFT); // jsp pk mais l'API ne prends pas en charge les int ni les str !=10 
     $montant = $montantRestant;
-    $retour = "http://localhost:8080/payment_check.php";
+    $retour = "http://localhost:8080/script/payment_check.php";
     $control = md5($api_key. "#" . $transaction. "#" . $montant. "#" . $vendeur. "#" . $retour . "#");
 ?>
 
