@@ -38,6 +38,7 @@ nav img{
     font-size: medium;
     text-align: left;
     margin-left: 10px;
+    text-decoration: none;
 }
 
 nav button:hover {

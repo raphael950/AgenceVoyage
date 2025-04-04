@@ -34,7 +34,8 @@ nav img{
     color: white;
     font-weight: bold;
     font-size: medium;
-    text-align: left; 
+    text-align: left;
+    text-decoration: none;
 }
 
 nav button:hover {
