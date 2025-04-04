@@ -31,7 +31,7 @@
                 if (isset($_SESSION["user"])) {
                     $username = htmlspecialchars($_SESSION["user"]["username"]);
                     echo '<span class="welcome">Bienvenue, ' . $username . '</span>';
-                    echo '<a href="profile2.php" id="nav-button">Mon profil</a>';
+                    echo '<a href="reservations.php" id="nav-button">Mes réservations</a>';
                     echo '<a href="logout.php" id="nav-button">Se déconnecter <i class="fa-solid fa-right-from-bracket"></i></a>';
                     if($_SESSION["user"]["role"] == "admin"){
                         echo '<a href="admin2.php" id="nav-button">Page administrateur</a>';
