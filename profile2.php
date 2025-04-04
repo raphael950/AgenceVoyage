@@ -31,10 +31,10 @@
                 if (isset($_SESSION["user"])) {
                     $username = htmlspecialchars($_SESSION["user"]["username"]);
                     echo '<span class="welcome">Bienvenue, ' . $username . '</span>';
-                    echo '<a href="reservations.php" id="nav-button">Mes réservations</a>';
+                    echo '<a href="reservations.php" id="nav-button">Mes réservations <i class="fa-solid fa-plane-departure"></i></a>';
                     echo '<a href="logout.php" id="nav-button">Se déconnecter <i class="fa-solid fa-right-from-bracket"></i></a>';
                     if($_SESSION["user"]["role"] == "admin"){
-                        echo '<a href="admin2.php" id="nav-button">Page administrateur</a>';
+                        echo '<a href="admin2.php" id="nav-button">Page administrateur <i class="fa-solid fa-screwdriver-wrench"></i></a>';
                     }                    
                 } else {
                     echo '<a href="register.php" id="nav-button">S\'inscrire</a>';
