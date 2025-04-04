@@ -6,7 +6,7 @@
     $date = $_POST['date'];
     $adresse = $_POST['adresse'];
 
-    $content = file_get_contents("data/users.json");
+    $content = file_get_contents("../data/users.json");
     $users = json_decode($content, true);
 
     foreach ($users as &$user) {
@@ -23,7 +23,7 @@
         $user["adresse"] = $adresse;
     }
 
-    file_put_contents("data/users.json", json_encode($users, JSON_PRETTY_PRINT));
-    header("Location: admin2.php");
+    file_put_contents("../data/users.json", json_encode($users, JSON_PRETTY_PRINT));
+    header("Location: ../admin2.php");
     
 ?>

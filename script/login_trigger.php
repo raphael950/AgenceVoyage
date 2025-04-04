@@ -5,12 +5,12 @@
     $pass = trim($_POST["pass"] ?? '');
 
     if (empty($email) || empty($pass)) {
-        header("Location: login.php");
+        header("Location: ../login.php");
         $_SESSION["error"] = "Email ou mot de passe vide.";
         exit();
     }
 
-    $content = file_get_contents("data/users.json");
+    $content = file_get_contents("../data/users.json");
     $users = json_decode($content, true);
 
     $found = false;
@@ -28,9 +28,8 @@
                 break;
             }
 
-            // TODO: Authentification
             $_SESSION["user"] = $user;
-            header("Location: profile2.php");
+            header("Location: ../profile2.php");
             exit();
         }
         $_SESSION["error"] = "Mot de passe incorrect";
@@ -38,6 +37,6 @@
     }
 
     if (!$found) $_SESSION["error"] = "Email non trouvée.";
-    header("Location: login.php");
+    header("Location: ../login.php");
     
 ?>

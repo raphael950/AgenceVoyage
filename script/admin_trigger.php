@@ -1,6 +1,6 @@
 <?php
 
-    $content = file_get_contents("data/users.json");
+    $content = file_get_contents("../data/users.json");
     $users = json_decode($content, true);
     $client_id = intval($_POST['client_id']);
 
@@ -14,7 +14,7 @@
                 $user["role"] = "vip";
             }
         }
-        file_put_contents("data/users.json", json_encode($users, JSON_PRETTY_PRINT));
+        file_put_contents("../data/users.json", json_encode($users, JSON_PRETTY_PRINT));
     }
     
     function ban($users, $client_id){
@@ -24,7 +24,7 @@
                 break;
             }
         }
-        file_put_contents("data/users.json", json_encode($users, JSON_PRETTY_PRINT));
+        file_put_contents("../data/users.json", json_encode($users, JSON_PRETTY_PRINT));
     }
 
     $action = $_POST['action']; // récupére le but du bouton cliqué
@@ -40,5 +40,5 @@
             break;
     }
 
-    header("Location: admin2.php");
+    header("Location: ../admin2.php");
 ?>
