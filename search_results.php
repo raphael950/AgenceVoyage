@@ -109,15 +109,15 @@
 
         <div class="pagination">
             <?php if ($currentPage > 1): ?>
-                <a href="?page=<?= $currentPage - 1 ?>">Précédent</a>
+                <a href="?search=<?= $search ?>&country=<?= $country ?>&travelers=<?= $travelers ?>&page=<?= $currentPage - 1 ?>">Précédent</a>
             <?php endif; ?>
 
             <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-                <a href="?page=<?= $i ?>" <?= $i === $currentPage ? 'style="font-weight: bold;"' : '' ?>><?= $i ?></a>
+                <a href="?search=<?= $search ?>&country=<?= $country ?>&travelers=<?= $travelers ?>&page=<?= $i ?>" <?= $i === $currentPage ? 'style="font-weight: bold;"' : '' ?>><?= $i ?></a>
             <?php endfor; ?>
 
             <?php if ($currentPage < $totalPages): ?>
-                <a href="?page=<?= $currentPage + 1 ?>">Suivant</a>
+                <a href="?search=<?= $search ?>&country=<?= $country ?>&travelers=<?= $travelers ?>&page=<?= $currentPage + 1 ?>">Suivant</a>
             <?php endif; ?>
         </div>
     </main>
