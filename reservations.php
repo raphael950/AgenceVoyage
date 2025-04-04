@@ -48,14 +48,14 @@
             // recup voyages reserves
             $contenu = file_get_contents("data/voyages.json");
             $voyages = json_decode($contenu, true);
-            $contenu = file_get_contents("data/transactions.json");
-            $transactions = json_decode($contenu, true);
+            $contenu = file_get_contents("data/reservations.json");
+            $reservations = json_decode($contenu, true);
 
             
             $generated = false; // utilisé pour gérer le cas 0 réservations
-            foreach($transactions as $transaction){
+            foreach($reservations as $reservation){
                 foreach($voyages as $voyage){
-                    if($voyage["id"] == $transaction["voyage"] && $_SESSION["user"]["email"] == $transaction["email"]){
+                    if($_SESSION["user"]["id"] == $reservation["user_id"] && $reservation["voyage_id"]==$voyage["id"]){
                         $generated = true;
                         $titre = $voyage["titre"];
                         $imageUrl = "assets/voyages/". $voyage["id"] . ".jpg";
