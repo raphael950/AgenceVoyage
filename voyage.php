@@ -98,7 +98,11 @@ if ($voyage):
             <?php endforeach; ?>
         </div>
         <div class="reservation">
-            <button onclick="window.location.href='recapitulatif.php?id=<?php echo $voyage['id']; ?>'">Réserver</button>
+            <?php if (isset($_SESSION["user"])): ?>
+                <button onclick="window.location.href='recapitulatif.php?id=<?php echo $voyage['id']; ?>'">Réserver</button>
+            <?php else: ?>
+                <p>Pour réserver, veuillez vous inscrire ou vous connecter.</p>
+            <?php endif; ?>
         </div>
     </main>
 
