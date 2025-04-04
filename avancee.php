@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include "include/voyage_utils.php";
 ?>
 
 <!DOCTYPE html>
@@ -41,16 +42,41 @@
             </form>
         </div>
     </div>
-    <section>
-        <div class="card">
-            <img src="https://d2xuzatlfjyc9k.cloudfront.net/wp-content/uploads/2014/05/Best-Costa-Rica-Fishing-Trips-Marinas-1.jpg" alt="Costa Rica">
-            <div class="text">
-                <h3>Costa Rica</h3>
-                <p>1h 50, sans escale</p>
-                <p>lun. 3/3 > lun. 10/3</p>
-                <h3>à partir de 31</h3>
-            </div>
-        </div>
+    <section id="exemples">
+        <?php
+            #recup voyages
+            #pour chaque voyage afficher une carte avec titre, image, etc
+            $contenu = file_get_contents("data/voyages.json");
+            $voyages = json_decode($contenu, true);
+            $voyageShow = 0;
+
+            foreach($voyages as $voyage) {
+                $voyageShow++;
+                $titre = $voyage["titre"];
+                $imageUrl = "assets/voyages/". $voyage["id"] . "/miniature.png";
+                if (!file_exists($imageUrl)) $imageUrl = "assets/no_photo.jpg";
+                $prix = $voyage["prix"];
+                $duree = duree($voyage);
+                $etapes = count($voyage["etapes"]);
+
+                echo <<<HTML
+                    <div class="card">
+                        <a href="voyage.php?id={$voyage['id']}">
+                            <img src="$imageUrl" alt="$titre">
+                            <div class="text">
+                                <div>
+                                    <h3>$titre</h3>
+                                    <p>$duree jours, $etapes étapes</p>
+                                </div>
+                                <h3 class="bottom">à partir de {$prix}€/pers</h3>
+                            </div>
+                        </a>
+                
+                    </div>
+                HTML;
+                if($voyageShow == 5) break;
+            }
+        ?>          
     </section>
     <footer>
         <p>&copy; Fishing Travel</p>

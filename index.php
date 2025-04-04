@@ -69,8 +69,10 @@
             #pour chaque voyage afficher une carte avec titre, image, etc
             $contenu = file_get_contents("data/voyages.json");
             $voyages = json_decode($contenu, true);
+            $voyageShow = 0;
 
             foreach($voyages as $voyage) {
+                $voyageShow++;
                 $titre = $voyage["titre"];
                 $imageUrl = "assets/voyages/". $voyage["id"] . "/miniature.png";
                 if (!file_exists($imageUrl)) $imageUrl = "assets/no_photo.jpg";
@@ -93,10 +95,9 @@
                 
                     </div>
                 HTML;
+                if($voyageShow == 5) break;
             }
-        ?>
-        
-          
+        ?>          
     </section>
     
     <footer>
