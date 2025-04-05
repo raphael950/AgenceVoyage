@@ -2,6 +2,12 @@
     session_start();
     include "include/voyage_utils.php";
 
+    // user non connecté mais se rend sur la page quand meme via URL
+    if (!isset($_SESSION["user"])) {
+        header("Location: login.php");
+        exit();
+    }
+
     // Récupération de l'ID du voyage depuis l'URL
     // $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 

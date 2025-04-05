@@ -1,5 +1,12 @@
 <?php
     session_start();
+
+    // user non connecté mais se rend sur la page quand meme via URL
+    if (!isset($_SESSION["user"])) {
+        header("Location: login.php");
+        exit();
+    }
+    
     // Charger les données des voyages
     $voyages = json_decode(file_get_contents('data/voyages.json'), true);
 

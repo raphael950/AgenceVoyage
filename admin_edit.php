@@ -1,6 +1,12 @@
 <?php
     session_start();
 
+    // user non admin ou pas connecté mais se rend sur la page quand meme via URL
+    if (!isset($_SESSION["user"]) || $_SESSION["user"]["role"] != "admin"){
+        header("Location: login.php");
+        exit();
+    }
+
     $content = file_get_contents("data/users.json");
     $users = json_decode($content, true);
     $client_id = intval($_POST['client_id']);
