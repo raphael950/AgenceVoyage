@@ -1,62 +1,62 @@
 <?php
-session_start();
-// Charger les données des voyages
-$voyages = json_decode(file_get_contents('data/voyages.json'), true);
+    session_start();
+    // Charger les données des voyages
+    $voyages = json_decode(file_get_contents('data/voyages.json'), true);
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupération des données du formulaire
-    $voyage_id = (int) $_POST['voyage_id'];
-    $date_depart = $_POST['date_depart'];
-    $nombre_personne = (int) $_POST['nombre_personne'];
-    $options_souscrites = [];
-    
-    // Trouver le voyage sélectionné
-    foreach ($voyages as $voyage) {
-        if ($voyage['id'] == $voyage_id) {
-            // Parcourir les étapes et les options
-            foreach ($voyage['etapes'] as $etape) {
-                foreach ($etape['options'] as $option) {
-                    // Vérifier si l'option a été sélectionnée dans le formulaire
-                    if (isset($_POST['options'][$option['nom']])) {
-                        // Calcul du prix pour les options de type 'individuel'
-                        if ($option['type'] == 'individuel') {
-                            $quantite_option = $_POST['options'][$option['nom']];
-                            if ((int) $quantite_option == 0) continue;
-                            $options_souscrites[$option['nom']] = (int) $quantite_option;
-                        } else {
-                            // Calcul du prix pour les options de type 'groupe'
-                            $options_souscrites[$option['nom']] = 1;
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // Récupération des données du formulaire
+        $voyage_id = (int) $_POST['voyage_id'];
+        $date_depart = $_POST['date_depart'];
+        $nombre_personne = (int) $_POST['nombre_personne'];
+        $options_souscrites = [];
+        
+        // Trouver le voyage sélectionné
+        foreach ($voyages as $voyage) {
+            if ($voyage['id'] == $voyage_id) {
+                // Parcourir les étapes et les options
+                foreach ($voyage['etapes'] as $etape) {
+                    foreach ($etape['options'] as $option) {
+                        // Vérifier si l'option a été sélectionnée dans le formulaire
+                        if (isset($_POST['options'][$option['nom']])) {
+                            // Calcul du prix pour les options de type 'individuel'
+                            if ($option['type'] == 'individuel') {
+                                $quantite_option = $_POST['options'][$option['nom']];
+                                if ((int) $quantite_option == 0) continue;
+                                $options_souscrites[$option['nom']] = (int) $quantite_option;
+                            } else {
+                                // Calcul du prix pour les options de type 'groupe'
+                                $options_souscrites[$option['nom']] = 1;
+                            }
                         }
                     }
                 }
             }
         }
+        
+        // Charger les réservations existantes
+        $reservations = json_decode(file_get_contents('data/reservations.json'), true);
+
+        $resa_id = count($reservations) + 1;
+        
+        // Ajouter la nouvelle réservation
+        $reservations[] = [
+            'id' => $resa_id,
+            'user_id' => $_SESSION["user"]["id"],
+            'voyage_id' => $voyage_id,
+            'date_depart' => $date_depart,
+            'nombre_personne' => $nombre_personne,
+            'options_souscrites' => $options_souscrites
+        ];
+        
+        // Sauvegarder les réservations mises à jour
+        file_put_contents('data/reservations.json', json_encode($reservations, JSON_PRETTY_PRINT));
+
+        $_SESSION["resaID"] = $resa_id;
+        
+        // Redirection vers la page de paiement
+        header('Location: payment.php');
+        exit;
     }
-    
-    // Charger les réservations existantes
-    $reservations = json_decode(file_get_contents('data/reservations.json'), true);
-
-    $resa_id = count($reservations) + 1;
-    
-    // Ajouter la nouvelle réservation
-    $reservations[] = [
-        'id' => $resa_id,
-        'user_id' => $_SESSION["user"]["id"],
-        'voyage_id' => $voyage_id,
-        'date_depart' => $date_depart,
-        'nombre_personne' => $nombre_personne,
-        'options_souscrites' => $options_souscrites
-    ];
-    
-    // Sauvegarder les réservations mises à jour
-    file_put_contents('data/reservations.json', json_encode($reservations, JSON_PRETTY_PRINT));
-
-    $_SESSION["resaID"] = $resa_id;
-    
-    // Redirection vers la page de paiement
-    header('Location: payment.php');
-    exit;
-}
 ?>
 
 <!DOCTYPE html>

@@ -1,6 +1,7 @@
 <?php
     session_start();
 
+    $name = trim($_POST["name"] ?? '');
     $email = trim($_POST["email"] ?? '');
     $pass = trim($_POST["password"] ?? '');
 
@@ -24,7 +25,7 @@
     // Create new user
     $new_user = array(
         "id" => count($users) + 1,
-        "username" => "$email",
+        "username" => $name,
         "email" => $email,
         "password" => password_hash($pass, PASSWORD_DEFAULT),
         "role" => "client"

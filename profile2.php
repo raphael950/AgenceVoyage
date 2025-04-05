@@ -56,11 +56,7 @@
                     <tr>
                         <th><label for="nom">Nom</label></td>
                         <td><input type="text" id="nom" name="nom" value="<?php echo $_SESSION["user"]["username"];?>"/></td>
-                    </tr>
-                    <tr>
-                        <th><label for="prenom">Prénom</label></td>
-                        <td><input type="text" id="prenom" name="prenom"/></td>
-                    </tr>
+                    </tr>                    
                     <tr>
                         <th><label for="email">E-mail</label></td>
                         <td><input type="email" id="email" name="email" value="<?php echo $_SESSION["user"]["email"];?>"/></td>
@@ -69,8 +65,8 @@
                         <th><label for="sexe">Sexe</label></td>
                         <td>
                             <select name="sexe">
-                                <option value="homme" <?= (($_SESSION["user"]["gender"] ?? '') == "homme") ? 'selected' : '' ?>>Homme</option>
-                                <option value="femme" <?= (($_SESSION["user"]["gender"] ?? '') == "femme") ? 'selected' : '' ?>>Femme</option>
+                                <option value="Homme" <?= (($_SESSION["user"]["gender"] ?? '') == "Homme") ? 'selected' : '' ?>>Homme</option>
+                                <option value="Femme" <?= (($_SESSION["user"]["gender"] ?? '') == "Femme") ? 'selected' : '' ?>>Femme</option>
                             </select>
                         </td>
                     </tr>
@@ -80,7 +76,7 @@
                     </tr>
                     <tr>
                         <th><label for="adresse">Adresse</label></td>
-                        <td><input type="text" id="adresse" name="adresse" value="<?php if(isset($_SESSION["user"]["birth"])){echo $_SESSION["user"]["birth"];}?>"/></td>
+                        <td><input type="text" id="adresse" name="adresse" value="<?php if(isset($_SESSION["user"]["adresse"])){echo $_SESSION["user"]["adresse"];}?>"/></td>
                     </tr>
                 </table>
                 <input type="submit" value="Modifier">

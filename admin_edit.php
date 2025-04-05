@@ -66,10 +66,6 @@
                         <td><input type="text" id="nom" name="nom" value="<?php echo $client["username"];?>"/></td>
                     </tr>
                     <tr>
-                        <th><label for="prenom">Prénom</label></td>
-                        <td><input type="text" id="prenom" name="prenom"/></td> <!-- TODO -->
-                    </tr>
-                    <tr>
                         <th><label for="email">E-mail</label></td>
                         <td><input type="email" id="email" name="email" value="<?php echo $client["email"];?>"/></td>
                     </tr>
@@ -77,8 +73,8 @@
                         <th><label for="sexe">Sexe</label></td>
                         <td>
                             <select name="sexe">
-                                <option value="homme" <?= (($client["gender"] ?? '') == "homme") ? 'selected' : '' ?>>Homme</option>
-                                <option value="femme" <?= (($client["gender"] ?? '') == "femme") ? 'selected' : '' ?>>Femme</option>
+                                <option value="Homme" <?= (($client["gender"] ?? '') == "Homme") ? 'selected' : '' ?>>Homme</option>
+                                <option value="Femme" <?= (($client["gender"] ?? '') == "Femme") ? 'selected' : '' ?>>Femme</option>
                             </select>
                         </td>
                     </tr>

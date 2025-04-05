@@ -55,7 +55,6 @@
             <table>
                 <tr>
                     <th>Nom client</th>
-                    <th>Prénom client</th>
                     <th>E-mail client</th>
                     <th>Sexe client</th>
                     <th>Date de naissance client</th>
@@ -64,7 +63,6 @@
                 </tr>
                 <?php foreach ($usersToDisplay as $user): ?>
                     <tr>
-                        <td><?= htmlspecialchars($user['username']) ?></td>
                         <td><?= htmlspecialchars($user['username']) ?></td>
                         <td><?= htmlspecialchars($user['email']) ?></td>
                         <td><?= isset($user["gender"]) && !empty($user["gender"]) ? htmlspecialchars($user["gender"]) : "N/A"; ?></td>
