@@ -84,6 +84,7 @@ section#exemples {
 }
 .card .text {
     padding: 10px;
+    color: black;
 }
 
 .card h3:last-of-type {
@@ -93,6 +94,10 @@ section#exemples {
 .noreservation {
     text-align: center;
     margin-top: 30px;
+}
+a {
+    text-decoration: none;
+
 }
 
 /* */
