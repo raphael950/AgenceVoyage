@@ -54,17 +54,15 @@
                     if($_SESSION["user"]["id"] == $reservation["user_id"] && $reservation["voyage_id"]==$voyage["id"]){
                         $generated = true;
                         $titre = $voyage["titre"];
-                        $imageUrl = "assets/voyages/". $voyage["id"] . ".jpg";
-                        $prix = $voyage["prix"];
+                        $date = new DateTime($reservation["date_depart"])->format('d/m');
+                        $imageUrl = "assets/voyages/". $voyage["id"] ."/". $voyage["id"] . ".jpg";
                         echo <<<HTML
                             <div class="card">
                                 <a href="voyage.php?id={$voyage['id']}">
                                 <img src="$imageUrl" alt="$titre">
                                 <div class="text">
                                     <h3>$titre</h3>
-                                    <p>1h 50, sans escale</p>
-                                    <p>lun. 3/3 > lun. 10/3</p>
-                                    <h3>Prix payé : {$prix}€</h3>
+                                    <p>Départ le $date</p>
                                 </div>
                                 </a>
                         
