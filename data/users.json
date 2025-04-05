@@ -1,9 +1,37 @@
 [
     {
         "id": 1,
-        "username": "Admin",
-        "email": "admin@admin.com",
+        "username": "Admin1",
+        "email": "admin1@admin.com",
         "password": "$2y$12$KmH0vxhivi.U4sSISKGbc.PbYtK6ftY0oFLOeIzLXw\/ysSPE.D8Ny",
         "role": "admin"
+    },
+    {
+        "id": 2,
+        "username": "Admin2",
+        "email": "admin2@admin.com",
+        "password": "$2y$12$KmH0vxhivi.U4sSISKGbc.PbYtK6ftY0oFLOeIzLXw\/ysSPE.D8Ny",
+        "role": "admin"
+    },
+    {
+        "id": 3,
+        "username": "User1",
+        "email": "user1@example.com",
+        "password": "$2y$12$Y5CHgUpyzFboVnbhW31MrOzspHJcUqA7SSF0JuSNSph8l3k8XiISO",
+        "role": "client"
+    },
+    {
+        "id": 4,
+        "username": "User2",
+        "email": "user2@example.com",
+        "password": "$2y$12$Y5CHgUpyzFboVnbhW31MrOzspHJcUqA7SSF0JuSNSph8l3k8XiISO",
+        "role": "client"
+    },
+    {
+        "id": 5,
+        "username": "User3",
+        "email": "user3@example.com",
+        "password": "$2y$12$Y5CHgUpyzFboVnbhW31MrOzspHJcUqA7SSF0JuSNSph8l3k8XiISO",
+        "role": "client"
     }
 ]
