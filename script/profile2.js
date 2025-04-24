@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var editButton = field.querySelector(".edit-button");
         var cancelButton = field.querySelector(".cancel-button");
         var validateButton = field.querySelector(".validate-button");
+        var originalValue = input.value;
 
         editButton.addEventListener("click", function () {
             input.disabled = false;
@@ -28,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         cancelButton.addEventListener("click", function () {
-            input.value = input.dataset.originalValue;
+            input.value = originalValue;
             input.disabled = true;
             cancelButton.style.display = "none";
             validateButton.style.display = "none";
@@ -36,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         validateButton.addEventListener("click", function () {
-            input.dataset.originalValue = input.value;
+            originalValue = input.value;
             input.disabled = true;
             cancelButton.style.display = "none";
             validateButton.style.display = "none";
@@ -45,11 +46,26 @@ document.addEventListener("DOMContentLoaded", function () {
             // verif si au moins un champ a été validé
             isModified = Array.from(fields).some(function (field) {
                 var fieldInput = field.querySelector("input, select");
-                return fieldInput.value !== fieldInput.dataset.originalValue;
+                return fieldInput.value !== originalValue;
             });
 
             // affiche le bouton "soumettre" que si une modification a été validée
             submitButton.style.display = isModified ? "block" : "none";
         });
+
+
+        // par définition les données ne peuvent pas etre envoyée en post quand il y a 'disabled'
+        // on décide donc que, lorsque l'user sumbit, on passe tout les champ en non 'disabled'
+        // ce qui nous permet donc d'envoyer les données en post normalement :
+        
+        submitButton.addEventListener("click", function () {
+            fields.forEach(function (field) {
+                var input = field.querySelector("input, select");
+                input.disabled = false;
+            });
+        });
+        
     });
+
+    
 });

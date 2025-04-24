@@ -54,7 +54,7 @@
                     <tr class="editable-field">
                         <th><label for="nom">Nom</label></th>
                         <td>
-                            <input type="text" id="nom" name="nom" value="<?php echo $_SESSION["user"]["username"];?>" data-original-value="<?php echo $_SESSION["user"]["username"];?>" disabled />
+                            <input type="text" id="nom" name="nom" value="<?php echo $_SESSION["user"]["username"];?>" disabled />
                             <button type="button" class="edit-button"><i class="fa-solid fa-pen"></i></button>
                             <button type="button" class="cancel-button" style="display: none;"><i class="fa-solid fa-rotate-left"></i></button>
                             <button type="button" class="validate-button" style="display: none;"><i class="fa-solid fa-check"></i></button>
@@ -63,7 +63,7 @@
                     <tr class="editable-field">
                         <th><label for="email">E-mail</label></th>
                         <td>
-                            <input type="email" id="email" name="email" value="<?php echo $_SESSION["user"]["email"];?>" data-original-value="<?php echo $_SESSION["user"]["email"];?>" disabled />
+                            <input type="email" id="email" name="email" value="<?php echo $_SESSION["user"]["email"];?>" disabled />
                             <button type="button" class="edit-button"><i class="fa-solid fa-pen"></i></button>
                             <button type="button" class="cancel-button" style="display: none;"><i class="fa-solid fa-rotate-left"></i></button>
                             <button type="button" class="validate-button" style="display: none;"><i class="fa-solid fa-check"></i></button>
@@ -72,7 +72,7 @@
                     <tr class="editable-field">
                         <th><label for="sexe">Sexe</label></th>
                         <td>
-                            <select name="sexe" data-original-value="<?= $_SESSION["user"]["gender"] ?? '' ?>" disabled>
+                            <select name="sexe" disabled>
                                 <option value="Homme" <?= (($_SESSION["user"]["gender"] ?? '') == "Homme") ? 'selected' : '' ?>>Homme</option>
                                 <option value="Femme" <?= (($_SESSION["user"]["gender"] ?? '') == "Femme") ? 'selected' : '' ?>>Femme</option>
                             </select>
@@ -84,7 +84,7 @@
                     <tr class="editable-field">
                         <th><label for="date">Date de naissance</label></th>
                         <td>
-                            <input type="date" name="date" value="<?php echo $_SESSION["user"]["birth"] ?? '';?>" data-original-value="<?php echo $_SESSION["user"]["birth"] ?? '';?>" disabled />
+                            <input type="date" name="date" value="<?php echo $_SESSION["user"]["birth"] ?? '';?>" disabled />
                             <button type="button" class="edit-button"><i class="fa-solid fa-pen"></i></button>
                             <button type="button" class="cancel-button" style="display: none;"><i class="fa-solid fa-rotate-left"></i></button>
                             <button type="button" class="validate-button" style="display: none;"><i class="fa-solid fa-check"></i></button>
@@ -93,7 +93,7 @@
                     <tr class="editable-field">
                         <th><label for="adresse">Adresse</label></th>
                         <td>
-                            <input type="text" id="adresse" name="adresse" value="<?php echo $_SESSION["user"]["adresse"] ?? '';?>" data-original-value="<?php echo $_SESSION["user"]["adresse"] ?? '';?>" disabled />
+                            <input type="text" id="adresse" name="adresse" value="<?php echo $_SESSION["user"]["adresse"] ?? '';?>" disabled />
                             <button type="button" class="edit-button"><i class="fa-solid fa-pen"></i></button>
                             <button type="button" class="cancel-button" style="display: none;"><i class="fa-solid fa-rotate-left"></i></button>
                             <button type="button" class="validate-button" style="display: none;"><i class="fa-solid fa-check"></i></button>
