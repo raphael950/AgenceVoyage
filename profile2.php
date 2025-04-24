@@ -16,6 +16,7 @@
     <title>Modifier mon profil</title>
     <link rel="stylesheet" href="style/profile2.css">
     <script src="https://kit.fontawesome.com/1633e685ed.js" crossorigin="anonymous"></script>
+    <script src="script/profile2.js" defer></script> <!-- Lien vers le fichier JS -->
 </head>
 <body>
     <nav>
@@ -42,44 +43,64 @@
     <div id="main-card">
         <form action="script/edit_trigger.php" method="post">
             <fieldset>
-
                 <?php
                     if (isset($_SESSION["error"])) {
-                        echo "<p style='color: red':>".$_SESSION["error"]."</p>";
+                        echo "<p style='color: red'>".$_SESSION["error"]."</p>";
                         unset($_SESSION["error"]);
                     }
-                    //echo $_SESSION[ "user"]["email"];
                 ?>
-
                 <legend>Modifier mon profil</legend>
                 <table>
-                    <tr>
-                        <th><label for="nom">Nom</label></td>
-                        <td><input type="text" id="nom" name="nom" value="<?php echo $_SESSION["user"]["username"];?>"/></td>
-                    </tr>                    
-                    <tr>
-                        <th><label for="email">E-mail</label></td>
-                        <td><input type="email" id="email" name="email" value="<?php echo $_SESSION["user"]["email"];?>"/></td>
-                    </tr>
-                    <tr>
-                        <th><label for="sexe">Sexe</label></td>
+                    <tr class="editable-field">
+                        <th><label for="nom">Nom</label></th>
                         <td>
-                            <select name="sexe">
+                            <input type="text" id="nom" name="nom" value="<?php echo $_SESSION["user"]["username"];?>" data-original-value="<?php echo $_SESSION["user"]["username"];?>" disabled />
+                            <button type="button" class="edit-button"><i class="fa-solid fa-pen"></i></button>
+                            <button type="button" class="cancel-button" style="display: none;"><i class="fa-solid fa-rotate-left"></i></button>
+                            <button type="button" class="validate-button" style="display: none;"><i class="fa-solid fa-check"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="editable-field">
+                        <th><label for="email">E-mail</label></th>
+                        <td>
+                            <input type="email" id="email" name="email" value="<?php echo $_SESSION["user"]["email"];?>" data-original-value="<?php echo $_SESSION["user"]["email"];?>" disabled />
+                            <button type="button" class="edit-button"><i class="fa-solid fa-pen"></i></button>
+                            <button type="button" class="cancel-button" style="display: none;"><i class="fa-solid fa-rotate-left"></i></button>
+                            <button type="button" class="validate-button" style="display: none;"><i class="fa-solid fa-check"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="editable-field">
+                        <th><label for="sexe">Sexe</label></th>
+                        <td>
+                            <select name="sexe" data-original-value="<?= $_SESSION["user"]["gender"] ?? '' ?>" disabled>
                                 <option value="Homme" <?= (($_SESSION["user"]["gender"] ?? '') == "Homme") ? 'selected' : '' ?>>Homme</option>
                                 <option value="Femme" <?= (($_SESSION["user"]["gender"] ?? '') == "Femme") ? 'selected' : '' ?>>Femme</option>
                             </select>
+                            <button type="button" class="edit-button"><i class="fa-solid fa-pen"></i></button>
+                            <button type="button" class="cancel-button" style="display: none;"><i class="fa-solid fa-rotate-left"></i></button>
+                            <button type="button" class="validate-button" style="display: none;"><i class="fa-solid fa-check"></i></button>
                         </td>
                     </tr>
-                    <tr>
-                        <th><label for="date">Date de naissance</label></td>
-                        <td><input type="date" name="date" value="<?php if(isset($_SESSION["user"]["birth"])){echo $_SESSION["user"]["birth"];}?>"></td>
+                    <tr class="editable-field">
+                        <th><label for="date">Date de naissance</label></th>
+                        <td>
+                            <input type="date" name="date" value="<?php echo $_SESSION["user"]["birth"] ?? '';?>" data-original-value="<?php echo $_SESSION["user"]["birth"] ?? '';?>" disabled />
+                            <button type="button" class="edit-button"><i class="fa-solid fa-pen"></i></button>
+                            <button type="button" class="cancel-button" style="display: none;"><i class="fa-solid fa-rotate-left"></i></button>
+                            <button type="button" class="validate-button" style="display: none;"><i class="fa-solid fa-check"></i></button>
+                        </td>
                     </tr>
-                    <tr>
-                        <th><label for="adresse">Adresse</label></td>
-                        <td><input type="text" id="adresse" name="adresse" value="<?php if(isset($_SESSION["user"]["adresse"])){echo $_SESSION["user"]["adresse"];}?>"/></td>
+                    <tr class="editable-field">
+                        <th><label for="adresse">Adresse</label></th>
+                        <td>
+                            <input type="text" id="adresse" name="adresse" value="<?php echo $_SESSION["user"]["adresse"] ?? '';?>" data-original-value="<?php echo $_SESSION["user"]["adresse"] ?? '';?>" disabled />
+                            <button type="button" class="edit-button"><i class="fa-solid fa-pen"></i></button>
+                            <button type="button" class="cancel-button" style="display: none;"><i class="fa-solid fa-rotate-left"></i></button>
+                            <button type="button" class="validate-button" style="display: none;"><i class="fa-solid fa-check"></i></button>
+                        </td>
                     </tr>
                 </table>
-                <input type="submit" value="Modifier">
+                <input type="submit" id="submit-button" value="Soumettre" style="display: none;">
             </fieldset>
         </form>
     </div>

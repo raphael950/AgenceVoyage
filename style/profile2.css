@@ -58,7 +58,7 @@ nav button:hover {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 400px;
+    width: fit-content;
 }
 
 fieldset {
@@ -69,6 +69,7 @@ fieldset {
 
 th{
     text-align: left;
+    padding-right: 30px;
 }
 
 legend {
@@ -84,6 +85,7 @@ input {
     border-width: 1px;
     border-style: solid;
     border-radius: 10px;
+    min-width: 225px;
 }
 
 select{
@@ -114,6 +116,26 @@ label {
 }
 
 
+.edit-button, .cancel-button, .validate-button {
+    background-color: #045F94;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.edit-button:hover, .cancel-button:hover, .validate-button:hover {
+    background-color: #015585;
+}
+
+.editable-field td {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacement entre les éléments */
+}
 
 footer {
     color: white;
