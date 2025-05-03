@@ -28,6 +28,7 @@
     <title>Page administrateur</title>
     <link rel="stylesheet" href="style/admin2.css">
     <script src="https://kit.fontawesome.com/1633e685ed.js" crossorigin="anonymous"></script>
+    <script src="script/admin.js" defer></script>
 </head>
 <body>
     <nav>
@@ -71,15 +72,15 @@
                         <td>
                             <form action="admin_edit.php" method="post">
                                 <input type="hidden" name="client_id" value="<?= htmlspecialchars($user['id']) ?>">
-                                <button type="submit" name="action" value="edit">Modifier</button>
+                                <button type="submit" class="editButton" name="action" value="edit">Modifier</button>
                             </form>    
                             <form action="script/admin_trigger.php" method="post">
                                 <input type="hidden" name="client_id" value="<?= htmlspecialchars($user['id']) ?>">
-                                <button type="submit" name="action" value="vip"><?= ($user['role'] == "vip") ? "Enlever VIP" : "Donner VIP"; ?></button>
+                                <button type="submit" class="vipButton" name="action" value="vip"><?= ($user['role'] == "vip") ? "Enlever VIP" : "Donner VIP"; ?></button>
                             </form>
                             <form action="script/admin_trigger.php" method="post">
                                 <input type="hidden" name="client_id" value="<?= htmlspecialchars($user['id']) ?>">
-                                <button type="submit" name="action" value="ban">Bannir</button>
+                                <button type="submit" class="banButton" name="action" value="ban">Bannir</button>
                             </form>
                         </td>
                     </tr>
