@@ -64,6 +64,14 @@
         header('Location: payment.php');
         exit;
     }
+
+    if(isset($_GET["id"])){
+        foreach ($voyages as $voyage) {
+            if ($voyage['id'] == $_GET["id"]) {
+                $prix = $voyage['prix'];
+            }
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -72,8 +80,9 @@
     <meta charset="UTF-8">
     <title>Réservation de Voyage</title>
     <link rel="stylesheet" href="style/recapitulatif.css">
+    <script src="script/recapitulatif.js" defer></script>
 </head>
-<body>
+<body data-prixPersonne="<?php echo $prix; ?>">
     <div class="bg-image"></div>
     <div id="main-card">
         <h1>Réservez votre voyage</h1>
@@ -91,7 +100,7 @@
             <input type="date" name="date_depart" id="date_depart" required>
 
             <label for="nombre_personne">Nombre de personnes :</label>
-            <input type="number" name="nombre_personne" id="nombre_personne" min="1" required>
+            <input type="number" name="nombre_personne" id="nombre_personne" min="1" value="1" required>
 
             <h2>Options</h2>
             <?php foreach ($voyages as $voyage) : ?>
@@ -114,7 +123,7 @@
             <?php endforeach; ?>
 
 
-            <h3 id="prix_total">Prix total : 0€</h3>
+            <h3 id="prix_total">0</h3>
 
             <button type="submit">Réserver</button>
         </form>
