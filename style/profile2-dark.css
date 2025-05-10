@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #0A1B26;
+    color: #F9FAFB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+nav {
+    height: 48px;
+    background-color: #0D2A3A;
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+nav img {
+    height: 80px;
+    width: 80px;
+}
+
+#nav-button {
+    background-color: #045F94;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 40px;
+    margin-right: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    text-align: left;
+    text-decoration: none;
+}
+
+nav button:hover {
+    background-color: #015585;
+}
+
+.welcome {
+    color: white;
+    margin-right: 20px;
+}
+
+#main-card {
+    background-color: #1F2937;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    width: fit-content;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+
+legend {
+    font-size: 1.5em;
+    padding-bottom: 10px;
+    color: #93C5FD;
+}
+
+label {
+    margin-top: 20px;
+    color: #E5E7EB;
+}
+
+input, select {
+    background-color: #111827;
+    color: #F9FAFB;
+    border: 1px solid #475569;
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 225px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #045F94;
+    border: none;
+    color: white;
+    margin-top: 30px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #015585;
+}
+
+th {
+    text-align: left;
+    padding-right: 30px;
+    color: #E5E7EB;
+}
+
+.edit-button, .cancel-button, .validate-button {
+    background-color: #045F94;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.edit-button:hover, .cancel-button:hover, .validate-button:hover {
+    background-color: #015585;
+}
+
+.editable-field td {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 15px;
+    bottom: 0;
+    background-color: #0D2A3A;
+    width: 100%;
+    position: fixed;
+}
+
+footer ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+}
+
+footer a {
+    color: #93C5FD;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

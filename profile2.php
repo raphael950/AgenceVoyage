@@ -14,9 +14,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifier mon profil</title>
-    <link rel="stylesheet" href="style/profile2.css">
+    <link id="theme-style" rel="stylesheet" href="style/profile2.css">
     <script src="https://kit.fontawesome.com/1633e685ed.js" crossorigin="anonymous"></script>
     <script src="script/profile2.js" defer></script> <!-- Lien vers le fichier JS -->
+    <script src="script/theme.js"></script>
+
 </head>
 <body>
     <nav>

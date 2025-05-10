@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #0A1B26;
+    color: #F9FAFB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#main-card {
+    background-color: #1F2937;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    width: 300px;
+}
+
+.bg-image {
+    background-image: url(https://baptisteverger.fr/wp-content/uploads/2022/11/peche-en-bord-de-mer.jpg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(2px) brightness(0.5);
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding: 0;
+}
+
+legend {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #93C5FD;
+}
+
+input {
+    border: 1px solid #4B5563;
+    width: 100%;
+    font-size: 1em;
+    padding: 10px 0px;
+    border-radius: 10px;
+    background-color: #374151;
+    color: #F9FAFB;
+}
+
+input::placeholder {
+    color: #9CA3AF;
+}
+
+input:last-of-type {
+    background-color: #045F94;
+    border: none;
+    color: white;
+    margin-top: 30px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+input:last-of-type:hover {
+    background-color: #015585;
+}
+
+label {
+    margin-top: 20px;
+    color: #D1D5DB;
+}
+
+.info {
+    font-size: 0.9em;
+    color: #9CA3AF;
+    margin-top: 10px;
+}
+
+.back-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.back-link a {
+    color: #60A5FA;
+    text-decoration: none;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}

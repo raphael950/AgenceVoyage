@@ -14,7 +14,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Se connecter</title>
-    <link rel="stylesheet" href="style/login.css">
+    <link id="theme-style" rel="stylesheet" href="style/login.css">
+    <script src="script/theme.js"></script>
+
 </head>
 <body>
     <div class="bg-image"></div>
