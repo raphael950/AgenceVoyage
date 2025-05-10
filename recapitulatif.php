@@ -79,8 +79,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Réservation de Voyage</title>
-    <link rel="stylesheet" href="style/recapitulatif.css">
+    <link id="theme-style" rel="stylesheet" href="style/recapitulatif.css">
     <script src="script/recapitulatif.js" defer></script>
+    <script src="script/theme.js"></script>
+
 </head>
 <body data-prixPersonne="<?php echo $prix; ?>">
     <div class="bg-image"></div>

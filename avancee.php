@@ -8,11 +8,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Fishing Travel - Recherche Avancée</title>
-    <link rel="stylesheet" href="style/recherche.css">
+    <link id="theme-style" rel="stylesheet" href="style/recherche.css">
     <script src="https://kit.fontawesome.com/1633e685ed.js" crossorigin="anonymous"></script>
+    <script src="script/theme.js"></script>
+
 </head>
 <body>
     <nav>
+        <button id="login-button" onclick="switchTheme('style/recherche')">
+            <i class="fa-regular fa-lightbulb"></i>
+        </button>
         <?php
             if (isset($_SESSION["user"])) {
                 $username = htmlspecialchars($_SESSION["user"]["username"]);

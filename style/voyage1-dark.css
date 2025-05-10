@@ -5,7 +5,8 @@
 }
 
 body {
-    background-color: #f9fafb;
+    background-color: #0A1B26;
+    color: #E5E7EB;
 }
 
 nav {
@@ -15,12 +16,10 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /*position: fixed;
-    top: 0;*/
     width: 100%;
 }
 
-nav img{
+nav img {
     height: 80px;
     width: 80px;
 }
@@ -53,7 +52,6 @@ nav button:hover {
     margin-right: 20px;
 }
 
-
 .photos {
     display: flex;
     justify-content: center;
@@ -67,31 +65,35 @@ nav button:hover {
     margin-bottom: 30px;
 }
 
-h1{
+h1 {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 50px;
+    color: #F3F4F6;
 }
 
-.texte{
+.texte {
     margin-left: 30px;
 }
 
-h3{
+h3 {
     margin-top: 20px;
     margin-bottom: 10px;
+    color: #F3F4F6;
 }
 
 p {
     margin-bottom: 10px;
+    color: #D1D5DB;
 }
 
-#h2{
+#h2 {
     margin-left: 30px;
-    margin-top:30px;
+    margin-top: 30px;
+    color: #F3F4F6;
 }
 
-.poissons{
+.poissons {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -102,7 +104,7 @@ p {
     text-align: center;
 }
 
-.poissons img{
+.poissons img {
     margin-bottom: 5px;
     width: 50%;
     height: auto;
@@ -110,9 +112,7 @@ p {
     margin-top: 30px;
 }
 
-
-
-/* astuce pour le footer pour que celui ci reste bien collé au bas de la page */
+/* Footer fix */
 html, body {
     height: 100%;
     margin: 0;
@@ -122,7 +122,7 @@ html, body {
 
 main {
     flex-grow: 1;
-    background-color: #f9fafb;
+    background-color: #0A1B26;
 }
 
 footer {
@@ -131,7 +131,6 @@ footer {
     text-align: center;
     padding-top: 15px;
     padding-bottom: 15px;
-    bottom: 0;
     background-color: #0D2A3A;
     width: 100%;
 }
@@ -140,22 +139,25 @@ footer ul {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    list-style:none;
+    list-style: none;
     padding: 0px;
     margin: 30px 0px;
+}
+
+footer a {
+    color: white;
 }
 
 footer a:hover {
     text-decoration: underline;
 }
 
-
 .etapes {
     display: flex;
     flex-direction: column;
     gap: 30px;
     margin: 30px auto;
-    max-width: 1200px; /* Limite la largeur de l'ensemble des étapes */
+    max-width: 1200px;
     padding: 0 20px;
 }
 
@@ -163,14 +165,14 @@ footer a:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #ffffff;
+    background: #1F2937;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     margin: 10px 0;
     transition: transform 0.3s ease;
     width: 100%;
-    max-width: 900px; /* Limite la largeur de chaque carte */
+    max-width: 900px;
 }
 
 .etape:hover {
@@ -187,27 +189,27 @@ footer a:hover {
 .etape h4 {
     margin: 0;
     font-size: 22px;
-    color: #333;
+    color: #E5E7EB;
     font-weight: 600;
 }
 
 .etape p {
     margin: 10px 0;
-    color: #555;
+    color: #CBD5E1;
     font-size: 16px;
 }
 
 .etape-image {
     flex-shrink: 0;
-    width: 200px; /* Réduit la largeur de l'image */
+    width: 200px;
 }
 
 .etape-image img {
     width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    object-fit: cover; /* Assure que l'image couvre son conteneur sans déformer */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    object-fit: cover;
 }
 
 .reservation {
@@ -241,15 +243,15 @@ footer a:hover {
 .options {
     margin-top: 15px;
     padding: 10px;
-    background-color: #f8fafc; /* Couleur de fond légère */
+    background-color: #1E293B;
     border-radius: 8px;
-    border: 1px solid #d1d5db; /* Bordure discrète */
+    border: 1px solid #334155;
 }
 
 .options h5 {
     margin: 5px 0;
     font-size: 18px;
-    color: #333;
+    color: #F3F4F6;
     font-weight: 600;
 }
 
@@ -260,20 +262,18 @@ footer a:hover {
 
 .options li {
     font-size: 16px;
-    color: #555;
+    color: #CBD5E1;
     padding: 5px 0;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #e5e7eb; /* Séparation entre les options */
+    border-bottom: 1px solid #334155;
 }
 
 .options li:last-child {
-    border-bottom: none; /* Pas de bordure en bas pour le dernier élément */
+    border-bottom: none;
 }
 
 .options li span {
     font-weight: bold;
-    color: #045F94; /* Bleu pour faire ressortir le prix */
+    color: #60A5FA;
 }
-
-

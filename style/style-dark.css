@@ -4,7 +4,8 @@
 }
 
 body {
-    background-color: #0D2A3A;
+    background-color: #0A0F1A;
+    color: #E0E0E0;
 }
 
 nav {
@@ -17,12 +18,11 @@ nav {
 }
 
 .welcome {
-    color: white;
+    color: #ffffff;
 }
 
-
 .button {
-    background-color: #045F94;
+    background-color: #1E90FF;
     border-style: none;
     border-radius: 10px;
     padding: 15px 40px;
@@ -32,28 +32,29 @@ nav {
     font-size: medium;
     text-decoration: none;
     cursor: grab;
+
 }
 
 #register-button:hover {
-    background-color:#163c50;
+    background-color: #155d8b;
 }
 
 #register-button {
-    background-color:#184862;
+    background-color: #1a6ea8;
 }
 
 #button-avancee {
-    color: #045F94;
-    background-color: white;
+    color: #1E90FF;
+    background-color: #1a1f2b;
+    border: 1px solid #1E90FF;
 }
 
-
 #login-button:hover {
-    background-color: #015585;
+    background-color: #1872b6;
 }
 
 #header p {
-    color: #0D2A3A;
+    color: #ffffff;
 }
 
 #header {
@@ -66,21 +67,21 @@ nav {
     height: 500px;
 
     display: flex;
-    color:#0D2A3A;
+    color: #ffffff;
     align-items: center;
     justify-content: center;
     font-size: 1.75em;
 }
 
 .search-container {
-    position: relative; /* place la loupe dans la barre */
+    position: relative;
     display: flex;
     align-items: center;
-    background: #f0f0f0;
+    background: #1c1c2e;
     border-radius: 25px;
     padding: 5px;
     width: 500px;
-    border: 1px solid #ccc;
+    border: 1px solid #444;
 }
 
 input[name="search"] {
@@ -89,16 +90,18 @@ input[name="search"] {
     padding-right: 40px;
     font-size: 16px;
     border: none;
-    background: white;
+    background: #2a2a3d;
+    color: #ffffff;
     border-radius: 25px;
 }
 
 input[name="gosearch"] {
     position: absolute;
-    right: 10px; /* decale la loupe de 10 a partir de la droite */
+    right: 10px;
     width: 20px;
     height: 20px;
-    cursor: pointer; /* curseur cliquer */
+    cursor: pointer;
+    filter: invert(100%);
 }
 
 /* */
@@ -112,7 +115,7 @@ input[name="gosearch"] {
 
 section#exemples {
     padding: 40px 0px;
-    background-color: #f9fafb;
+    background-color: #141922;
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
@@ -121,19 +124,19 @@ section#exemples {
     width: 100%;
 }
 
-
 .card {
-    background-color: white;
+    background-color: #1e1e2e;
     border-radius: 32px;
     padding: 8px;
     width: 200px;
     max-height: 100%;
+    color: #E0E0E0;
 }
 
 .card a {
     display: flex;
     flex-direction: column;
-    height: 100%; /* Assurer que l’ancre prend toute la hauteur */
+    height: 100%;
 }
 
 .card img {
@@ -154,12 +157,9 @@ section#exemples {
     flex-grow: 1;
 }
 
-
-
-
 section#points-forts {
-    color: #0D2A3A;
-    background-color: white;
+    color: #E0E0E0;
+    background-color: #121820;
     text-align: center;
     padding: 80px;
 }
@@ -185,18 +185,17 @@ section#points-forts > div {
     align-items: center;
 }
 
-
 footer {
-    color: white;
+    color: #CCCCCC;
     text-align: center;
     padding: 15px;
     position: relative;
     bottom: 0;
+    background-color: #0a0f1a;
 }
 
-/* Liens dans le footer */
 footer a {
-    color: #FFFFFF;
+    color: #CCCCCC;
     text-decoration: none;
 }
 
@@ -204,7 +203,7 @@ footer ul {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    list-style:none;
+    list-style: none;
     padding: 0px;
     margin: 30px 0px;
 }
@@ -217,7 +216,3 @@ a {
 footer a:hover {
     text-decoration: underline;
 }
-
-
-
-

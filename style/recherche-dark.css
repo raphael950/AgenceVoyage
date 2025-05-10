@@ -4,7 +4,8 @@
 }
 
 body {
-    background-color: #0D2A3A;
+    background-color: #0A0F1A;
+    color: #E0E0E0;
 }
 
 nav {
@@ -44,7 +45,7 @@ nav {
     background-size: cover;
     height: 500px;
     display: flex;
-    color: #0D2A3A;
+    color: #FFFFFF;
     align-items: center;
     justify-content: center;
     font-size: 1.75em;
@@ -60,18 +61,20 @@ nav {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    background: #f0f0f0;
+    background: #1f2a38;
     border-radius: 25px;
     padding: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #2c2f36;
 }
 
-.search-container input, .search-container select {
+.search-container input,
+.search-container select {
     flex: 1;
     padding: 12px;
     font-size: 18px;
-    border: 1px solid #ccc;
-    background: white;
+    border: 1px solid #444;
+    background: #2c2f36;
+    color: #e0e0e0;
     border-radius: 25px;
 }
 
@@ -96,14 +99,14 @@ nav {
 
 section {
     padding: 80px;
-    background-color: #f9fafb;
+    background-color: #121820;
     display: flex;
     gap: 20px;
 }
 
 section#exemples {
     padding: 40px 0px;
-    background-color: #f9fafb;
+    background-color: #121820;
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
@@ -113,7 +116,7 @@ section#exemples {
 }
 
 .card {
-    background-color: white;
+    background-color: #1a1f2b;
     border-radius: 32px;
     padding: 8px;
     width: 200px;
@@ -125,7 +128,7 @@ section#exemples {
     flex-direction: column;
     height: 100%;
     text-decoration: none;
-    color: black;
+    color: #E0E0E0;
 }
 
 .card img {
@@ -147,12 +150,11 @@ section#exemples {
     flex-grow: 1;
 }
 
-
-
 footer {
     color: white;
     text-align: center;
     padding: 20px;
+    background-color: #0D2A3A;
 }
 
 footer ul {

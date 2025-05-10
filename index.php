@@ -11,12 +11,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     -->
     <title>Fishing Travel</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link id="theme-style" rel="stylesheet" href="style/style.css">
     <script src="https://kit.fontawesome.com/1633e685ed.js" crossorigin="anonymous"></script>
+    <script src="script/theme.js"></script>
     
 </head>
 <body>
     <nav>
+    <button class="button" onclick="switchTheme('style/style')">
+        <i class="fa-regular fa-lightbulb"></i>
+    </button>
     <?php
         if (isset($_SESSION["user"])) {
             $username = htmlspecialchars($_SESSION["user"]["username"]);
@@ -110,4 +114,5 @@
         <a href="https://github.com/raphael950/AgenceVoyage.git">Lien du GitHub</a>
     </footer>
 </body>
+
 </html>

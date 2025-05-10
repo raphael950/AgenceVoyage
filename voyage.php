@@ -29,8 +29,9 @@ if ($voyage):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($voyage['titre']); ?></title>
-    <link rel="stylesheet" href="style/voyage1.css">
+    <link id="theme-style" rel="stylesheet" href="style/voyage1.css">
     <script src="https://kit.fontawesome.com/1633e685ed.js" crossorigin="anonymous"></script>
+    <script src="script/theme.js"></script>
 </head>
 <body>
     <nav>
@@ -38,6 +39,9 @@ if ($voyage):
             <img src="assets/logo2.png" class="logo" alt="logo">
         </a>
         <div class="nav-buttons">
+            <button class="button" id="nav-button" onclick="switchTheme('style/voyage1')">
+                <i class="fa-regular fa-lightbulb"></i>
+            </button>
             <?php
                 if (isset($_SESSION["user"])) {
                     $username = htmlspecialchars($_SESSION["user"]["username"]);

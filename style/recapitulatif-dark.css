@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0A1B26;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    color: #E5E7EB;
+}
+
+.bg-image {
+    background-image: url('https://baptisteverger.fr/wp-content/uploads/2022/11/peche-en-bord-de-mer.jpg');
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px) brightness(0.6);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #F3F4F6;
+}
+
+#main-card {
+    background-color: #1F2937;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    width: 600px;
+    text-align: center;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #60A5FA;
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+select, input {
+    border: 2px solid #475569;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    font-size: 1em;
+    background-color: #111827;
+    color: #E5E7EB;
+}
+
+input[type="date"], input[type="number"] {
+    text-align: center;
+}
+
+.options {
+    margin-top: 10px;
+    background: #334155;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+h2, h3 {
+    margin-top: 15px;
+    color: #F3F4F6;
+}
+
+/* Ajustement des options pour aligner la checkbox et réduire la taille du texte */
+.option-label {
+    display: flex;
+    align-items: center;
+    font-size: 0.85em;
+    font-weight: normal;
+    color: #CBD5E1;
+}
+
+.option-label input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+button {
+    background-color: #045F94;
+    border: none;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #015585;
+}
+
+#prix_total {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #FACC15;
+}
