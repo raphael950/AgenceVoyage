@@ -186,3 +186,22 @@ footer ul {
 footer a:hover {
     text-decoration: underline;
 }
+
+.sort-controls {
+    margin-bottom: 20px;
+}
+
+.sort-controls button {
+    margin: 0 10px;
+    padding: 8px 16px;
+    background-color: #045F94;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.sort-controls button:hover {
+    background-color: #023a5c;
+}

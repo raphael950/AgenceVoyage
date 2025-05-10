@@ -91,39 +91,18 @@
     </nav>
     <main>
         <h1>Résultats de la recherche</h1>
-        <div class="results">
-            <?php if (count($results) > 0): ?>
-                <?php foreach ($resultsToDisplay as $result): ?>
-                    <?php $imageUrl = "assets/voyages/". $result["id"] . "/miniature.png";?>
-                    <div class="card">
-                        <img src="<?= $imageUrl ?>" alt="Image de <?= $imageUrl ?>">
-                        <div class="card-content">
-                            <h3><?= htmlspecialchars($result['titre']) ?></h3>
-                            <p><?= htmlspecialchars($result['texte']) ?></p>
-                            <p><strong>Pays :</strong> <?= htmlspecialchars($result['pays']) ?></p>
-                            <a href="voyage.php?id=<?= $result['id'] ?>">Voir les détails</a>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <p>Aucun résultat trouvé pour votre recherche.</p>
-            <?php endif; ?>
+        <div class="sort-controls">
+            <p><strong>Trier par :</strong>
+                <button onclick="sortResults('prix')">Prix</button>
+                <button onclick="sortResults('duree')">Durée</button>
+                <button onclick="sortResults('etapes')">Nombre d'étapes</button>
+            </p>
         </div>
-        <a href="avancee.php" id="back">Retour à la recherche</a>
 
-        <div class="pagination">
-            <?php if ($currentPage > 1): ?>
-                <a href="?search=<?= $search ?>&country=<?= $country ?>&travelers=<?= $travelers ?>&page=<?= $currentPage - 1 ?>">Précédent</a>
-            <?php endif; ?>
+        <div class="results"></div>
+        <div class="pagination"></div>
 
-            <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-                <a href="?search=<?= $search ?>&country=<?= $country ?>&travelers=<?= $travelers ?>&page=<?= $i ?>" <?= $i === $currentPage ? 'style="font-weight: bold;"' : '' ?>><?= $i ?></a>
-            <?php endfor; ?>
-
-            <?php if ($currentPage < $totalPages): ?>
-                <a href="?search=<?= $search ?>&country=<?= $country ?>&travelers=<?= $travelers ?>&page=<?= $currentPage + 1 ?>">Suivant</a>
-            <?php endif; ?>
-        </div>
+        
     </main>
 
     <footer>
@@ -135,5 +114,10 @@
         </ul>
         <a href="https://github.com/raphael950/AgenceVoyage.git">Lien du github</a>
     </footer>
+    <script>
+        const allResults = <?= json_encode($results) ?>;
+    </script>
+    <script src="script/tris.js"></script>
+
 </body>
 </html>
