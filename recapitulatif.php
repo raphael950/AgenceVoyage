@@ -59,6 +59,11 @@
         file_put_contents('data/reservations.json', json_encode($reservations, JSON_PRETTY_PRINT));
 
         $_SESSION["resaID"] = $resa_id;
+
+        // panier :
+        $_SESSION["panier"]["id"] = $voyage_id;
+        $_SESSION["panier"]["options"] = $options_souscrites;
+        $_SESSION["panier"]["nbpersonne"] = $nombre_personne;
         
         // Redirection vers la page de paiement
         header('Location: payment.php');
@@ -68,7 +73,10 @@
     if(isset($_GET["id"])){
         foreach ($voyages as $voyage) {
             if ($voyage['id'] == $_GET["id"]) {
-                $prix = $voyage['prix'];
+                $prix = $voyage['prix']; // pour transmettre la variable au js
+
+                // panier :
+                // $_SESSION["panier"]["id"] = $voyage['id'];
             }
         }
     }

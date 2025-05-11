@@ -60,6 +60,9 @@
     $montant = $montantRestant;
     $retour = "http://localhost:8080/script/payment_check.php";
     $control = md5($api_key. "#" . $transaction. "#" . $montant. "#" . $vendeur. "#" . $retour . "#");
+
+    // panier
+    $_SESSION["panier"]["prix"] = $prixTotalReserv;
 ?>
 
 <!DOCTYPE html>
