@@ -72,6 +72,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paiement : <?= htmlspecialchars($voyage['titre']); ?></title>
     <link id="theme-style" rel="stylesheet" href="style/payment.css">
+    <script src="https://kit.fontawesome.com/1633e685ed.js" crossorigin="anonymous"></script>
     <script src="script/theme.js"></script>
 
 </head>
@@ -98,6 +99,9 @@
             <input type='hidden' name='control' value='<?= $control ?>'>
             <input type='submit' value="Valider et payer">
         </form>
+        <a href="<?php echo "voyage.php?id=".$voyage["id"]; ?>">
+            <i class="fa-solid fa-arrow-left"></i> Retour à la personnalisation du voyage
+        </a>
     </div>
 </body>
 </html>

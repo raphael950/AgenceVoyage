@@ -88,6 +88,7 @@
     <meta charset="UTF-8">
     <title>Réservation de Voyage</title>
     <link id="theme-style" rel="stylesheet" href="style/recapitulatif.css">
+    <script src="https://kit.fontawesome.com/1633e685ed.js" crossorigin="anonymous"></script>
     <script src="script/recapitulatif.js" defer></script>
     <script src="script/theme.js"></script>
 
@@ -95,6 +96,9 @@
 <body data-prixPersonne="<?php echo $prix; ?>">
     <div class="bg-image"></div>
     <div id="main-card">
+        <a href="<?php echo "voyage.php?id=".$_GET["id"]; ?>">
+            <i class="fa-solid fa-arrow-left"></i> Retour page précédente
+        </a>
         <h1>Réservez votre voyage</h1>
         <form method="post">
             <label for="voyage">Choisissez un voyage :</label>
