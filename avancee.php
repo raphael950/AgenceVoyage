@@ -38,9 +38,24 @@
                 <input class="search" type="text" name="search" placeholder="Rechercher (optionnel)">
                 <select name="country" class="search">
                     <option value="">Sélectionner un pays</option>
-                    <option value="costa_rica">Costa Rica</option>
-                    <option value="canada">Canada</option>
-                    <option value="france">France</option>
+                    <?php
+                        $contenu = file_get_contents("data/voyages.json");
+                        $voyages = json_decode($contenu, true);
+                        $paysSet = [];
+                        foreach($voyages as $voyage){
+                            $listePays = explode(',', $voyage['pays']);
+                            foreach ($listePays as $p) {
+                                $paysSet[] = trim($p);
+                            }
+                            $paysUniques = array_unique($paysSet);
+                            sort($paysUniques);
+                        }
+                        foreach($paysUniques as $pays){
+                            echo <<<HTML
+                                <option value=$pays>$pays</option>
+                            HTML;
+                        }
+                    ?>
                 </select>
                 <input type="number" name="travelers" class="search" placeholder="Nombre de voyageurs" min="1" max="4">
                 <button type="submit" class="gosearch">Rechercher</button>
