@@ -37,3 +37,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // arrive sur la page => calcul initial du prix
     calculerPrixTotal();
 });
+
+document.getElementsByTagName("form")[0].addEventListener("submit", function (event) {
+    const dateInput = document.getElementById("date_depart");
+    const errorMsg = document.getElementById("erreurdate");
+    const selectedDate = new Date(dateInput.value);
+    const today = new Date();
+
+    if(today >= selectedDate){
+        event.preventDefault(); // empeche le submit du form
+        // alert("La date du départ doit être strictement supérieure à aujourd'hui");
+        errorMsg.textContent = "La date du départ doit être strictement supérieure à aujourd'hui.";
+    }
+    else errorMsg.textContent = "";
+});

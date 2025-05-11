@@ -108,6 +108,7 @@
 
             <label for="date_depart">Date de départ :</label>
             <input type="date" name="date_depart" id="date_depart" required>
+            <p id="erreurdate" style="color: red;"></p>
 
             <label for="nombre_personne">Nombre de personnes :</label>
             <input type="number" name="nombre_personne" id="nombre_personne" min="1" value="1" required>
