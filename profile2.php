@@ -16,7 +16,7 @@
     <title>Modifier mon profil</title>
     <link id="theme-style" rel="stylesheet" href="style/profile2.css">
     <script src="https://kit.fontawesome.com/1633e685ed.js" crossorigin="anonymous"></script>
-    <script src="script/profile2.js" defer></script> <!-- Lien vers le fichier JS -->
+    <script src="script/profile2.js" defer></script>
     <script src="script/theme.js"></script>
 
 </head>
@@ -86,7 +86,7 @@
                     <tr class="editable-field">
                         <th><label for="date">Date de naissance</label></th>
                         <td>
-                            <input type="date" name="date" value="<?php echo $_SESSION["user"]["birth"] ?? '';?>" disabled />
+                            <input type="date" name="date" id="date" value="<?php echo $_SESSION["user"]["birth"] ?? '';?>" disabled />
                             <button type="button" class="edit-button"><i class="fa-solid fa-pen"></i></button>
                             <button type="button" class="cancel-button" style="display: none;"><i class="fa-solid fa-rotate-left"></i></button>
                             <button type="button" class="validate-button" style="display: none;"><i class="fa-solid fa-check"></i></button>
@@ -103,6 +103,7 @@
                     </tr>
                 </table>
                 <input type="submit" id="submit-button" value="Soumettre" style="display: none;">
+                <p id="erreurdate" style="color: red; margin-top:5px;"></p>
             </fieldset>
         </form>
     </div>

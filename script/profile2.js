@@ -53,11 +53,9 @@ document.addEventListener("DOMContentLoaded", function () {
             submitButton.style.display = isModified ? "block" : "none";
         });
 
-
         // par définition les données ne peuvent pas etre envoyée en post quand il y a 'disabled'
         // on décide donc que, lorsque l'user sumbit, on passe tout les champ en non 'disabled'
-        // ce qui nous permet donc d'envoyer les données en post normalement :
-        
+        // ce qui nous permet donc d'envoyer les données en post normalement :        
         submitButton.addEventListener("click", function () {
             fields.forEach(function (field) {
                 var input = field.querySelector("input, select");
@@ -68,4 +66,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     
+});
+
+document.getElementsByTagName("form")[0].addEventListener("submit", function (event) {
+    const dateInput = document.getElementById("date");
+    const errorMsg = document.getElementById("erreurdate");
+    const selectedDate = new Date(dateInput.value);
+    const today = new Date();
+
+    if(today <= selectedDate){
+        event.preventDefault(); // empeche le submit du form
+        errorMsg.textContent = "La date de naissance doit être strictement inférieure à aujourd'hui. (bonjour Marty Mcfly)";
+        var fields = document.querySelectorAll(".editable-field");
+        fields.forEach(function (field) {   // pour eviter que les champs restent activés
+            var input = field.querySelector("input, select");
+            input.disabled = true;
+        });
+    }
+    else errorMsg.textContent = "";
 });
