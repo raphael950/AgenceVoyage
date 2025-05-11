@@ -37,7 +37,7 @@
         file_put_contents("../data/transactions.json", json_encode($transactions, JSON_PRETTY_PRINT));
 
         $_SESSION["payment"] = "accepted";
-        header("Location: ../payment.php"); // TODO : pages des voyages réservés
+        header("Location: ../reservations.php");
     } else {
         $_SESSION["payment"] = "declined";
         header("Location: ../payment.php");
