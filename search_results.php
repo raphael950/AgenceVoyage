@@ -1,26 +1,21 @@
 <?php
     session_start();
 
-    // récupérer les paramètres de recherche
     $search = trim($_GET['search'] ?? '');
     $country = trim($_GET['country'] ?? '');
     $travelers = intval($_GET['travelers'] ?? 0);
 
-    // charger les données des voyages
     $voyages = json_decode(file_get_contents('data/voyages.json'), true);
     $results = [];
 
-    // parcourir les voyages pour trouver des correspondances
     foreach ($voyages as $voyage) {
         $match = true;
 
-        // vérifier le champ "search" dans titre, texte, secteur, poissons
         if (!empty($search)) {
             $foundInTitle = stripos($voyage['titre'], $search) !== false;
             $foundInText = stripos($voyage['texte'], $search) !== false;
             $foundInCountry = stripos($voyage['pays'], $search) !== false;
 
-            // vérifier dans les secteurs et poissons
             $foundInSecteur = false;
             $foundInPoissons = false;
             foreach ($voyage['etapes'] as $etape) {

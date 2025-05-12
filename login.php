@@ -14,8 +14,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Se connecter</title>
+    <script src="https://kit.fontawesome.com/1633e685ed.js" crossorigin="anonymous"></script>
     <link id="theme-style" rel="stylesheet" href="style/login.css">
     <script src="script/theme.js"></script>
+    <script src="script/password_visibility.js"></script>
 
 </head>
 <body>
@@ -34,7 +36,12 @@
                 <input type="email" name="mail" id="email" placeholder="Email" required>
 
                 <label for="pass">Mot de passe</label>
-                <input type="password" name="pass" id="pass" placeholder="Mot de passe" required>
+
+                <div class="password-container">
+                    <input type="password" name="pass" id="pass" placeholder="Mot de passe" required>
+                    <i class="fas fa-eye" id="togglePassword"></i>
+                </div>
+
                 <a href="oublie.html">Mot de passe oublié</a>
                 <input type="submit" value="Se connecter">
             </fieldset>

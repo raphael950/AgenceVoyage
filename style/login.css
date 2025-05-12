@@ -60,7 +60,7 @@ input {
     box-sizing: border-box;
 }
 
-input:last-of-type {
+input[type="submit"] {
     background-color: #045F94;
     border-style: none;
     color:white;
@@ -75,4 +75,22 @@ input:last-child:hover {
 
 label {
     margin-top: 20px;
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container input {
+    padding-right: 40px; /* espace pour l’icône */
+}
+
+.password-container i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
 }
