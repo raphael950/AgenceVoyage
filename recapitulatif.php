@@ -7,31 +7,29 @@
         exit();
     }
     
-    // Charger les données des voyages
     $voyages = json_decode(file_get_contents('data/voyages.json'), true);
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Récupération des données du formulaire
+
+        // recup données du formulaire
         $voyage_id = (int) $_POST['voyage_id'];
         $date_depart = $_POST['date_depart'];
         $nombre_personne = (int) $_POST['nombre_personne'];
         $options_souscrites = [];
         
-        // Trouver le voyage sélectionné
         foreach ($voyages as $voyage) {
             if ($voyage['id'] == $voyage_id) {
                 // Parcourir les étapes et les options
                 foreach ($voyage['etapes'] as $etape) {
                     foreach ($etape['options'] as $option) {
-                        // Vérifier si l'option a été sélectionnée dans le formulaire
                         if (isset($_POST['options'][$option['nom']])) {
-                            // Calcul du prix pour les options de type 'individuel'
+                            // calcul du prix pour les options de type 'individuel'
                             if ($option['type'] == 'individuel') {
                                 $quantite_option = $_POST['options'][$option['nom']];
                                 if ((int) $quantite_option == 0) continue;
                                 $options_souscrites[$option['nom']] = (int) $quantite_option;
                             } else {
-                                // Calcul du prix pour les options de type 'groupe'
+                                // calcul du prix pour les options de type 'groupe'
                                 $options_souscrites[$option['nom']] = 1;
                             }
                         }
@@ -146,10 +144,10 @@
 
     <script>
     document.getElementById('voyage').addEventListener('change', function() {
-        // Masquer toutes les options
+
+        // masquer les options
         document.querySelectorAll('.options').forEach(div => div.style.display = 'none');
 
-        // Afficher les options du voyage sélectionné
         var selectedVoyageId = this.value;
         var optionsContainer = document.getElementById('options-' + selectedVoyageId);
         if (optionsContainer) {
@@ -157,7 +155,6 @@
         }
     });
 
-    // Si la page se charge et qu'un voyage est déjà sélectionné, on affiche ses options.
     window.onload = function() {
         var selectedVoyageId = document.getElementById('voyage').value;
         if (selectedVoyageId) {

@@ -4,13 +4,10 @@ let currentSort = '';
 let ascending = true;
 let sortedResults = [...allResults];
 
-// Fonction pour calculer la durée d’un voyage si absente
+// calculer la durée d’un voyage
 sortedResults.forEach(voyage => {
     console.log(voyage);
     if (!voyage.duree) {
-        voyage.duree = 
-        // Ex. : durée = nombre d'étapes ou autre critère simple
-        console.log("test");
         voyage.duree = 0;
         voyage.etapes.forEach(etape => {
             voyage.duree += etape.nb_jours;
@@ -18,7 +15,6 @@ sortedResults.forEach(voyage => {
     }
 });
 
-// Rendu des cartes
 function renderResults(results, page = 1) {
     const start = (page - 1) * resultsPerPage;
     const end = start + resultsPerPage;
@@ -85,7 +81,6 @@ function renderPagination(totalResults, current) {
     });
 }
 
-// Tri dynamique
 function sortResults(by) {
     if (currentSort === by) {
         ascending = !ascending;
@@ -114,7 +109,6 @@ function sortResults(by) {
     renderResults(sortedResults, currentPage);
 }
 
-// Init au chargement
 document.addEventListener('DOMContentLoaded', () => {
     renderResults(sortedResults, currentPage);
 });
