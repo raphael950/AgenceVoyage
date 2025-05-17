@@ -23,16 +23,18 @@
         $user["birth"] = $date;
         $user["adresse"] = $adresse;
 
-        file_put_contents("../data/users.json", json_encode($users, JSON_PRETTY_PRINT));
+        $update_ok = file_put_contents("../data/users.json", json_encode($users, JSON_PRETTY_PRINT)) != false;
         $_SESSION["user"]=$user;
-        header("Location: ../profile2.php");
+        // echo json_encode(["success" => true, "message" => "profil modifié"]); // reponse de l'API
+        // header("Location: ../profile2.php");
+
+        header('Content-Type: application/json');
+        if ($update_ok == true) {
+            echo json_encode(['success' => true, "message" => "profil modifié"]);
+        } else {
+            echo json_encode(['success' => false, 'message' => 'Erreur lors de la mise à jour.']);
+        }
+
         break;
     }
-
-    /*
-    file_put_contents("../data/users.json", json_encode($users, JSON_PRETTY_PRINT));
-    $_SESSION["user"]=$user;
-    header("Location: ../profile2.php");
-    */
-    
 ?>

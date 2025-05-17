@@ -103,7 +103,7 @@
                     </tr>
                 </table>
                 <input type="submit" id="submit-button" value="Soumettre" style="display: none;">
-                <p id="erreurdate" style="color: red; margin-top:5px;"></p>
+                <p id="erreurdate" style="color: red; margin-top:5px; text-align:center;"></p>
             </fieldset>
         </form>
     </div>
