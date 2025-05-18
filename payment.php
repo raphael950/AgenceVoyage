@@ -99,7 +99,7 @@
             <input type='hidden' name='control' value='<?= $control ?>'>
             <input type='submit' value="Valider et payer">
         </form>
-        <a href="<?php echo "voyage.php?id=".$voyage["id"]; ?>">
+        <a href="<?php echo "recapitulatif.php?id=".$voyage["id"]; ?>">
             <i class="fa-solid fa-arrow-left"></i> Retour à la personnalisation du voyage
         </a>
     </div>
