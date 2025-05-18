@@ -148,6 +148,13 @@ button[value="ban"]:hover {
     pointer-events: none;
 }
 
+#spinner{
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+
 footer {
     color: white;
     text-align: center;
