@@ -90,6 +90,9 @@
             </table>
         </div>
 
+        <div id="spinner">
+            <h3 id="loading-spinner" style="display:none;">Modification en cours <i class="fa fa-spinner fa-spin"></i></h3>
+        </div>
         
         <div class="pagination">
             <?php if ($currentPage > 1): ?>

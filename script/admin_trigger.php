@@ -14,7 +14,8 @@
                 $user["role"] = "vip";
             }
         }
-        file_put_contents("../data/users.json", json_encode($users, JSON_PRETTY_PRINT));
+        $update_ok = file_put_contents("../data/users.json", json_encode($users, JSON_PRETTY_PRINT)) != false;
+        return $update_ok;
     }
     
     function ban($users, $client_id){
@@ -24,21 +25,32 @@
                 break;
             }
         }
-        file_put_contents("../data/users.json", json_encode($users, JSON_PRETTY_PRINT));
+        $update_ok = file_put_contents("../data/users.json", json_encode($users, JSON_PRETTY_PRINT)) != false;
+        return $update_ok;
     }
 
     $action = $_POST['action']; // récupére le but du bouton cliqué
     switch ($action){
         case "vip":
-            give_vip($users, $client_id);
+            $update_ok = give_vip($users, $client_id);
             break;
         case "ban":
-            ban($users, $client_id);
+            $update_ok = ban($users, $client_id);
             break;
         default:
             echo "Action non reconnue.";
             break;
     }
 
-    header("Location: ../admin2.php");
+    //$update_ok = file_put_contents("../data/users.json", json_encode($users, JSON_PRETTY_PRINT)) != false;
+    //header('Content-Type: application/json');
+    sleep(3);
+    header('Content-Type: text/plain');
+    if ($update_ok == true) {
+        http_response_code(200);
+        // echo "OK";
+    } else {
+        http_response_code(500);
+        // echo "ERR";
+    }
 ?>
