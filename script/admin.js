@@ -1,38 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* ne sert plus à rien
-    function multiBoutons(selecteurBouton, actionValue = null) {
-        document.querySelectorAll(selecteurBouton).forEach(function (button) {
-            button.addEventListener("click", function (event) {
-                event.preventDefault(); // fix: empeche le formulaire de submit direct
-                button.style.backgroundColor = "grey";
-                setTimeout(function () {
-                    const form = button.closest("form");
-                    if (!form) return;
-                    if (actionValue !== null) {
-                        // on recréé tous les champs à la main car form.submit() fait crash le php sinon
-                        const hiddenAction = document.createElement("input");
-                        hiddenAction.type = "hidden";
-                        hiddenAction.name = "action";
-                        hiddenAction.value = actionValue;
-                        form.appendChild(hiddenAction);
-                    }
-                    //form.submit();
-                }, 5000);
-            });
-        });
-    }
-
-    multiBoutons(".editButton");
-    multiBoutons(".vipButton", "vip");
-    multiBoutons(".banButton", "ban");
-
-
-
-
-    */
-
-    // Ajoute un écouteur sur chaque bouton d'action
     document.querySelectorAll('.vipButton, .banButton').forEach(function(button) {
         button.addEventListener('click', async function(event) {
             event.preventDefault();
@@ -86,46 +53,5 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
-
-    /*
-    console.log("aaa");
-    Array.from(document.getElementsByTagName("form")).forEach(function (form){
-        console.log("bbb");
-        form.addEventListener("click", async function(bouton){
-            console.log("ccc");
-            bouton.preventDefault();
-            const formData = new FormData(form);
-            
-            if(bouton.textContent == "Modifer") return;
-            try{
-                const response = await fetch("script/admin_trigger.php", {
-                    method:"POST",
-                    body: FormData // bouton
-                });
-                const result = await response.text();
-                console.log(formData);
-                console.log(bouton);
-
-                if(response.ok == true){
-                    console.log("response.ok == true");
-                }
-                else{
-                    console.log("erreur" + response.status);
-                }
-            }
-            catch(error){
-                console.log("error");
-                // errorMsg.textContent = "Erreur réseau. Modifications annulées";                
-            }
-
-        });
-
-
-    });*/
-
-    
-
-
-
 
 });
