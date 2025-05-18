@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const optionsGroupes = document.querySelectorAll(".option-groupe");
 
     const selectVoyage = document.getElementById("voyage");
-    const voyageId = selectVoyage.value;
 
 
     function isVisible(element) {
@@ -19,6 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
     async function envoyerRequetePrixTotal() {
+        const voyageId = selectVoyage.value;
+
         const nombrePersonnes = parseInt(nombrePersonnesInput.value, 10) || 0;
 
 
@@ -83,6 +84,10 @@ document.addEventListener("DOMContentLoaded", () => {
     optionsGroupes.forEach(option => {
         option.addEventListener("change", envoyerRequetePrixTotal);
     });
+
+
+    selectVoyage.addEventListener("change", envoyerRequetePrixTotal);
+
 
     envoyerRequetePrixTotal();
 });
