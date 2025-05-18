@@ -23,7 +23,15 @@
         $user["adresse"] = $adresse;
     }
 
-    file_put_contents("../data/users.json", json_encode($users, JSON_PRETTY_PRINT));
-    header("Location: ../admin2.php");
+    $update_ok = file_put_contents("../data/users.json", json_encode($users, JSON_PRETTY_PRINT)) != false;
+    // echo json_encode(["success" => true, "message" => "profil modifié"]); // reponse de l'API
+    // header("Location: ../profile2.php");
+
+    header('Content-Type: application/json');
+    if ($update_ok == true) {
+        echo json_encode(['success' => true, "message" => "profil modifié"]);
+    } else {
+        echo json_encode(['success' => false, 'message' => 'Erreur lors de la mise à jour.']);
+    }
     
 ?>

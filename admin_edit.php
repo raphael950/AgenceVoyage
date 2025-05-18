@@ -16,14 +16,6 @@
             break;
         }
     }
-
-    // user non admin ou pas connecté mais se rend sur la page quand meme via URL
-    /*
-    if (!isset($_SESSION["user"]) || $_SESSION["user"]["role"] != "admin"){
-        header("Location: login.php");
-        exit();
-    }
-    */
 ?>
 
 <!DOCTYPE html>
@@ -34,6 +26,7 @@
     <title>Modifier un profil</title>
     <link id="theme-style" rel="stylesheet" href="style/profile2.css">
     <script src="https://kit.fontawesome.com/1633e685ed.js" crossorigin="anonymous"></script>
+    <script src="script/admin_edit.js" defer></script>
     <script src="script/theme.js"></script>
 
     
@@ -70,33 +63,57 @@
 
                 <legend>Modifier le profil n°<?php echo $client_id;?></legend>
                 <table>
-                    <tr>
-                        <th><label for="nom">Nom</label></td>
-                        <td><input type="text" id="nom" name="nom" value="<?php echo $client["username"];?>"/></td>
-                    </tr>
-                    <tr>
-                        <th><label for="email">E-mail</label></td>
-                        <td><input type="email" id="email" name="email" value="<?php echo $client["email"];?>"/></td>
-                    </tr>
-                    <tr>
-                        <th><label for="sexe">Sexe</label></td>
+                    <tr class="editable-field">
+                        <th><label for="nom">Nom</label></th>
                         <td>
-                            <select name="sexe">
+                            <input type="text" id="nom" name="nom" value="<?php echo $client["username"];?>" disabled />
+                            <button type="button" class="edit-button"><i class="fa-solid fa-pen"></i></button>
+                            <button type="button" class="cancel-button" style="display: none;"><i class="fa-solid fa-rotate-left"></i></button>
+                            <button type="button" class="validate-button" style="display: none;"><i class="fa-solid fa-check"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="editable-field">
+                        <th><label for="email">E-mail</label></th>
+                        <td>
+                            <input type="email" id="email" name="email" value="<?php echo $client["email"];?>" disabled />
+                            <button type="button" class="edit-button"><i class="fa-solid fa-pen"></i></button>
+                            <button type="button" class="cancel-button" style="display: none;"><i class="fa-solid fa-rotate-left"></i></button>
+                            <button type="button" class="validate-button" style="display: none;"><i class="fa-solid fa-check"></i></button>
+                        </td>
+                    </tr>
+                    <tr class="editable-field">
+                        <th><label for="sexe">Sexe</label></th>
+                        <td>
+                            <select name="sexe" disabled>
                                 <option value="Homme" <?= (($client["gender"] ?? '') == "Homme") ? 'selected' : '' ?>>Homme</option>
                                 <option value="Femme" <?= (($client["gender"] ?? '') == "Femme") ? 'selected' : '' ?>>Femme</option>
                             </select>
+                            <button type="button" class="edit-button"><i class="fa-solid fa-pen"></i></button>
+                            <button type="button" class="cancel-button" style="display: none;"><i class="fa-solid fa-rotate-left"></i></button>
+                            <button type="button" class="validate-button" style="display: none;"><i class="fa-solid fa-check"></i></button>
                         </td>
                     </tr>
-                    <tr>
-                        <th><label for="date">Date de naissance</label></td>
-                        <td><input type="date" name="date" value="<?php if(isset($client["birth"])){echo $client["birth"];}?>"></td>
+                    <tr class="editable-field">
+                        <th><label for="date">Date de naissance</label></th>
+                        <td>
+                            <input type="date" name="date" id="date" value="<?php echo $client["birth"] ?? '';?>" disabled />
+                            <button type="button" class="edit-button"><i class="fa-solid fa-pen"></i></button>
+                            <button type="button" class="cancel-button" style="display: none;"><i class="fa-solid fa-rotate-left"></i></button>
+                            <button type="button" class="validate-button" style="display: none;"><i class="fa-solid fa-check"></i></button>
+                        </td>
                     </tr>
-                    <tr>
-                        <th><label for="adresse">Adresse</label></td>
-                        <td><input type="text" id="adresse" name="adresse" value="<?php if(isset($client["adresse"])){echo $client["adresse"];}?>"/></td>
+                    <tr class="editable-field">
+                        <th><label for="adresse">Adresse</label></th>
+                        <td>
+                            <input type="text" id="adresse" name="adresse" value="<?php echo $client["adresse"] ?? '';?>" disabled />
+                            <button type="button" class="edit-button"><i class="fa-solid fa-pen"></i></button>
+                            <button type="button" class="cancel-button" style="display: none;"><i class="fa-solid fa-rotate-left"></i></button>
+                            <button type="button" class="validate-button" style="display: none;"><i class="fa-solid fa-check"></i></button>
+                        </td>
                     </tr>
                 </table>
-                <input type="submit" value="Modifier">
+                <input type="submit" id="submit-button" value="Soumettre" style="display: none;">
+                <p id="erreurdate" style="color: red; margin-top:5px; text-align:center;"></p>
             </fieldset>
         </form>
     </div>
