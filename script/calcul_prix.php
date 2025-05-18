@@ -1,4 +1,3 @@
-
 <?php
     header("Content-Type: application/json");
     include("../include/voyage_utils.php");
