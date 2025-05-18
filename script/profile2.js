@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     var fields = document.querySelectorAll(".editable-field");
     var submitButton = document.getElementById("submit-button");
-    var isModified = false;
 
     fields.forEach(function (field) {
         var input = field.querySelector("input, select");
@@ -25,21 +24,22 @@ document.addEventListener("DOMContentLoaded", function () {
             editButton.style.display = "inline-block";
         });
 
+        originalValue = input.value;
         validateButton.addEventListener("click", function () {
-            originalValue = input.value;
             input.disabled = true;
             cancelButton.style.display = "none";
             validateButton.style.display = "none";
             editButton.style.display = "inline-block";
 
-            // verif si au moins un champ a été validé
-            isModified = Array.from(fields).some(function (field) {
-                var fieldInput = field.querySelector("input, select");
-                return fieldInput.value !== originalValue;
-            });
-
-            // affiche le bouton "soumettre" que si une modification a été validée
-            submitButton.style.display = isModified ? "block" : "none";
+            // comparaison des données originelles et nouvelles
+            console.log(originalValue);
+            console.log(field.querySelector("input, select").value);
+            if(originalValue == field.querySelector("input, select").value){
+                submitButton.style.display = "none";
+            }
+            else{
+                submitButton.style.display = "inline-block";
+            }
         });
 
         // par définition les données ne peuvent pas etre envoyée en post quand il y a 'disabled'
@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 input.disabled = false;
                 console.log("oaoaoa");
             });
+            originalValue = input.value; // si soumission, la nouvelle valeur originelle est celle qui est soumise
         });
         
     });
@@ -107,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         originalValues[name] = form.elements[name].value;   // application des nouvelles valeurs
                     }
                     errorMsg.textContent = "Modifications enregistrées";
+                    errorMsg.style.color = "green";
                 }
                 else{
                     console.log("result.success X true");
@@ -114,6 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         form.elements[name].value = originalValues[name];   // retour aux anciennes valeurs
                     }
                     errorMsg.textContent = "Erreur serveur. Modifications annulées";
+                    errorMsg.style.color = "red";
                 }
                 
             }
@@ -123,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         form.elements[name].value = originalValues[name];   // idem
                 }
                 errorMsg.textContent = "Erreur réseau. Modifications annulées";
+                errorMsg.style.color = "red";
             }
         }
 
