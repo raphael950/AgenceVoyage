@@ -1,41 +1,90 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const prixParPersonne = parseFloat(document.body.dataset.prixpersonne);
-    let nombrePersonnesInput = document.getElementById("nombre_personne");
-    let optionsIndividuelles = document.querySelectorAll(".option-individuelle");
-    let optionsGroupes = document.querySelectorAll(".option-groupe");
-    let prixTotalElement = document.getElementById("prix_total");
+    const prixTotalElement = document.getElementById("prix_total");
+    const nombrePersonnesInput = document.getElementById("nombre_personne");
+    const optionsIndividuelles = document.querySelectorAll(".option-individuelle");
+    const optionsGroupes = document.querySelectorAll(".option-groupe");
 
-    function calculerPrixTotal(){
-        let prixTotal = prixParPersonne * (parseInt(nombrePersonnesInput.value, 10) || 0);
+    const selectVoyage = document.getElementById("voyage");
+    const voyageId = selectVoyage.value;
 
-        optionsIndividuelles.forEach(function(option){
-            let quantite = parseInt(option.value, 10) || 0; // si pas défini, =0
-            let prixOption = parseFloat(option.dataset.prix) || 0;
-            prixTotal += quantite*prixOption;
-        });
 
-        optionsGroupes.forEach(function(option){
-            if (option.checked) {
-                let prixOption = parseFloat(option.dataset.prix) || 0;
-                prixTotal += prixOption;
+    function isVisible(element) {
+        return element.offsetParent !== null;
+    }
+
+    function getNomDepuisAttr(name) {
+        const match = name.match(/^options\[(.+)\]$/);
+        return match ? match[1] : null;
+    }
+    
+
+    async function envoyerRequetePrixTotal() {
+        const nombrePersonnes = parseInt(nombrePersonnesInput.value, 10) || 0;
+
+
+        const optionsInd = Array.from(optionsIndividuelles)
+            .filter(isVisible)
+            .map(option => ({
+                nom: getNomDepuisAttr(option.name),
+                quantite: parseInt(option.value, 10) || 0
+            }))
+            .filter(opt => opt.quantite > 0);
+
+        const optionsGrp = Array.from(optionsGroupes)
+            .filter(isVisible)
+            .filter(option => option.checked)
+            .map(option => getNomDepuisAttr(option.name));
+
+        try {
+            const response = await fetch("script/calcul_prix.php", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    nombre_personnes: nombrePersonnes,
+                    options_individuelles: optionsInd,
+                    options_groupes: optionsGrp,
+                    voyage_id: voyageId
+                })
+            });
+
+            const text = await response.text();
+
+            console.log("Réponse du serveur :", text);
+
+            let data;
+            try {
+                data = JSON.parse(text);
+            } catch (e) {
+                throw new Error("Réponse JSON invalide : " + e.message);
             }
-        });
 
-        prixTotalElement.textContent = `${prixTotal.toFixed(2)} €`; // 2 chiffre apres la virgule
-    };
+            if (data && typeof data.prix_total === 'number') {
+                prixTotalElement.textContent = `${data.prix_total.toFixed(2)} €`;
+            } else {
+                prixTotalElement.textContent = "Erreur de calcul";
+            }
+
+        } catch (error) {
+            console.error("Erreur lors de la récupération du prix total :", error);
+            prixTotalElement.textContent = "Erreur réseau ou serveur";
+        }
+    }
 
     if (nombrePersonnesInput) {
-        nombrePersonnesInput.addEventListener("input", calculerPrixTotal);
+        nombrePersonnesInput.addEventListener("input", envoyerRequetePrixTotal);
     }
-    optionsIndividuelles.forEach(function(option){
-        option.addEventListener("input", calculerPrixTotal);
-    });
-    optionsGroupes.forEach(function(option){
-        option.addEventListener("change", calculerPrixTotal);
+
+    optionsIndividuelles.forEach(option => {
+        option.addEventListener("input", envoyerRequetePrixTotal);
     });
 
-    // arrive sur la page => calcul initial du prix
-    calculerPrixTotal();
+    optionsGroupes.forEach(option => {
+        option.addEventListener("change", envoyerRequetePrixTotal);
+    });
+
+    envoyerRequetePrixTotal();
 });
 
 document.getElementsByTagName("form")[0].addEventListener("submit", function (event) {
@@ -44,10 +93,10 @@ document.getElementsByTagName("form")[0].addEventListener("submit", function (ev
     const selectedDate = new Date(dateInput.value);
     const today = new Date();
 
-    if(today >= selectedDate){
-        event.preventDefault(); // empeche le submit du form
-        // alert("La date du départ doit être strictement supérieure à aujourd'hui");
+    if (today >= selectedDate) {
+        event.preventDefault();
         errorMsg.textContent = "La date du départ doit être strictement supérieure à aujourd'hui.";
+    } else {
+        errorMsg.textContent = "";
     }
-    else errorMsg.textContent = "";
 });
